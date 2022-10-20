@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="creat git repository">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="Add z to Main">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +28,20 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Softcon_Assignement_01" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,6 +52,7 @@
       <updated>1666123221376</updated>
       <workItem from="1666123222899" duration="950000" />
       <workItem from="1666161409963" duration="316000" />
+      <workItem from="1666180855320" duration="879000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -52,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666124277982</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add z to Main">
+      <created>1666181108642</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666181108642</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,7 +86,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -71,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creat git repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="creat git repository" />
+    <MESSAGE value="Add z to Main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add z to Main" />
   </component>
 </project>
