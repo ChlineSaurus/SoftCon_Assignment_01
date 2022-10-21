@@ -1,6 +1,6 @@
 package Player;
 
-abstract class AbstractPlayer {
+public abstract class AbstractPlayer {
     //private Grid ownGrid() = new Grid;
     //private Grid targetGrid() = new Grid;
     //private fleet ownFleet() = new fleet;
@@ -16,4 +16,7 @@ abstract class AbstractPlayer {
     void placeBoat() {
 
     }
+
+    public abstract int getPosition();
+
 }
