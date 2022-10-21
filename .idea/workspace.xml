@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="Add z to Main">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="testing">
+      <change afterPath="$PROJECT_DIR$/src/Boats/type/Battleship.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Boats/type/Carrier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Boats/type/Patrol_boats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Boats/type/Submarine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boats/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,6 +64,8 @@
       <workItem from="1666123222899" duration="950000" />
       <workItem from="1666161409963" duration="316000" />
       <workItem from="1666180855320" duration="879000" />
+      <workItem from="1666250627267" duration="954000" />
+      <workItem from="1666279486547" duration="1780000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -75,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666181108642</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="testing">
+      <created>1666250903158</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666250903159</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creat git repository" />
     <MESSAGE value="Add z to Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add z to Main" />
+    <MESSAGE value="testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing" />
   </component>
 </project>
