@@ -13,6 +13,7 @@ public class AbstractBoat {
     }
 
     static void toot() {
+
         System.out.println("Toooooooot");
     }
 }
