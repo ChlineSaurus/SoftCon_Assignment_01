@@ -1,3 +1,6 @@
+import Boats.type.Battleship;
+
+
 public class Main {
     public static void main(String[] args) {
         int x = 0;
@@ -5,5 +8,20 @@ public class Main {
         System.out.println(x);
         System.out.println("testing");
         int z=0;
+        Battleship a=new Battleship();
+        System.out.println(a.currenthitpoints());
+        a.isHit();
+        System.out.println(a.currenthitpoints());
+        System.out.println(a.issunk());
+        a.isHit();
+        System.out.println(a.currenthitpoints());
+        a.isHit();
+        a.isHit();
+        System.out.println(a.currenthitpoints());
+        a.isHit();
+
+        System.out.println(a.currenthitpoints());
+        System.out.println(a.currenthitpoints());
+
     }
 }
