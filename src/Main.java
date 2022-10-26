@@ -1,6 +1,3 @@
-import Boats.type.Battleship;
-
-
 public class Main {
     public static void main(String[] args) {
         assert 1==0;
@@ -9,7 +6,7 @@ public class Main {
         System.out.println(x);
         System.out.println("testing");
         int z=0;
-        Battleship a=new Battleship();
+       /* Battleship a=new Battleship();
         System.out.println(a.currenthitpoints());
         a.isHit();
         System.out.println(a.currenthitpoints());
@@ -26,6 +23,12 @@ public class Main {
 
         System.out.println(a.currenthitpoints());
         System.out.println(a.currenthitpoints());
+        */
 
+        GameManager first = new GameManager();
+        first.ManageGame();
+        Display test = new DisplayGrid();
+        test.DisplayGrid();
+        test.DisplayRecivedText();
     }
 }
