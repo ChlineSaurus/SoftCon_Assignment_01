@@ -1,8 +1,10 @@
 package Boats;
 
-public class AbstractBoat {
+public abstract class  AbstractBoat {
     // I'm a boat
-    private int hitpoints;
+    protected int hitpoints;
+
+
     public boolean issunk(){
         return hitpoints == 0;
     }
@@ -12,8 +14,4 @@ public class AbstractBoat {
         hitpoints--;
     }
 
-    static void toot() {
-
-        System.out.println("Toooooooot");
-    }
 }

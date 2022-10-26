@@ -1,24 +1,18 @@
 package Boats;
 
 public class fleetmanager {
-    private int allowed_carriers;
-    private int allowed_subs;
-    private int allowed_battleships;
-    private int allowed_patrol_boats;
+    private int allowed_carriers=1;
+    private int allowed_battleships=2;
+    private int allowed_subs=3;
+    private int allowed_patrol_boats=4;
 
     private int fleetsize;
-    public fleetmanager(int allowed_carriers,int allowed_battleships, int allowed_subs, int allowed_patrol_boats){
-        assert allowed_battleships>=0 && allowed_carriers>=0 && allowed_subs>=0 && allowed_patrol_boats>=0;
-        this.allowed_carriers=allowed_carriers;
-        this.allowed_battleships=allowed_battleships;
-        this.allowed_subs=allowed_subs;
-        this.allowed_patrol_boats=allowed_patrol_boats;
-        get_fleetsize();
+    public fleetmanager(){
+
     }
     private void get_fleetsize(){
-        fleetsize=allowed_carriers+allowed_battleships+allowed_subs+allowed_patrol_boats;
-        assert fleetsize>0;
-    }
+        fleetsize=allowed_carriers+allowed_battleships+allowed_subs+allowed_patrol_boats;}
+
 
     boolean isFleetplaced(){
         return true;
