@@ -1,5 +1,10 @@
 package Boats.type;
 
-public class Submarine {
+import Boats.AbstractBoat;
 
+
+public class Submarine extends AbstractBoat {
+    public Submarine(){
+        hitpoints=3;
+    }
 }
