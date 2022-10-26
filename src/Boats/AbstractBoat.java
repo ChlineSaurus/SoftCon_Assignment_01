@@ -46,7 +46,7 @@ public abstract class  AbstractBoat {
     }
     //in order that ishit is called one first must recieve the information from the grid make this function private sothat the it isn't absued
     public void isHit(){
-        assert issunk()!=true;
+        assert !issunk();
 
         hitpoints=hitpointmanager.valueOf(hitpoints.getHitpoints()-1);
     }
