@@ -4,6 +4,6 @@ import Boats.AbstractBoat;
 
 public class PatrolBoats extends AbstractBoat {
     public PatrolBoats(){
-        hitpoints=hitpointmanager.TWOHITPOINTS;
+        hitpoints=HitpointManager.TwoHitPoints;
     }
 }

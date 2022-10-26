@@ -4,51 +4,45 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class  AbstractBoat {
-     protected enum hitpointmanager{
+     protected enum HitpointManager{
+
          ZEROHITPOINTS(0),
-         ONEHITPOINT(1),
-         TWOHITPOINTS(2),
-         THREEHITPOINTS(3),
+
+         OneHitint(1),
+         TwoHitPoints(2),
+         ThreeHitPoints(3),
          FOURHITPOINTS(4),
-         FIVEHITPOINTS(5);
+         FiveHitPoints(5);
          private final int value;
          private static Map map = new HashMap<>();
-         hitpointmanager(int hitpoints){
-             this.value=hitpoints;
+         HitpointManager(int value){
+             this.value=value;
          }
 
          static {
-             for (hitpointmanager HITPOINTCLASS : hitpointmanager.values()) {
+             for (HitpointManager HITPOINTCLASS : HitpointManager.values()) {
                  map.put(HITPOINTCLASS.value, HITPOINTCLASS);
              }
 
          }
-         public static hitpointmanager valueOf(int hitpoints) {
-             return (hitpointmanager) map.get(hitpoints);
+         public static HitpointManager valueOf(int value) {
+             return (HitpointManager) map.get(value);
          }
-         int getHitpoints(){
+         private int getHitpointValue(){
              return value;
          }
     }
-    public int currenthitpoints(){
-         return hitpoints.getHitpoints();
+
+    protected HitpointManager hitpoints;
+
+
+    public boolean isSunk(){
+        return hitpoints == HitpointManager.ZEROHITPOINTS;
     }
-
-    protected hitpointmanager hitpoints;
-
-    // I'm a
-    // boat
-
-
-
-    public boolean issunk(){
-        return hitpoints == hitpointmanager.ZEROHITPOINTS;
-    }
-    //in order that ishit is called one first must recieve the information from the grid make this function private sothat the it isn't absued
     public void isHit(){
-        assert !issunk();
+        assert !isSunk();
 
-        hitpoints=hitpointmanager.valueOf(hitpoints.getHitpoints()-1);
+        hitpoints=HitpointManager.valueOf(hitpoints.getHitpointValue()-1);
     }
 
 }

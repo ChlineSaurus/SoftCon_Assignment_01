@@ -5,7 +5,7 @@ import Boats.AbstractBoat;
 public class Battleship extends AbstractBoat {
 
     public Battleship(){
-        hitpoints=hitpointmanager.FOURHITPOINTS;
+        hitpoints=HitpointManager.FOURHITPOINTS;
     }
 
 }

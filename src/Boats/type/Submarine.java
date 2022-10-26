@@ -5,6 +5,7 @@ import Boats.AbstractBoat;
 
 public class Submarine extends AbstractBoat {
     public Submarine(){
-        hitpoints=hitpointmanager.THREEHITPOINTS;
+        hitpoints=HitpointManager.ThreeHitPoints;
     }
 }
+
