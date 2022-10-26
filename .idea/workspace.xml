@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="assertions don't work see main line 6">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="Human and Computerplayer Class created">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/AbstractPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/type/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/type/ComputerPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player/type/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/type/HumanPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,19 +32,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Softcon_Assignement_01" />
-      <option name="VM_PARAMETERS" value="-ea" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -61,10 +71,7 @@
       <updated>1666123221376</updated>
       <workItem from="1666123222899" duration="950000" />
       <workItem from="1666161409963" duration="316000" />
-      <workItem from="1666516279938" duration="2006000" />
-      <workItem from="1666595908032" duration="3785000" />
-      <workItem from="1666685103408" duration="1903000" />
-      <workItem from="1666772914865" duration="12696000" />
+      <workItem from="1666516279938" duration="335000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -94,63 +101,7 @@
       <option name="project" value="LOCAL" />
       <updated>1666460948362</updated>
     </task>
-    <task id="LOCAL-00005" summary="ishit &amp; issunk">
-      <created>1666516643380</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1666516643380</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fleetmaager">
-      <created>1666597929008</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1666597929009</updated>
-    </task>
-    <task id="LOCAL-00007" summary="allowedboats">
-      <created>1666622710277</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1666622710277</updated>
-    </task>
-    <task id="LOCAL-00008" summary="created fleetmanager so that one can chose the amount of carriers battleships etc that shall be placed.">
-      <created>1666686230283</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1666686230283</updated>
-    </task>
-    <task id="LOCAL-00009" summary="deleted patarolboat made boat class AbstractBoat">
-      <created>1666775470588</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1666775470589</updated>
-    </task>
-    <task id="LOCAL-00010" summary="extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints">
-      <created>1666777757630</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1666777757630</updated>
-    </task>
-    <task id="LOCAL-00011" summary="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work">
-      <created>1666785167707</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1666785167707</updated>
-    </task>
-    <task id="LOCAL-00012" summary="assertions don't work see main line 6">
-      <created>1666785690211</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1666785690211</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,14 +134,6 @@
     <MESSAGE value="creat git repository" />
     <MESSAGE value="General Methods abstract Player" />
     <MESSAGE value="extends absboat" />
-    <MESSAGE value="ishit &amp; issunk" />
-    <MESSAGE value="fleetmaager" />
-    <MESSAGE value="allowedboats" />
-    <MESSAGE value="created fleetmanager so that one can chose the amount of carriers battleships etc that shall be placed." />
-    <MESSAGE value="deleted patarolboat made boat class AbstractBoat" />
-    <MESSAGE value="extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints" />
-    <MESSAGE value="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work" />
-    <MESSAGE value="assertions don't work see main line 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="assertions don't work see main line 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="extends absboat" />
   </component>
 </project>

@@ -4,7 +4,7 @@ import Player.AbstractPlayer;
 
 public class ComputerPlayer extends AbstractPlayer {
     @Override
-    public int getPosition(){
+     protected int getPosition(){
         return 1;
     }
 }
