@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Battleship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Battleship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Carrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Carrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Submarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Submarine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +64,7 @@
       <workItem from="1666516279938" duration="2006000" />
       <workItem from="1666595908032" duration="3785000" />
       <workItem from="1666685103408" duration="1903000" />
-      <workItem from="1666772914865" duration="10614000" />
+      <workItem from="1666772914865" duration="11490000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -140,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666777757630</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work">
+      <created>1666785167707</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666785167707</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +182,7 @@
     <MESSAGE value="created fleetmanager so that one can chose the amount of carriers battleships etc that shall be placed." />
     <MESSAGE value="deleted patarolboat made boat class AbstractBoat" />
     <MESSAGE value="extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints" />
+    <MESSAGE value="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work" />
+    <option name="LAST_COMMIT_MESSAGE" value="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work" />
   </component>
 </project>
