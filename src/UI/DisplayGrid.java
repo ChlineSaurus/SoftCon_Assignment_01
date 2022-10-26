@@ -1,3 +1,4 @@
+package UI;
 
 interface Display {
     void DisplayGrid();
