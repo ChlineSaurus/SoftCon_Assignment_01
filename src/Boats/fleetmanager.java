@@ -1,6 +1,11 @@
 package Boats;
 
+import java.util.List;
+
 public class fleetmanager {
+    private List<AbstractBoat> alfa;
+
+
     private int allowed_carriers=1;
     private int allowed_battleships=2;
     private int allowed_subs=3;
@@ -19,7 +24,7 @@ public class fleetmanager {
     }
 
     private int boats_not_sunk = 6;
-    boolean isFleetDestroyed(){return true;}
+    public boolean isFleetDestroyed(){return false;}
 
 
 }

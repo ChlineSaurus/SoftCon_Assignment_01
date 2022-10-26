@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DisplayGrid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="naming convention">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boats/fleetmanager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/fleetmanager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boats/type/Battleship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Battleship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Carrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Carrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Submarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Submarine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +71,7 @@
       <workItem from="1666123222899" duration="950000" />
       <workItem from="1666161409963" duration="316000" />
       <workItem from="1666516279938" duration="335000" />
+      <workItem from="1666793806811" duration="1473000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -104,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666460948362</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="naming convention">
+      <created>1666793778700</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666793778700</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +142,7 @@
     <MESSAGE value="General Methods abstract Player" />
     <MESSAGE value="extends absboat" />
     <MESSAGE value="Grobi Ordnerstruktur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grobi Ordnerstruktur" />
+    <MESSAGE value="naming convention" />
+    <option name="LAST_COMMIT_MESSAGE" value="naming convention" />
   </component>
 </project>
