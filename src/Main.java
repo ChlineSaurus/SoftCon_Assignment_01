@@ -1,6 +1,9 @@
 public class Main {
+import Boats.type.Battleship;
+import static org.junit.Assert.assertEquals;
+
     public static void main(String[] args) {
-        assert 1==0;
+        assertEquals("not same", 1, 0);
         int x = 0;
         System.out.println("Hello world!");
         System.out.println(x);
@@ -23,14 +26,6 @@ public class Main {
 
         System.out.println(a.currenthitpoints());
         System.out.println(a.currenthitpoints());
-        */
 
-        GameManager first = new GameManager();
-        first.ManageGame();
-        Display test = new DisplayGrid();
-        test.DisplayGrid();
-        test.DisplayRecivedText("This is my message to display");
-        test.DisplayShipsToPlace("Carrier");
-        test.DisplayWinner("Max");
     }
 }
