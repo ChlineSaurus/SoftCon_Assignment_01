@@ -1,0 +1,143 @@
+Index: src/Player/type/ComputerPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Player.type;\n\nimport Player.AbstractPlayer;\n\npublic class ComputerPlayer extends AbstractPlayer {\n    @Override\n    public int getPosition(){\n        return 1;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Player/type/ComputerPlayer.java b/src/Player/type/ComputerPlayer.java
+--- a/src/Player/type/ComputerPlayer.java	(revision 4144f4076a950947022191e6a6fa259abdc5e958)
++++ b/src/Player/type/ComputerPlayer.java	(date 1666537187208)
+@@ -4,7 +4,7 @@
+ 
+ public class ComputerPlayer extends AbstractPlayer {
+     @Override
+-    public int getPosition(){
++     protected int getPosition(){
+         return 1;
+     }
+ }
+Index: src/Player/AbstractPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Player;\n\npublic abstract class AbstractPlayer {\n    //private Grid ownGrid() = new Grid;\n    //private Grid targetGrid() = new Grid;\n    //private fleet ownFleet() = new fleet;\n\n    boolean validBoatPosition() {\n        return true;\n    }\n\n    void shoot() {\n\n    }\n\n    void placeBoat() {\n\n    }\n\n    public abstract int getPosition();\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Player/AbstractPlayer.java b/src/Player/AbstractPlayer.java
+--- a/src/Player/AbstractPlayer.java	(revision 4144f4076a950947022191e6a6fa259abdc5e958)
++++ b/src/Player/AbstractPlayer.java	(date 1666537187227)
+@@ -17,6 +17,6 @@
+ 
+     }
+ 
+-    public abstract int getPosition();
++    protected abstract int getPosition();
+ 
+ }
+Index: src/Player/type/HumanPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Player.type;\n\nimport Player.AbstractPlayer;\n\npublic class HumanPlayer extends AbstractPlayer {\n    @Override\n    public int getPosition(){\n        return 1;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Player/type/HumanPlayer.java b/src/Player/type/HumanPlayer.java
+--- a/src/Player/type/HumanPlayer.java	(revision 4144f4076a950947022191e6a6fa259abdc5e958)
++++ b/src/Player/type/HumanPlayer.java	(date 1666537187259)
+@@ -4,7 +4,7 @@
+ 
+ public class HumanPlayer extends AbstractPlayer {
+     @Override
+-    public int getPosition(){
++    protected int getPosition(){
+         return 1;
+     }
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_18\" project-jdk-name=\"19\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 4144f4076a950947022191e6a6fa259abdc5e958)
++++ b/.idea/misc.xml	(date 1666519082253)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="19" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"extends absboat\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Boats/AbstractBoat.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Boats/AbstractBoat.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\n      <created>1666123221376</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1666123221376</updated>\n      <workItem from=\"1666123222899\" duration=\"950000\" />\n      <workItem from=\"1666161409963\" duration=\"316000\" />\n      <workItem from=\"1666516279938\" duration=\"335000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\n      <created>1666123243096</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666123243096</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\n      <created>1666124277982</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666124277982</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"General Methods abstract Player\">\n      <created>1666379766123</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666379766123</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"extends absboat\">\n      <created>1666460948362</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666460948362</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"5\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/master\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"creat git repository\" />\n    <MESSAGE value=\"General Methods abstract Player\" />\n    <MESSAGE value=\"extends absboat\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"extends absboat\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4144f4076a950947022191e6a6fa259abdc5e958)
++++ b/.idea/workspace.xml	(date 1666538799798)
+@@ -1,9 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="extends absboat">
++    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="Human and Computerplayer Class created">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/AbstractPlayer.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Player/type/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/type/ComputerPlayer.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Player/type/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/type/HumanPlayer.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -46,7 +49,6 @@
+       <updated>1666123221376</updated>
+       <workItem from="1666123222899" duration="950000" />
+       <workItem from="1666161409963" duration="316000" />
+-      <workItem from="1666516279938" duration="335000" />
+     </task>
+     <task id="LOCAL-00001" summary="creat git repository">
+       <created>1666123243096</created>
+@@ -69,14 +71,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1666379766123</updated>
+     </task>
+-    <task id="LOCAL-00004" summary="extends absboat">
+-      <created>1666460948362</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1666460948362</updated>
+-    </task>
+-    <option name="localTasksCounter" value="5" />
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -93,7 +88,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="origin/master" />
++                        <option value="master" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -108,7 +103,6 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="creat git repository" />
+     <MESSAGE value="General Methods abstract Player" />
+-    <MESSAGE value="extends absboat" />
+-    <option name="LAST_COMMIT_MESSAGE" value="extends absboat" />
++    <option name="LAST_COMMIT_MESSAGE" value="General Methods abstract Player" />
+   </component>
+ </project>
+\ No newline at end of file
