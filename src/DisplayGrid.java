@@ -1,7 +1,11 @@
 
 interface Display {
     void DisplayGrid();
-    void DisplayRecivedText();
+    void DisplayRecivedText(String message);
+
+    void DisplayShipsToPlace(String ship);
+
+    void DisplayWinner(String winner);
 }
 public class DisplayGrid implements Display {
 
@@ -11,8 +15,20 @@ public class DisplayGrid implements Display {
     }
 
     @Override
-    public void DisplayRecivedText() {
-        System.out.println("Your text is displayed");
+    public void DisplayRecivedText(String message) {
+        System.out.println(message);
+    }
+
+    @Override
+    public void DisplayShipsToPlace(String ship) {
+        String toDisplay = String.format("You have to place the following ships: %s",ship);
+        System.out.println(toDisplay);
+    }
+
+    @Override
+    public void DisplayWinner(String winner) {
+        String toDisplay = String.format("And the winner is: %s",winner);
+        System.out.println(toDisplay);
     }
 
 }

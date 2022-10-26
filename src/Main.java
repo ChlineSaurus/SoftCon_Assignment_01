@@ -6,7 +6,7 @@ public class Main {
         System.out.println(x);
         System.out.println("testing");
         int z=0;
-       /* Battleship a=new Battleship();
+        /*Battleship a=new Battleship();
         System.out.println(a.currenthitpoints());
         a.isHit();
         System.out.println(a.currenthitpoints());
@@ -29,6 +29,8 @@ public class Main {
         first.ManageGame();
         Display test = new DisplayGrid();
         test.DisplayGrid();
-        test.DisplayRecivedText();
+        test.DisplayRecivedText("This is my message to display");
+        test.DisplayShipsToPlace("Carrier");
+        test.DisplayWinner("Max");
     }
 }

@@ -15,7 +15,7 @@ public class GameManager {
         while(fleet == true){
             System.out.println(("battle is going"));
             counter ++;
-            if(counter == 10) {
+            if(counter == 5) {
                 fleet = false;
             }
         }
