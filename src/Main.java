@@ -8,6 +8,14 @@ public class Main {
         System.out.println(x);
         System.out.println("testing");
         int z=0;
+        Battleship b=new Battleship();
+        b.isHit();
+        System.out.println(b.isSunk());
+        b.isHit();
+        Battleship a=b;
+        a.isHit();
+
+
 
 
     }

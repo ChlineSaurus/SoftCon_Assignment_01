@@ -1,9 +1,21 @@
 package Boats;
 
+import Boats.type.Carrier;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class fleetmanager {
-    private List<AbstractBoat> alfa;
+     List<AbstractBoat> aBoats=new ArrayList<>();
+     public void addboat (){
+         Carrier temp=new Carrier();
+         aBoats.add(temp);
+     }
+     public boolean isFleetPlaced(){
+         return false;
+     }
+
+
 
 
     private int allowed_carriers=1;
