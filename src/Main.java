@@ -1,9 +1,9 @@
 import Boats.type.Battleship;
-
+import static org.junit.Assert.assertEquals;
 
 public class Main {
     public static void main(String[] args) {
-        assert 1==0;
+        assertEquals("not same", 1, 0);
         int x = 0;
         System.out.println("Hello world!");
         System.out.println(x);
