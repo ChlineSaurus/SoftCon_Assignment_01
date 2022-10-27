@@ -1,5 +1,9 @@
 package Player;
 
+import Grid.Column;
+import Grid.CoordinatesTuple;
+import Grid.Row;
+
 public abstract class AbstractPlayer {
     //private Grid ownGrid() = new Grid;
     //private Grid targetGrid() = new Grid;
@@ -9,14 +13,20 @@ public abstract class AbstractPlayer {
         return true;
     }
 
-    void shoot() {
+    public void shoot() {
+        while(true) {
+            CoordinatesTuple coordinates = getPosition();
+            //shoot at Grid or GridCell
+            break;
+        }
+
+        }
+
+    public void placeBoat(CoordinatesTuple A, CoordinatesTuple B) {
 
     }
 
-    void placeBoat() {
 
-    }
-
-    protected abstract int getPosition();
+    protected abstract CoordinatesTuple getPosition();
 
 }
