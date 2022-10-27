@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="new enums need to use stratergy later">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="used enums to introduce gridcell and grid">
+      <change beforePath="$PROJECT_DIR$/src/Boats/fleetmanager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +71,7 @@
       <workItem from="1666793806811" duration="2440000" />
       <workItem from="1666799024425" duration="2935000" />
       <workItem from="1666802202614" duration="2000" />
-      <workItem from="1666852426563" duration="2349000" />
+      <workItem from="1666852426563" duration="2948000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -132,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666801975301</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="used enums to introduce gridcell and grid">
+      <created>1666857046741</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666857046741</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +153,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="boss" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -169,6 +173,7 @@
     <MESSAGE value="naming convention" />
     <MESSAGE value="boatclassfinishid starting with fleet" />
     <MESSAGE value="new enums need to use stratergy later" />
-    <option name="LAST_COMMIT_MESSAGE" value="new enums need to use stratergy later" />
+    <MESSAGE value="used enums to introduce gridcell and grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="used enums to introduce gridcell and grid" />
   </component>
 </project>

@@ -5,7 +5,7 @@ import Boats.type.Carrier;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fleetmanager {
+public class FleetManager {
      List<AbstractBoat> aBoats=new ArrayList<>();
      public void addboat (){
          Carrier temp=new Carrier();
@@ -24,7 +24,7 @@ public class fleetmanager {
     private int allowed_patrol_boats=4;
 
     private int fleetsize;
-    public fleetmanager(){
+    public FleetManager(){
 
     }
     private void get_fleetsize(){
