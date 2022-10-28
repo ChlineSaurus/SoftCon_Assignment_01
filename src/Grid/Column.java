@@ -17,7 +17,7 @@ public enum Column {
     Column(Integer value) {
         this.value = value;
     }
-    protected int getValue(){
+    protected Integer getValue(){
         return value;
     }
 }

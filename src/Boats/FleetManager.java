@@ -22,11 +22,8 @@ public class FleetManager {
     private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;
 
 
-
     public FleetManager(){
     }
-
-
 
     public boolean isFleetplaced(){
         return allowedCarrier == AllowedBoats.Zero && allowedBattleships == AllowedBoats.Zero && allowedSubmarines == AllowedBoats.Zero && allowedPatrolBoats == AllowedBoats.Zero;
@@ -35,15 +32,15 @@ public class FleetManager {
 
     public boolean isFleetDestroyed(){
         int i=0;
-        boolean temp=true;
+
         while (fleet.size()>i){
 
             if (!fleet.get(i).isSunk()){
-                temp=false;
+                return false;
             }
             i++;
         }
-        return temp;
+        return true;
     }
 
 

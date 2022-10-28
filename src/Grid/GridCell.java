@@ -8,6 +8,13 @@ public class GridCell {
         this.row=a;
         this.column=b;
     }
+    protected Integer GetRowIndex(){
+        return row.getValue();
+    }
+    protected Integer GetColumnIndex(){
+        return column.getValue();
+    }
+
 
 
 }
