@@ -33,7 +33,7 @@ public class HumanPlayer extends AbstractPlayer {
     @Override
     protected CoordinatesTuple getPosition() {
         //throws IllegalUserInputException
-        return new CoordinatesTuple(Row.A, Column.C);
+        return new CoordinatesTuple(Row.R0, Column.C);
         //inputToCoordinatesTuple(s);
     }
 
