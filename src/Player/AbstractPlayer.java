@@ -1,8 +1,6 @@
 package Player;
 
-import Grid.Column;
 import Grid.CoordinatesTuple;
-import Grid.Row;
 
 public abstract class AbstractPlayer {
     //private Grid ownGrid() = new Grid;
