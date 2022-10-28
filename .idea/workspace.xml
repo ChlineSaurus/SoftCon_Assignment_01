@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="used enums to introduce gridcell and grid">
-      <change beforePath="$PROJECT_DIR$/src/Boats/fleetmanager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="renamed FleetManager">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boats/AllowedBoats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AllowedBoats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +53,8 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Softcon_Assignement_01" />
+      <option name="PROGRAM_PARAMETERS" value="-ea" />
+      <option name="VM_PARAMETERS" value="-ea" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -71,7 +79,7 @@
       <workItem from="1666793806811" duration="2440000" />
       <workItem from="1666799024425" duration="2935000" />
       <workItem from="1666802202614" duration="2000" />
-      <workItem from="1666852426563" duration="2948000" />
+      <workItem from="1666852426563" duration="12345000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -136,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666857046741</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="renamed FleetManager">
+      <created>1666857621892</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666857621892</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +189,7 @@
     <MESSAGE value="boatclassfinishid starting with fleet" />
     <MESSAGE value="new enums need to use stratergy later" />
     <MESSAGE value="used enums to introduce gridcell and grid" />
-    <option name="LAST_COMMIT_MESSAGE" value="used enums to introduce gridcell and grid" />
+    <MESSAGE value="renamed FleetManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed FleetManager" />
   </component>
 </project>

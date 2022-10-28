@@ -11,6 +11,7 @@ public class GameManager {
     private void GameFlow(){
         boolean fleet = true;
         int counter = 0;
+        //!player.fleet.isDestroyed || !computer.fleet.isDestroyed
 
         while(fleet == true){
             System.out.println(("battle is going"));

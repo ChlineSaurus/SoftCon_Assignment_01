@@ -9,4 +9,5 @@ public class GridCell {
         this.column=b;
     }
 
+
 }

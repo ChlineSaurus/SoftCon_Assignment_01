@@ -6,37 +6,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FleetManager {
-     List<AbstractBoat> aBoats=new ArrayList<>();
-     public void addboat (){
-         Carrier temp=new Carrier();
-         aBoats.add(temp);
+     private List<AbstractBoat> fleet=new ArrayList<>();
+
+    public void addBoat (AbstractBoat a){
+         //check
+        int max = 10;
+        assert fleet.size()< max;
+         fleet.add(a);
      }
-     public boolean isFleetPlaced(){
-         return false;
-     }
+
+
+    private AllowedBoats allowedCarrier=AllowedBoats.One;
+    private AllowedBoats allowedBattleships=AllowedBoats.Two;
+    private AllowedBoats allowedSubmarines=AllowedBoats.Three;
+    private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;
 
 
 
-
-    private int allowed_carriers=1;
-    private int allowed_battleships=2;
-    private int allowed_subs=3;
-    private int allowed_patrol_boats=4;
-
-    private int fleetsize;
     public FleetManager(){
-
-    }
-    private void get_fleetsize(){
-        fleetsize=allowed_carriers+allowed_battleships+allowed_subs+allowed_patrol_boats;}
-
-
-    boolean isFleetplaced(){
-        return true;
     }
 
-    private int boats_not_sunk = 6;
-    public boolean isFleetDestroyed(){return false;}
+
+
+    public boolean isFleetplaced(){
+        return allowedCarrier == AllowedBoats.Zero && allowedBattleships == AllowedBoats.Zero && allowedSubmarines == AllowedBoats.Zero && allowedPatrolBoats == AllowedBoats.Zero;
+    }
+
+
+    public boolean isFleetDestroyed(){
+        int i=0;
+        boolean temp=true;
+        while (fleet.size()>i){
+
+            if (!fleet.get(i).isSunk()){
+                temp=false;
+            }
+            i++;
+        }
+        return temp;
+    }
 
 
 }
