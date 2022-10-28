@@ -6,7 +6,10 @@ import Grid.CoordinatesTuple;
 import Grid.Row;
 import Player.AbstractPlayer;
 
+import java.util.ArrayList;
+
 public class HumanPlayer extends AbstractPlayer {
+    public boolean shouldBeDisplayed = true;
     
     private CoordinatesTuple inputToCoordinatesTuple(String input) throws IllegalUserInputException {
         if (input.length() != 2) {
@@ -16,11 +19,11 @@ public class HumanPlayer extends AbstractPlayer {
         Row row;
         Column column;
         try {
-            row = Row.valueOf(Character.toString(uppercaseInput.charAt(0)));
+            row = Row.valueOf("R" + uppercaseInput.charAt(0));
             column = Column.valueOf(Character.toString(uppercaseInput.charAt(1)));
         } catch (IllegalArgumentException e1) {
             try {
-                row = Row.valueOf(Character.toString(uppercaseInput.charAt(1)));
+                row = Row.valueOf("R" + uppercaseInput.charAt(0));
                 column = Column.valueOf(Character.toString(uppercaseInput.charAt(0)));
             } catch (IllegalArgumentException e2) {
                 throw new IllegalUserInputException("Your input was not in the right form: Please give the game a " +
@@ -29,9 +32,17 @@ public class HumanPlayer extends AbstractPlayer {
         }
         return new CoordinatesTuple(row, column);
     } 
-    
+
     @Override
-    protected CoordinatesTuple getPosition() {
+    protected ArrayList<CoordinatesTuple> getBoatPosition() {
+        ArrayList<CoordinatesTuple> boatCoordinates = new ArrayList<CoordinatesTuple>();
+        boatCoordinates.add(new CoordinatesTuple(Row.R0, Column.C));
+
+        return boatCoordinates;
+    }
+
+    @Override
+    protected CoordinatesTuple getShotPosition() {
         //throws IllegalUserInputException
         return new CoordinatesTuple(Row.R0, Column.C);
         //inputToCoordinatesTuple(s);

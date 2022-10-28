@@ -1,30 +1,32 @@
 package Player;
 
+import Exceptions.BoatPlacement.IllegalBoatException;
+import Exceptions.IllegalShotException;
 import Grid.CoordinatesTuple;
+
+import java.util.ArrayList;
 
 public abstract class AbstractPlayer {
     //private Grid ownGrid() = new Grid;
     //private Grid targetGrid() = new Grid;
     //private fleet ownFleet() = new fleet;
+    public boolean shouldBeDisplayed = true;
 
-    boolean validBoatPosition() {
-        return true;
+    public CoordinatesTuple shoot() throws IllegalShotException {
+        return getShotPosition();
     }
 
-    public void shoot() {
-        while(true) {
-            CoordinatesTuple coordinates = getPosition();
-            //shoot at Grid or GridCell
-            break;
-        }
-
-        }
-
-    public void placeBoat(CoordinatesTuple A, CoordinatesTuple B) {
-
+    public void hitOnOwnGrid(CoordinatesTuple hitPosition) throws IllegalShotException {
+        //shotAtGrid();
     }
 
+    public void placeBoat() throws IllegalBoatException {
+        ArrayList<CoordinatesTuple> boatPosition = getBoatPosition();
+        //ownGrid.placeBoat(boatPosition)
+    };
 
-    protected abstract CoordinatesTuple getPosition();
+    protected abstract ArrayList<CoordinatesTuple> getBoatPosition();
+
+    protected abstract CoordinatesTuple getShotPosition();
 
 }

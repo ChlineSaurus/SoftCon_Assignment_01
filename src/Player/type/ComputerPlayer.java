@@ -4,6 +4,9 @@ import Grid.Column;
 import Grid.CoordinatesTuple;
 import Grid.Row;
 import Player.AbstractPlayer;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class ComputerPlayer extends AbstractPlayer {
@@ -11,6 +14,7 @@ public class ComputerPlayer extends AbstractPlayer {
     private static final int rowLength = rowEnum.length;
     private static final Column[] columnEnum = Column.values();
     private static final int columnLength = rowEnum.length;
+    public boolean shouldBeDisplayed = false;
 
     private static CoordinatesTuple randomPosition() {
         int randomRowIndex = new Random().nextInt(rowLength);
@@ -18,7 +22,15 @@ public class ComputerPlayer extends AbstractPlayer {
         return new CoordinatesTuple(rowEnum[randomRowIndex], columnEnum[randomColumnIndex]);
     }
     @Override
-     protected CoordinatesTuple getPosition() {
+    protected ArrayList<CoordinatesTuple> getBoatPosition() {
+        ArrayList<CoordinatesTuple> boatCoordinates = new ArrayList<CoordinatesTuple>();
+
+        boatCoordinates.add(randomPosition());
+
+        return boatCoordinates;
+    }
+    @Override
+     protected CoordinatesTuple getShotPosition() {
         return randomPosition();
     }
 }
