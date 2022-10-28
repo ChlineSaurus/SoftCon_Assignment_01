@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum AllowedBoats {
-    ZeroBoats(0),
+    Zero(0),
 
-    OneBoat(1),
-    TwoBoats(2),
-    ThreeBoats(3),
-    FourHitPoints(4);
+    One(1),
+    Two(2),
+    Three(3),
+    Four(4);
     private final int value;
     private static Map map = new HashMap<>();
     AllowedBoats(int value){
