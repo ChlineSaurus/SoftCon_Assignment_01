@@ -1,4 +1,21 @@
+import Player.AbstractPlayer;
+import Player.type.ComputerPlayer;
+import Player.type.HumanPlayer;
+
 public class GameManager {
+
+    private static GameManager uniqueInstance;
+    private GameManager() {
+        AbstractPlayer player1 = new HumanPlayer();
+        AbstractPlayer player2 = new ComputerPlayer();
+    }
+
+    public static synchronized GameManager getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new GameManager();
+        }
+        return uniqueInstance;
+    }
     public void ManageGame(){
         StartGame();
         GameFlow();
