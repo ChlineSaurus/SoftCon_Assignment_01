@@ -1,5 +1,6 @@
 package Player;
 
+import Boats.FleetManager;
 import Exceptions.BoatPlacement.IllegalBoatException;
 import Exceptions.IllegalShotException;
 import Grid.CoordinatesTuple;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 public abstract class AbstractPlayer {
     //private Grid ownGrid() = new Grid;
     //private Grid targetGrid() = new Grid;
-    //private fleet ownFleet() = new fleet;
+    public FleetManager ownFleet = new FleetManager();
     public boolean shouldBeDisplayed = true;
 
     public CoordinatesTuple shoot() throws IllegalShotException {
