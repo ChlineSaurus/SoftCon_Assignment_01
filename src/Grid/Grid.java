@@ -23,17 +23,33 @@ public class Grid {
             [A,B,C,D,E,F,G,H,I,J],
 
      */
-    ArrayList<GridCell> rowList = new ArrayList<GridCell>();
-    ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();
+    static ArrayList<GridCell> rowList = new ArrayList<GridCell>();
+    static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();
 
-    //create 2D-List with 10 rows and GridCells in them
-    public void newGrid() {
+    //create ArrayList Matrix with GridCells in them
+    public void arraylistMatrix() {
         for (Row row : Row.values()) {
             gridList.add(rowList = new ArrayList<GridCell>());
             for (Column column : Column.values()) {
                 GridCell temp = new GridCell(row, column);
                 rowList.add(temp);
             }
+        }
+    }
+
+    //create enum Matrix with GridCells in them
+    public void enumMatrix(){
+        enum grid{
+            gridList[0],
+            gridList[1],
+            gridList[2],
+            gridList[3],
+            gridList[4],
+            gridList[5],
+            gridList[6],
+            gridList[7],
+            gridList[8],
+            gridList[9];
         }
     }
 
