@@ -54,7 +54,7 @@ public class GameManager {
     private void StartGame(){
         for(int i = 0; i < 2; i++) {
             AbstractPlayer currentPlayer = currentTurn();
-            while(currentPlayer.ownFleet.isFleetplaced()) {
+            while(currentPlayer.isFleetPlaced()) {
                 try {
                     currentPlayer.placeBoat();
                 } catch(IllegalBoatException e) {

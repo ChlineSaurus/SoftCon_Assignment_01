@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public abstract class AbstractPlayer {
     //private Grid ownGrid() = new Grid;
     //private Grid targetGrid() = new Grid;
-    public FleetManager ownFleet = new FleetManager();
+    private FleetManager ownFleet = new FleetManager();
     public final boolean shouldBeDisplayed = false;
 
     public CoordinatesTuple shoot() throws IllegalShotException {
@@ -24,7 +24,15 @@ public abstract class AbstractPlayer {
     public void placeBoat() throws IllegalBoatException {
         ArrayList<CoordinatesTuple> boatPosition = getBoatPosition();
         //ownGrid.placeBoat(boatPosition)
-    };
+    }
+
+    public boolean isFleetPlaced() {
+        return ownFleet.isFleetplaced();
+    }
+
+    public boolean isFleetDestroyed() {
+        return ownFleet.isFleetDestroyed();
+    }
 
     protected abstract ArrayList<CoordinatesTuple> getBoatPosition() throws IllegalBoatException;
 
