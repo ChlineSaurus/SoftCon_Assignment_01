@@ -17,8 +17,4 @@ public enum Row {
         Row(Integer value) {
             this.value = value;
         }
-
-        protected Integer getValue(){
-                return value;
-        }
 }

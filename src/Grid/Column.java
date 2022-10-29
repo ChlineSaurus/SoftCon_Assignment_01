@@ -12,12 +12,9 @@ public enum Column {
     I(8),
     J(9);
 
-    private final Integer value;
+    public final Integer value;
 
     Column(Integer value) {
         this.value = value;
-    }
-    protected Integer getValue(){
-        return value;
     }
 }
