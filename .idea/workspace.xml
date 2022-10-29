@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22__21_04__Changes_.xml" beforeDir="false" />
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Battleship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Battleship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Carrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Carrier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +79,7 @@
       <workItem from="1666802202614" duration="2000" />
       <workItem from="1666852426563" duration="18851000" />
       <workItem from="1666987352224" duration="171000" />
-      <workItem from="1667032503106" duration="737000" />
+      <workItem from="1667032503106" duration="13922000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -168,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666962807154</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk">
+      <created>1667033442264</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667033442264</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +213,7 @@
     <MESSAGE value="renamed FleetManager" />
     <MESSAGE value="fleet working isfleetplaced and isfleetdestroyed relevant for game manager" />
     <MESSAGE value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
-    <option name="LAST_COMMIT_MESSAGE" value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
+    <MESSAGE value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
   </component>
 </project>

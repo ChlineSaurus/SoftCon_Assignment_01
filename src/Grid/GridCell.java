@@ -9,10 +9,10 @@ public class GridCell {
         this.column=b;
     }
     protected Integer GetRowIndex(){
-        return row.getValue();
+        return row.value;
     }
     protected Integer GetColumnIndex(){
-        return column.getValue();
+        return column.value;
     }
 
 

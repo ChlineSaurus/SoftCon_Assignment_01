@@ -18,6 +18,7 @@ public class GameManager {
         player2 = new ComputerPlayer(false);
         }
 
+
     public static synchronized GameManager getInstance() {
         if (uniqueInstance == null) {
             uniqueInstance = new GameManager();

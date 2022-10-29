@@ -14,4 +14,6 @@ public class Grid {
         return max(columDelta,rowDelta);
 
     }
+
+
 }
