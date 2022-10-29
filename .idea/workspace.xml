@@ -7,8 +7,6 @@
     <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="extends absboat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Row.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -86,7 +85,7 @@
       <workItem from="1666852426563" duration="18851000" />
       <workItem from="1666987352224" duration="171000" />
       <workItem from="1667032503106" duration="737000" />
-      <workItem from="1667061188012" duration="711000" />
+      <workItem from="1667061188012" duration="3628000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -172,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666962807154</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="extends absboat">
+      <created>1667062082901</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667062082902</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +210,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creat git repository" />
     <MESSAGE value="General Methods abstract Player" />
-    <MESSAGE value="extends absboat" />
     <MESSAGE value="Grobi Ordnerstruktur" />
     <MESSAGE value="naming convention" />
     <MESSAGE value="boatclassfinishid starting with fleet" />
@@ -213,6 +218,7 @@
     <MESSAGE value="renamed FleetManager" />
     <MESSAGE value="fleet working isfleetplaced and isfleetdestroyed relevant for game manager" />
     <MESSAGE value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
-    <option name="LAST_COMMIT_MESSAGE" value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
+    <MESSAGE value="extends absboat" />
+    <option name="LAST_COMMIT_MESSAGE" value="extends absboat" />
   </component>
 </project>
