@@ -14,7 +14,11 @@ public class ComputerPlayer extends AbstractPlayer {
     private static final int rowLength = rowEnum.length;
     private static final Column[] columnEnum = Column.values();
     private static final int columnLength = rowEnum.length;
-    public boolean shouldBeDisplayed = false;
+    public final boolean shouldBeDisplayed;
+
+    public ComputerPlayer(boolean shouldBeDisplayed) {
+        this.shouldBeDisplayed = shouldBeDisplayed;
+    }
 
     private static CoordinatesTuple randomPosition() {
         int randomRowIndex = new Random().nextInt(rowLength);

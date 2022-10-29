@@ -11,7 +11,7 @@ public abstract class AbstractPlayer {
     //private Grid ownGrid() = new Grid;
     //private Grid targetGrid() = new Grid;
     public FleetManager ownFleet = new FleetManager();
-    public boolean shouldBeDisplayed = true;
+    public final boolean shouldBeDisplayed = false;
 
     public CoordinatesTuple shoot() throws IllegalShotException {
         return getShotPosition();
@@ -26,8 +26,7 @@ public abstract class AbstractPlayer {
         //ownGrid.placeBoat(boatPosition)
     };
 
-    protected abstract ArrayList<CoordinatesTuple> getBoatPosition();
+    protected abstract ArrayList<CoordinatesTuple> getBoatPosition() throws IllegalBoatException;
 
-    protected abstract CoordinatesTuple getShotPosition();
-
+    protected abstract CoordinatesTuple getShotPosition() throws IllegalShotException;
 }

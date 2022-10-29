@@ -1,5 +1,7 @@
 package Player.type;
 
+import Exceptions.BoatPlacement.IllegalBoatException;
+import Exceptions.IllegalShotException;
 import Exceptions.IllegalUserInputException;
 import Grid.Column;
 import Grid.CoordinatesTuple;
@@ -7,10 +9,21 @@ import Grid.Row;
 import Player.AbstractPlayer;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class HumanPlayer extends AbstractPlayer {
-    public boolean shouldBeDisplayed = true;
-    
+    private final Scanner scanner;
+
+    public final boolean shouldBeDisplayed;
+
+    public HumanPlayer(boolean shouldBeDisplayed) {
+        this.shouldBeDisplayed = shouldBeDisplayed;
+        scanner = new Scanner(System.in);
+    }
+
+    private String takeInput() {
+        return scanner.nextLine();
+    }
     private CoordinatesTuple inputToCoordinatesTuple(String input) throws IllegalUserInputException {
         if (input.length() != 2) {
             throw new IllegalUserInputException("Your input hasn't had the right length!");
@@ -34,18 +47,33 @@ public class HumanPlayer extends AbstractPlayer {
     } 
 
     @Override
-    protected ArrayList<CoordinatesTuple> getBoatPosition() {
+    protected ArrayList<CoordinatesTuple> getBoatPosition() throws IllegalBoatException {
         ArrayList<CoordinatesTuple> boatCoordinates = new ArrayList<CoordinatesTuple>();
-        boatCoordinates.add(new CoordinatesTuple(Row.R0, Column.C));
-
+        String input = takeInput();
+        input = input.replaceAll("\\s", "");
+        input = input.replaceAll(",", "");
+        try {
+            boatCoordinates.add(inputToCoordinatesTuple(input.substring(0,2)));
+            boatCoordinates.add(inputToCoordinatesTuple(input.substring(2,4)));
+        } catch (IllegalUserInputException e) {
+            throw new IllegalBoatException("Your input was not in the right form: Please give the game two pairs of " +
+                    "a Uppercase Letter from A-J and a Number from 0-1");
+        }
+        if (boatCoordinates.get(0).column != boatCoordinates.get(1).column &&
+                boatCoordinates.get(0).row != boatCoordinates.get(1).row) {
+            throw new IllegalBoatException("Your Boat was less straight than Freddie Mercury: Please give the game +" +
+                    "Coordinates that are in a line.");
+        }
         return boatCoordinates;
     }
 
     @Override
-    protected CoordinatesTuple getShotPosition() {
-        //throws IllegalUserInputException
-        return new CoordinatesTuple(Row.R0, Column.C);
-        //inputToCoordinatesTuple(s);
+    protected CoordinatesTuple getShotPosition() throws IllegalShotException {
+        try {
+            return inputToCoordinatesTuple(takeInput());
+        } catch (IllegalUserInputException e) {
+            throw new IllegalShotException(e.getMessage());
+        }
     }
 
 }
