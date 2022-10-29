@@ -7,6 +7,7 @@ public abstract class  AbstractBoat {
 
 
     protected HitpointManager hitpoints;
+    protected char sunkLetter;
 
 
     public boolean isSunk(){
@@ -17,4 +18,7 @@ public abstract class  AbstractBoat {
         hitpoints=HitpointManager.valueOf(hitpoints.getHitpointValue()-1);
     }
 
+    public char getSunkLetter() {
+        return sunkLetter;
+    }
 }

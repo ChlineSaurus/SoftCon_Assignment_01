@@ -7,6 +7,7 @@ public class Battleship extends AbstractBoat {
 
     public Battleship(){
         hitpoints= HitpointManager.FourHitPoints;
+        sunkLetter='B';
     }
 
 }

@@ -6,5 +6,6 @@ import Boats.HitpointManager;
 public class Carrier extends AbstractBoat {
     public Carrier(){
         hitpoints= HitpointManager.FiveHitPoints;
+        sunkLetter='C';
     }
 }
