@@ -14,8 +14,8 @@ public class GameManager {
     AbstractPlayer player2;
 
     private GameManager() {
-        player1 = new HumanPlayer();
-        player2 = new ComputerPlayer();
+        player1 = new HumanPlayer(true);
+        player2 = new ComputerPlayer(false);
         }
 
     public static synchronized GameManager getInstance() {
