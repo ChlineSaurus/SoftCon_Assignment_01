@@ -1,5 +1,6 @@
 package Grid;
 
+//10x10 grid cells
 public enum Row {
         R0(0),
         R1(1),
