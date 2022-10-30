@@ -6,9 +6,13 @@ public  class Boat {
     protected HitpointManager hitpoints;
     private char sunkLetter;
     boolean isPlaced=false;
+    protected int gethitpoints(){
+        return hitpoints.getHitpointValue();
+    }
 
     public Boat(HitpointManager health,char sunk){
         assert health!=null;
+
         sunkLetter=sunk;
         hitpoints=health;
 

@@ -11,10 +11,11 @@ public enum HitpointManager {
         TwoHitPoints(2),
         ThreeHitPoints(3),
         FourHitPoints(4),
-        FiveHitPoints(5);
+        FiveHitPoints(5),
+        SixHitPoints(6);
 
         private final int value;
-        private static Map map = new HashMap<>();
+        private static final Map<Integer,HitpointManager> map = new HashMap<>();
         HitpointManager(int value){
             this.value=value;
         }
@@ -26,7 +27,7 @@ public enum HitpointManager {
 
         }
         public static HitpointManager valueOf(int value) {
-            return (HitpointManager) map.get(value);
+            return map.get(value);
         }
         int getHitpointValue(){
             return value;
