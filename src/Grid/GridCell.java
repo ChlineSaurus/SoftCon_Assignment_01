@@ -22,9 +22,11 @@ public class GridCell {
         return wasShot;
     }
     public void isShot(){
+        wasShot = true;
         if (WasShot()){
             if (t!= null){
                 t.isHit();
+
             }
 
         }

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="fleetmaager">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/Boat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Display.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +18,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -35,27 +32,19 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Softcon_Assignement_01" />
-      <option name="PROGRAM_PARAMETERS" value="-ea" />
-      <option name="VM_PARAMETERS" value="-ea" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,16 +65,11 @@
       <updated>1666123221376</updated>
       <workItem from="1666123222899" duration="950000" />
       <workItem from="1666161409963" duration="316000" />
-      <workItem from="1666516279938" duration="335000" />
-      <workItem from="1666793806811" duration="2440000" />
-      <workItem from="1666799024425" duration="2935000" />
-      <workItem from="1666802202614" duration="2000" />
-      <workItem from="1666852426563" duration="18851000" />
-      <workItem from="1666987352224" duration="171000" />
-      <workItem from="1667032503106" duration="13922000" />
-      <workItem from="1667132729308" duration="31000" />
-      <workItem from="1667134563335" duration="679000" />
-      <workItem from="1667138211834" duration="863000" />
+      <workItem from="1666516279938" duration="2006000" />
+      <workItem from="1666595908032" duration="3785000" />
+      <workItem from="1666685103408" duration="1903000" />
+      <workItem from="1666772914865" duration="11490000" />
+      <workItem from="1667115164555" duration="8331000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -115,84 +99,56 @@
       <option name="project" value="LOCAL" />
       <updated>1666460948362</updated>
     </task>
-    <task id="LOCAL-00005" summary="naming convention">
-      <created>1666793778700</created>
+    <task id="LOCAL-00005" summary="ishit &amp; issunk">
+      <created>1666516643380</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1666793778700</updated>
+      <updated>1666516643380</updated>
     </task>
-    <task id="LOCAL-00006" summary="boatclassfinishid starting with fleet">
-      <created>1666795360272</created>
+    <task id="LOCAL-00006" summary="fleetmaager">
+      <created>1666597929008</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1666795360272</updated>
+      <updated>1666597929009</updated>
     </task>
-    <task id="LOCAL-00007" summary="new enums need to use stratergy later">
-      <created>1666801948258</created>
+    <task id="LOCAL-00007" summary="allowedboats">
+      <created>1666622710277</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1666801948258</updated>
+      <updated>1666622710277</updated>
     </task>
-    <task id="LOCAL-00008" summary="new enums need to use stratergy later">
-      <created>1666801975301</created>
+    <task id="LOCAL-00008" summary="created fleetmanager so that one can chose the amount of carriers battleships etc that shall be placed.">
+      <created>1666686230283</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1666801975301</updated>
+      <updated>1666686230283</updated>
     </task>
-    <task id="LOCAL-00009" summary="used enums to introduce gridcell and grid">
-      <created>1666857046741</created>
+    <task id="LOCAL-00009" summary="deleted patarolboat made boat class AbstractBoat">
+      <created>1666775470588</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1666857046741</updated>
+      <updated>1666775470589</updated>
     </task>
-    <task id="LOCAL-00010" summary="renamed FleetManager">
-      <created>1666857621892</created>
+    <task id="LOCAL-00010" summary="extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints">
+      <created>1666777757630</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1666857621892</updated>
+      <updated>1666777757630</updated>
     </task>
-    <task id="LOCAL-00011" summary="fleet working isfleetplaced and isfleetdestroyed relevant for game manager">
-      <created>1666955369616</created>
+    <task id="LOCAL-00011" summary="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work">
+      <created>1666785167707</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1666955369616</updated>
+      <updated>1666785167707</updated>
     </task>
-    <task id="LOCAL-00012" summary="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY">
-      <created>1666962807154</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1666962807154</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk">
-      <created>1667033442264</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1667033442264</updated>
-    </task>
-    <task id="LOCAL-00014" summary="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly">
-      <created>1667114781321</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1667114781321</updated>
-    </task>
-    <task id="LOCAL-00015" summary="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly">
-      <created>1667132668270</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1667132668270</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,16 +181,13 @@
     <MESSAGE value="creat git repository" />
     <MESSAGE value="General Methods abstract Player" />
     <MESSAGE value="extends absboat" />
-    <MESSAGE value="Grobi Ordnerstruktur" />
-    <MESSAGE value="naming convention" />
-    <MESSAGE value="boatclassfinishid starting with fleet" />
-    <MESSAGE value="new enums need to use stratergy later" />
-    <MESSAGE value="used enums to introduce gridcell and grid" />
-    <MESSAGE value="renamed FleetManager" />
-    <MESSAGE value="fleet working isfleetplaced and isfleetdestroyed relevant for game manager" />
-    <MESSAGE value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
-    <MESSAGE value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
-    <MESSAGE value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
+    <MESSAGE value="ishit &amp; issunk" />
+    <MESSAGE value="fleetmaager" />
+    <MESSAGE value="allowedboats" />
+    <MESSAGE value="created fleetmanager so that one can chose the amount of carriers battleships etc that shall be placed." />
+    <MESSAGE value="deleted patarolboat made boat class AbstractBoat" />
+    <MESSAGE value="extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints" />
+    <MESSAGE value="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work" />
+    <option name="LAST_COMMIT_MESSAGE" value="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work" />
   </component>
 </project>
