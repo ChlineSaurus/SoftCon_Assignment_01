@@ -27,7 +27,7 @@ public class GameManager {
     }
     public void ManageGame(){
         StartGame();
-        GameFlow();
+        //GameFlow();
     }
 
     private boolean getStartingPlayer() {
@@ -66,7 +66,7 @@ public class GameManager {
         }
 
     }
-    private void GameFlow(){
+    /*private void GameFlow(){
         while(true) {
             AbstractPlayer currentPlayer = currentTurn();
             AbstractPlayer currentOpponent = currentOpponent();
@@ -86,5 +86,5 @@ public class GameManager {
             }
         }
         //display in special way, the player that is the currentPlayer is the winner
-    }
+    }*/
 }
