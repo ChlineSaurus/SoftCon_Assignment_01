@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static java.lang.Math.abs;
+
 
 public class FleetManager {
     private List<Boat> fleet=new ArrayList<>();
@@ -11,6 +13,8 @@ public class FleetManager {
     private AllowedBoats allowedBattleships=AllowedBoats.Two;
     private AllowedBoats allowedSubmarines=AllowedBoats.Three;
     private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;
+
+
 
 
 
@@ -31,6 +35,16 @@ public class FleetManager {
      private List<AllowedBoats> requiredBoats=new ArrayList<>();
 
 
+    public boolean isavailabe (int length){
+        int len=abs(length);
+        for (int i=0;i<requiredBoats.size();i++){
+            Boat temp=fleet.get(i);
+            if (!temp.isPlaced && temp.hitpoints.getHitpointValue()==length){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
@@ -46,6 +60,7 @@ public class FleetManager {
             }
         }
     }
+
 
 
     public boolean isFleetplaced(){

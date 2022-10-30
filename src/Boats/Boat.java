@@ -5,7 +5,7 @@ public  class Boat {
 
     protected HitpointManager hitpoints;
     private char sunkLetter;
-    private boolean isPlaced=false;
+    boolean isPlaced=false;
 
 
     public boolean isSunk(){

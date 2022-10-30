@@ -1,6 +1,7 @@
 package Grid;
 
 import Boats.Boat;
+import org.apache.avro.JsonProperties;
 
 public class GridCell {
 
@@ -22,6 +23,9 @@ public class GridCell {
     }
     public void isShot(){
         if (WasShot()){
+            if (t!= null){
+                t.isHit();
+            }
 
         }
     }
