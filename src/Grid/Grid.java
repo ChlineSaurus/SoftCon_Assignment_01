@@ -27,31 +27,29 @@ public class Grid {
     static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();
 
     //create ArrayList Matrix with GridCells in them
+    public void shoot(CoordinatesTuple c){
+        ArrayList<GridCell> a=gridList.get(c.row.value);
+        GridCell temp= a.get(c.column.value);
+        if (temp.WasShot()){
+            //create Error
+        }
+        else{
+            //to do wasshot to false
+
+        }
+    }
     public void arraylistMatrix() {
         for (Row row : Row.values()) {
             gridList.add(rowList = new ArrayList<GridCell>());
             for (Column column : Column.values()) {
-                GridCell temp = new GridCell(row, column);
+                GridCell temp = new GridCell();
                 rowList.add(temp);
             }
         }
     }
 
     //create enum Matrix with GridCells in them
-    public void enumMatrix(){
-        enum grid{
-            gridList[0],
-            gridList[1],
-            gridList[2],
-            gridList[3],
-            gridList[4],
-            gridList[5],
-            gridList[6],
-            gridList[7],
-            gridList[8],
-            gridList[9];
-        }
-    }
+
 
 
 
@@ -67,6 +65,7 @@ public class Grid {
             return max(columDelta, rowDelta);
 
          */
+
 
 }
 

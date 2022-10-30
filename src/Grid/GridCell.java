@@ -1,30 +1,28 @@
 package Grid;
 
-import Boats.AbstractBoat;
-import Boats.type.Battleship;
-
-
 public class GridCell {
-    private final Row row;
-    private final Column column;
+
+
 
     //know if cell has a boat on it
-    boolean wasShot = false;
+    private boolean wasShot = false;
 
     //know if boat is on it
-    boolean isOccupied = false;
+    private boolean isOccupied = false;
+
+    public boolean isOccupied() {
+        return isOccupied;
+    }
+
+    public boolean WasShot() {
+        return wasShot;
+    }
+
+    public GridCell(){
+
+    }
 
 
 
-    public GridCell(Row a, Column b){
-        this.row=a;
-        this.column=b;
-    }
-    protected Integer GetRowIndex(){
-        return row.value;
-    }
-    protected Integer GetColumnIndex(){
-        return column.value;
-    }
 
 }

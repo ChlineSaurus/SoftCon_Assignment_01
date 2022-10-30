@@ -1,13 +1,10 @@
 package Boats;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public abstract class  AbstractBoat {
+public  class Boat {
 
 
     protected HitpointManager hitpoints;
-    protected char sunkLetter;
+    private char sunkLetter;
 
 
     public boolean isSunk(){
@@ -21,4 +18,10 @@ public abstract class  AbstractBoat {
     public char getSunkLetter() {
         return sunkLetter;
     }
+    public Boat(HitpointManager health,char sunk){
+        sunkLetter=sunk;
+        hitpoints=health;
+
+    }
+
 }
