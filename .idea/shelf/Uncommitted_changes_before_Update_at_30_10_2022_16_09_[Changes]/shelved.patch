@@ -1,0 +1,226 @@
+Index: src/UI/Display.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package UI;\r\nimport Grid.Grid;\r\n\r\nimport java.awt.*;\r\n/* How to use: call DisplayMaster with two GridList and a String, what you want to display.\r\nChoose from:\r\n    \"boats\" to display everything within the process of placing boats\r\n    \"game\" whenever you need to display the current game state\r\n    \"won\" when the UserPlayer has won\r\n    \"lost\" when the UserPlayer has lost\r\n */\r\npublic class Display{\r\n    public void DisplayMaster(int[] target, int[] ocean, String what){\r\n        System.out.println(\"I am the display master\");\r\n        if(what == \"boats\"){\r\n            DisplayBoats(target, ocean);\r\n        } else if (what == \"game\") {\r\n            DisplayGame(target, ocean);\r\n        }\r\n        else if(what == \"won\"){\r\n            System.out.println(\"WOW congratulations, you have beaten the computer\");\r\n        }\r\n        else if(what == \"lost\"){\r\n            DisplayLoser(target);\r\n        }\r\n\r\n    }\r\n    private void DisplayGrid(int []target, int [] ocean){\r\n        String targetDeco = \"===== TARGET GRID =====\\n\" +\r\n                \"A B C D E F G H I J \\n\" +\r\n                \"+-+-+-+-+-+-+-+-+-+-+-+\";\r\n        String DecoBottom = \"+-+-+-+-+-+-+-+-+-+-+-+\\n\" +\r\n                \"A B C D E F G H I J \\n\" +\r\n                \"=======================\\n\";\r\n        String line = \"-----------------------\\n\";\r\n        String oceanDeco = \"===== OCEAN GRID =====\\n\" +\r\n                \"A B C D E F G H I J \\n\" +\r\n                \"+-+-+-+-+-+-+-+-+-+-+-+\";\r\n        System.out.println(targetDeco);\r\n        for(int i:target)\r\n            System.out.println(i);\r\n        System.out.println(DecoBottom);\r\n        System.out.println(line);\r\n        System.out.println(oceanDeco);\r\n        for(int i:ocean)\r\n            System.out.println(i);\r\n        System.out.println(DecoBottom);\r\n    }\r\n    private void DisplayBoats(int[] target, int[] ocean){\r\n        System.out.println(\"Please enter your disired Position of a boat in the following manner: \\\"A1,A4\\\"\");\r\n        DisplayGrid(target, ocean);\r\n        System.out.println(\"You have the following Boats to choose from:\");\r\n\r\n    }\r\n    private void DisplayGame(int[] target, int[] ocean){\r\n        // how to update where shot??\r\n        System.out.println(\"Please enter your desired field to shot at in the following manner: \\\"A1\\\"\");\r\n        // update shot\r\n        DisplayGrid(target, ocean);\r\n    }\r\n    private void DisplayLoser(int[] GridComp){\r\n        String TopDeco = \"= TARGET GRID COMPUTER =\\n\" +\r\n                \"A B C D E F G H I J \\n\" +\r\n                \"+-+-+-+-+-+-+-+-+-+-+-+\";\r\n\r\n        String BottomDeco = \"+-+-+-+-+-+-+-+-+-+-+-+\\n\" +\r\n                \"A B C D E F G H I J \\n\" +\r\n                \"=======================\\n\";\r\n        System.out.println(\"YOU LOST AGAINST THE COMPUTER. This would have been the Grid of your opponent\");\r\n        System.out.println(TopDeco);\r\n        for(int i:GridComp)\r\n            System.out.println(i);\r\n        System.out.println(BottomDeco);\r\n    }\r\n}\r\n/*interface Display {\r\n    void DisplayGrid();\r\n    void DisplayRecivedText(String message);\r\n\r\n    void DisplayShipsToPlace(String ship);\r\n\r\n    void DisplayWinner(String winner);\r\n}\r\npublic class DisplayGrid implements Display {\r\n\r\n    @Override\r\n    public void DisplayGrid() {\r\n        System.out.println(\"Grid is displayed\");\r\n    }\r\n\r\n    @Override\r\n    public void DisplayRecivedText(String message) {\r\n        System.out.println(message);\r\n    }\r\n\r\n    @Override\r\n    public void DisplayShipsToPlace(String ship) {\r\n        String toDisplay = String.format(\"You have to place the following ships: %s\",ship);\r\n        System.out.println(toDisplay);\r\n    }\r\n\r\n    @Override\r\n    public void DisplayWinner(String winner) {\r\n        String toDisplay = String.format(\"And the winner is: %s\",winner);\r\n        System.out.println(toDisplay);\r\n    }\r\n\r\n}\r\n*/
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/UI/Display.java b/src/UI/Display.java
+--- a/src/UI/Display.java	(revision 0d6b7b538aa828fddc5edc5a7f6f7b1695338827)
++++ b/src/UI/Display.java	(date 1667140106398)
+@@ -10,6 +10,11 @@
+     "lost" when the UserPlayer has lost
+  */
+ public class Display{
++    final String targetTitle = "===== TARGET GRID =====\n";
++    final String letters = "A B C D E F G H I J \n";
++    final String symbols = "+-+-+-+-+-+-+-+-+-+-+-+\n";
++    final String line = "-----------------------\n";
++    final String equals = "=======================\n";
+     public void DisplayMaster(int[] target, int[] ocean, String what){
+         System.out.println("I am the display master");
+         if(what == "boats"){
+Index: src/Grid/Grid.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grid;\r\n\r\nimport java.util.ArrayList;\r\n\r\nimport static java.lang.Math.abs;\r\nimport static java.lang.Math.max;\r\n\r\n\r\npublic class Grid {\r\n\r\n    public Grid() {\r\n\r\n    }\r\n    /*\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n\r\n     */\r\n    static ArrayList<GridCell> rowList = new ArrayList<GridCell>();\r\n    static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();\r\n\r\n    //create ArrayList Matrix with GridCells in them\r\n    public void shoot(CoordinatesTuple c){\r\n        ArrayList<GridCell> a=gridList.get(c.row.value);\r\n        GridCell temp= a.get(c.column.value);\r\n        if (temp.WasShot()){\r\n            //create Error\r\n        }\r\n        else{\r\n            //to do wasshot to false\r\n\r\n        }\r\n    }\r\n    public void arraylistMatrix() {\r\n        for (Row row : Row.values()) {\r\n            gridList.add(rowList = new ArrayList<GridCell>());\r\n            for (Column column : Column.values()) {\r\n                GridCell temp = new GridCell();\r\n                rowList.add(temp);\r\n            }\r\n        }\r\n    }\r\n\r\n    //create enum Matrix with GridCells in them\r\n\r\n\r\n\r\n\r\n\r\n\r\n        /*public int getDistance (GridCell a, GridCell b){\r\n            int columDelta = abs(a.GetColumnIndex() - b.GetColumnIndex());\r\n            int rowDelta = abs(a.GetRowIndex() - b.GetRowIndex());\r\n            //this function to check if the distance of the user is valid for instance\r\n            if (columDelta != 0 && rowDelta != 0) {\r\n                //error Message\r\n            }\r\n            return max(columDelta, rowDelta);\r\n\r\n         */\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Grid/Grid.java b/src/Grid/Grid.java
+--- a/src/Grid/Grid.java	(revision 0d6b7b538aa828fddc5edc5a7f6f7b1695338827)
++++ b/src/Grid/Grid.java	(date 1667142313319)
+@@ -1,5 +1,7 @@
+ package Grid;
+ 
++import Boats.BoatTypes;
++
+ import java.util.ArrayList;
+ 
+ import static java.lang.Math.abs;
+@@ -36,6 +38,16 @@
+         else{
+             //to do wasshot to false
+ 
++        }
++    }
++    public void place(CoordinatesTuple c, BoatTypes){
++        ArrayList<GridCell> a=gridList.get(c.row.value);
++        GridCell temp = a.get(c.column.value);
++        if(temp.isOccupied()){
++            //throw error
++        }
++        else{
++            for(i in BoatTypes.BoatTypes)
+         }
+     }
+     public void arraylistMatrix() {
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import UI.Display;\r\n\r\nimport static java.lang.System.exit;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n\r\n    GameManager gameManager = GameManager.getInstance();\r\n    gameManager.ManageGame();\r\n    exit(0);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 0d6b7b538aa828fddc5edc5a7f6f7b1695338827)
++++ b/src/Main.java	(date 1667142313313)
+@@ -1,9 +1,15 @@
++import Grid.Grid;
+ import UI.Display;
+ 
++
++import java.awt.*;
++
+ import static java.lang.System.exit;
+ 
+ public class Main {
+     public static void main(String[] args) {
++        Display display = new Display();
++        Grid test = new Grid();
+ 
+ 
+     GameManager gameManager = GameManager.getInstance();
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch	(revision 0d6b7b538aa828fddc5edc5a7f6f7b1695338827)
++++ /dev/null	(revision 0d6b7b538aa828fddc5edc5a7f6f7b1695338827)
+@@ -1,50 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"General Methods abstract Player\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Player/AbstractPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/AbstractPlayer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Player/type/ComputerPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/type/ComputerPlayer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Player/type/HumanPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/type/HumanPlayer.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\"\n  }\n}]]></component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\n      <created>1666123221376</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1666123221376</updated>\n      <workItem from=\"1666123222899\" duration=\"950000\" />\n      <workItem from=\"1666161409963\" duration=\"316000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\n      <created>1666123243096</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666123243096</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\n      <created>1666124277982</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666124277982</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"General Methods abstract Player\">\n      <created>1666379766123</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666379766123</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"creat git repository\" />\n    <MESSAGE value=\"General Methods abstract Player\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"General Methods abstract Player\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 14369f40e73c191fccff7e4d78acecf008ef42fc)
+-+++ b/.idea/workspace.xml	(date 1666380858021)
+-@@ -1,12 +1,7 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-   <component name="ChangeListManager">
+--    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="General Methods abstract Player">
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/AbstractPlayer.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Player/type/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/type/ComputerPlayer.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/Player/type/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/type/HumanPlayer.java" afterDir="false" />
+--    </list>
+-+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="Human and Computerplayer Class created" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-@@ -70,7 +65,14 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1666379766123</updated>
+-     </task>
+--    <option name="localTasksCounter" value="4" />
+-+    <task id="LOCAL-00004" summary="Human and Computerplayer Class created">
+-+      <created>1666380832564</created>
+-+      <option name="number" value="00004" />
+-+      <option name="presentableId" value="LOCAL-00004" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1666380832564</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="5" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-@@ -90,6 +92,7 @@
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="creat git repository" />
+-     <MESSAGE value="General Methods abstract Player" />
+--    <option name="LAST_COMMIT_MESSAGE" value="General Methods abstract Player" />
+-+    <MESSAGE value="Human and Computerplayer Class created" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="Human and Computerplayer Class created" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml	(revision 0d6b7b538aa828fddc5edc5a7f6f7b1695338827)
++++ /dev/null	(revision 0d6b7b538aa828fddc5edc5a7f6f7b1695338827)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]" date="1666519019611" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 23.10.22, 11:56 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"fleetmaager\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_29_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_29_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_43_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_43_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_43_PM__Changes_1.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_43_PM__Changes_1.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_22__15_08__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_22__15_08__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_22__15_32__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_22__15_32__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/GameManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/GameManager.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/UI/DisplayGrid.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/UI/Display.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"Softcon_Assignement_01\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\r\n      <created>1666123221376</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666123221376</updated>\r\n      <workItem from=\"1666123222899\" duration=\"950000\" />\r\n      <workItem from=\"1666161409963\" duration=\"316000\" />\r\n      <workItem from=\"1666516279938\" duration=\"2006000\" />\r\n      <workItem from=\"1666595908032\" duration=\"3785000\" />\r\n      <workItem from=\"1666685103408\" duration=\"1903000\" />\r\n      <workItem from=\"1666772914865\" duration=\"11490000\" />\r\n      <workItem from=\"1667115164555\" duration=\"8331000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\r\n      <created>1666123243096</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666123243096</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\r\n      <created>1666124277982</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666124277982</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"General Methods abstract Player\">\r\n      <created>1666379766123</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666379766123</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"extends absboat\">\r\n      <created>1666460948362</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666460948362</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"ishit &amp; issunk\">\r\n      <created>1666516643380</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666516643380</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"fleetmaager\">\r\n      <created>1666597929008</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666597929009</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"allowedboats\">\r\n      <created>1666622710277</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666622710277</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"created fleetmanager so that one can chose the amount of carriers battleships etc that shall be placed.\">\r\n      <created>1666686230283</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666686230283</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"deleted patarolboat made boat class AbstractBoat\">\r\n      <created>1666775470588</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666775470589</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints\">\r\n      <created>1666777757630</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666777757630</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work\">\r\n      <created>1666785167707</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666785167707</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"12\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"creat git repository\" />\r\n    <MESSAGE value=\"General Methods abstract Player\" />\r\n    <MESSAGE value=\"extends absboat\" />\r\n    <MESSAGE value=\"ishit &amp; issunk\" />\r\n    <MESSAGE value=\"fleetmaager\" />\r\n    <MESSAGE value=\"allowedboats\" />\r\n    <MESSAGE value=\"created fleetmanager so that one can chose the amount of carriers battleships etc that shall be placed.\" />\r\n    <MESSAGE value=\"deleted patarolboat made boat class AbstractBoat\" />\r\n    <MESSAGE value=\"extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints\" />\r\n    <MESSAGE value=\"no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0d6b7b538aa828fddc5edc5a7f6f7b1695338827)
++++ b/.idea/workspace.xml	(date 1667142313713)
+@@ -2,17 +2,12 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="fleetmaager">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_29_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_29_PM__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_43_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_43_PM__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_43_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26-Oct-22_3_43_PM__Changes_1.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_22__15_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_22__15_08__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_22__15_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_22__15_32__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/UI/DisplayGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Display.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/UI/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Display.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -73,7 +68,8 @@
+       <workItem from="1666595908032" duration="3785000" />
+       <workItem from="1666685103408" duration="1903000" />
+       <workItem from="1666772914865" duration="11490000" />
+-      <workItem from="1667115164555" duration="8331000" />
++      <workItem from="1667115164555" duration="8466000" />
++      <workItem from="1667138205272" duration="3152000" />
+     </task>
+     <task id="LOCAL-00001" summary="creat git repository">
+       <created>1666123243096</created>
+@@ -152,7 +148,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1666785167707</updated>
+     </task>
+-    <option name="localTasksCounter" value="12" />
++    <task id="LOCAL-00012" summary="fleetmaager">
++      <created>1667124963003</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1667124963003</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -186,12 +189,12 @@
+     <MESSAGE value="General Methods abstract Player" />
+     <MESSAGE value="extends absboat" />
+     <MESSAGE value="ishit &amp; issunk" />
+-    <MESSAGE value="fleetmaager" />
+     <MESSAGE value="allowedboats" />
+     <MESSAGE value="created fleetmanager so that one can chose the amount of carriers battleships etc that shall be placed." />
+     <MESSAGE value="deleted patarolboat made boat class AbstractBoat" />
+     <MESSAGE value="extendeed all abstratboat still have problem of primitve abstraction a boat can only have 6 different hitpoints" />
+     <MESSAGE value="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work" />
+-    <option name="LAST_COMMIT_MESSAGE" value="no more primitave abstraction can create class of boats however boat can be hit even if under 0 zero assertion doesn't work" />
++    <MESSAGE value="fleetmaager" />
++    <option name="LAST_COMMIT_MESSAGE" value="fleetmaager" />
+   </component>
+ </project>
+\ No newline at end of file

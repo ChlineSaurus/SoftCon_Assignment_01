@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="list list implemetned">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boats/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/Boat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/HitpointManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/HitpointManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +85,7 @@
       <workItem from="1667032503106" duration="13922000" />
       <workItem from="1667132729308" duration="31000" />
       <workItem from="1667134563335" duration="679000" />
-      <workItem from="1667138211834" duration="12877000" />
+      <workItem from="1667138211834" duration="863000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -189,28 +192,7 @@
       <option name="project" value="LOCAL" />
       <updated>1667132668270</updated>
     </task>
-    <task id="LOCAL-00016" summary="iavaliaBLE">
-      <created>1667139095232</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1667139095232</updated>
-    </task>
-    <task id="LOCAL-00017" summary="isfleetplaced updated so that works with current style">
-      <created>1667154244055</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1667154244055</updated>
-    </task>
-    <task id="LOCAL-00018" summary="new">
-      <created>1667158029334</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1667158029334</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,25 +235,6 @@
     <MESSAGE value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
     <MESSAGE value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
     <MESSAGE value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
-    <MESSAGE value="iavaliaBLE" />
-    <MESSAGE value="isfleetplaced updated so that works with current style" />
-    <MESSAGE value="new" />
-    <MESSAGE value="list list implemetned" />
-    <option name="LAST_COMMIT_MESSAGE" value="list list implemetned" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.AssertionError" package="java.lang" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
   </component>
 </project>

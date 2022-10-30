@@ -1,0 +1,1301 @@
+Index: src/Boats/AllowedBoats.java
+===================================================================
+diff --git a/src/Boats/AllowedBoats.java b/src/Boats/AllowedBoats.java
+deleted file mode 100644
+--- a/src/Boats/AllowedBoats.java	(revision 206afead59324ee3f33e39059bde20d17ed49e7e)
++++ /dev/null	(revision 206afead59324ee3f33e39059bde20d17ed49e7e)
+@@ -1,32 +0,0 @@
+-package Boats;
+-
+-import java.util.HashMap;
+-import java.util.Map;
+-
+-public enum AllowedBoats {
+-    Zero(0),
+-
+-    One(1),
+-    Two(2),
+-    Three(3),
+-    Four(4);
+-    private final int value;
+-    private static Map map = new HashMap<>();
+-    AllowedBoats(int value){
+-        this.value=value;
+-    }
+-
+-    static {
+-        for (AllowedBoats HITPOINTCLASS : AllowedBoats.values()) {
+-            map.put(HITPOINTCLASS.value, HITPOINTCLASS);
+-        }
+-
+-    }
+-    public static AllowedBoats valueOf(int value) {
+-        return (AllowedBoats) map.get(value);
+-    }
+-    int getHitpointValue(){
+-        return value;
+-    }
+-}
+-
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__18_31__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__18_31__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__18_31__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1667146195066)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__18_31__Changes_.xml	(date 1667146195066)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_29_10_22,_18_31_[Changes]" date="1667061124983" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_18_31_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 29.10.22, 18:31 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_18_31_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_18_31_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_18_31_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1667061109878)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_18_31_[Changes]/shelved.patch	(date 1667061109878)
+@@ -0,0 +1,402 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22__21_04__Changes_.xml\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Boats/AbstractBoat.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Boats/AbstractBoat.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Boats/FleetManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Boats/FleetManager.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Boats/type/Battleship.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Boats/type/Battleship.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Boats/type/Carrier.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Boats/type/Carrier.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Boats/type/PatrolBoats.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Boats/type/PatrolBoats.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n        <option value=\"Enum\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\n  }\n}</component>\n  <component name=\"RunManager\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\n      <module name=\"Softcon_Assignement_01\" />\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-ea\" />\n      <option name=\"VM_PARAMETERS\" value=\"-ea\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\n      <created>1666123221376</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1666123221376</updated>\n      <workItem from=\"1666123222899\" duration=\"950000\" />\n      <workItem from=\"1666161409963\" duration=\"316000\" />\n      <workItem from=\"1666516279938\" duration=\"335000\" />\n      <workItem from=\"1666793806811\" duration=\"2440000\" />\n      <workItem from=\"1666799024425\" duration=\"2935000\" />\n      <workItem from=\"1666802202614\" duration=\"2000\" />\n      <workItem from=\"1666852426563\" duration=\"18851000\" />\n      <workItem from=\"1666987352224\" duration=\"171000\" />\n      <workItem from=\"1667032503106\" duration=\"737000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\n      <created>1666123243096</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666123243096</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\n      <created>1666124277982</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666124277982</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"General Methods abstract Player\">\n      <created>1666379766123</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666379766123</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"extends absboat\">\n      <created>1666460948362</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666460948362</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"naming convention\">\n      <created>1666793778700</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666793778700</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"boatclassfinishid starting with fleet\">\n      <created>1666795360272</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666795360272</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"new enums need to use stratergy later\">\n      <created>1666801948258</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666801948258</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"new enums need to use stratergy later\">\n      <created>1666801975301</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666801975301</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"used enums to introduce gridcell and grid\">\n      <created>1666857046741</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666857046741</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"renamed FleetManager\">\n      <created>1666857621892</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666857621892</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"fleet working isfleetplaced and isfleetdestroyed relevant for game manager\">\n      <created>1666955369616</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666955369616</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\">\n      <created>1666962807154</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666962807154</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"13\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/master\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"creat git repository\" />\n    <MESSAGE value=\"General Methods abstract Player\" />\n    <MESSAGE value=\"extends absboat\" />\n    <MESSAGE value=\"Grobi Ordnerstruktur\" />\n    <MESSAGE value=\"naming convention\" />\n    <MESSAGE value=\"boatclassfinishid starting with fleet\" />\n    <MESSAGE value=\"new enums need to use stratergy later\" />\n    <MESSAGE value=\"used enums to introduce gridcell and grid\" />\n    <MESSAGE value=\"renamed FleetManager\" />\n    <MESSAGE value=\"fleet working isfleetplaced and isfleetdestroyed relevant for game manager\" />\n    <MESSAGE value=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\" />\n  </component>\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision 8cdb2ecb895f3cd825608cc3acc274b210bded88)
+++++ b/.idea/workspace.xml	(date 1667061084650)
++@@ -1,15 +1,14 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++ <project version="4">
+++  <component name="AutoImportSettings">
+++    <option name="autoReloadType" value="SELECTIVE" />
+++  </component>
++   <component name="ChangeListManager">
++-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY">
++-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch" beforeDir="false" />
++-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22__21_04__Changes_.xml" beforeDir="false" />
+++    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="extends absboat">
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Battleship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Battleship.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Carrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/Carrier.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/src/Grid/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Row.java" afterDir="false" />
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -19,8 +18,8 @@
++   <component name="FileTemplateManagerImpl">
++     <option name="RECENT_TEMPLATES">
++       <list>
+++        <option value="Enum" />
++         <option value="Class" />
++-        <option value="Enum" />
++       </list>
++     </option>
++   </component>
++@@ -35,21 +34,25 @@
++   <component name="ProjectViewState">
++     <option name="showLibraryContents" value="true" />
++   </component>
++-  <component name="PropertiesComponent">{
++-  &quot;keyToString&quot;: {
++-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
++-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
++-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+++  <component name="PropertiesComponent"><![CDATA[{
+++  "keyToString": {
+++    "Downloaded.Files.Path.Enabled": "false",
+++    "Repository.Attach.Annotations": "false",
+++    "Repository.Attach.JavaDocs": "false",
+++    "Repository.Attach.Sources": "false",
+++    "RunOnceActivity.OpenProjectViewOnStart": "true",
+++    "RunOnceActivity.ShowReadmeOnStart": "true",
+++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+++    "WebServerToolWindowFactoryState": "false",
+++    "node.js.detected.package.eslint": "true",
+++    "node.js.selected.package.eslint": "(autodetect)",
+++    "node.js.selected.package.tslint": "(autodetect)",
+++    "project.structure.last.edited": "Libraries",
+++    "project.structure.proportion": "0.0",
+++    "project.structure.side.proportion": "0.0",
+++    "settings.editor.selected.configurable": "preferences.editor"
++   }
++-}</component>
+++}]]></component>
++   <component name="RunManager">
++     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++       <option name="MAIN_CLASS_NAME" value="Main" />
++@@ -83,6 +86,8 @@
++       <workItem from="1666852426563" duration="18851000" />
++       <workItem from="1666987352224" duration="171000" />
++       <workItem from="1667032503106" duration="737000" />
+++      <workItem from="1667058856876" duration="233000" />
+++      <workItem from="1667059097872" duration="1921000" />
++     </task>
++     <task id="LOCAL-00001" summary="creat git repository">
++       <created>1666123243096</created>
++Index: src/Grid/Grid.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package Grid;\n\nimport static java.lang.Math.abs;\nimport static java.lang.Math.max;\n\npublic class Grid {\n    public int getDistance(GridCell a, GridCell b){\n        int columDelta=abs(a.GetColumnIndex()-b.GetColumnIndex());\n        int rowDelta=abs(a.GetRowIndex()-b.GetRowIndex());\n        //this function to check if the distance of the user is valid for instance\n        if (columDelta!=0 && rowDelta!=0){\n            //error Message\n        }\n        return max(columDelta,rowDelta);\n\n    }\n}\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/src/Grid/Grid.java b/src/Grid/Grid.java
++--- a/src/Grid/Grid.java	(revision 8cdb2ecb895f3cd825608cc3acc274b210bded88)
+++++ b/src/Grid/Grid.java	(date 1667061084598)
++@@ -1,17 +1,238 @@
++ package Grid;
++ 
+++import static Grid.Row.*;
++ import static java.lang.Math.abs;
++ import static java.lang.Math.max;
++ 
+++
+++
+++
+++
++ public class Grid {
++-    public int getDistance(GridCell a, GridCell b){
++-        int columDelta=abs(a.GetColumnIndex()-b.GetColumnIndex());
++-        int rowDelta=abs(a.GetRowIndex()-b.GetRowIndex());
+++
+++    public Grid() {
+++
+++    }
+++
+++    ;
+++
+++
+++    public void createGrid() {
+++
+++        enum grid {
+++            enum Row0 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row0(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row1 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row1(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row2 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row2(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row3 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row3(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row4 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row4(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row5 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row5(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row6 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row6(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row7 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row7(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row8 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row8(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++
+++            enum Row9 {
+++                R0(0),
+++                R1(1),
+++                R2(2),
+++                R3(3),
+++                R4(4),
+++                R5(5),
+++                R6(6),
+++                R7(7),
+++                R8(8),
+++                R9(9);
+++
+++                public final Integer value;
+++
+++                Row9(Integer value) {
+++                    this.value = value;
+++                }
+++            }
+++        }
+++
+++    }
+++
+++
+++    public void initialize() {
+++        for (Row row : values()) {
+++            for (Column column : Column.values()) {
+++                GridCell temp = new GridCell(row, column);
+++                //append to 2D enum array
+++            }
+++        }
+++    }
+++
+++
+++    public int getDistance(GridCell a, GridCell b) {
+++        int columDelta = abs(a.GetColumnIndex() - b.GetColumnIndex());
+++        int rowDelta = abs(a.GetRowIndex() - b.GetRowIndex());
++         //this function to check if the distance of the user is valid for instance
++-        if (columDelta!=0 && rowDelta!=0){
+++        if (columDelta != 0 && rowDelta != 0) {
++             //error Message
++         }
++-        return max(columDelta,rowDelta);
+++        return max(columDelta, rowDelta);
++ 
++     }
++ }
+++
++Index: src/Grid/Row.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package Grid;\n\npublic enum Row {\n        R0(0),\n        R1(1),\n        R2(2),\n        R3(3),\n        R4(4),\n        R5(5),\n        R6(6),\n        R7(7),\n        R8(8),\n        R9(9);\n\n        public final Integer value;\n\n        Row(Integer value) {\n            this.value = value;\n        }\n}\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/src/Grid/Row.java b/src/Grid/Row.java
++--- a/src/Grid/Row.java	(revision 8cdb2ecb895f3cd825608cc3acc274b210bded88)
+++++ b/src/Grid/Row.java	(date 1667055506920)
++@@ -1,5 +1,6 @@
++ package Grid;
++ 
+++//10x10 grid cells
++ public enum Row {
++         R0(0),
++         R1(1),
++Index: src/Grid/GridCell.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package Grid;\n\npublic class GridCell {\n    private final Row row;\n    private final Column column;\n\n    public GridCell(Row a, Column b){\n        this.row=a;\n        this.column=b;\n    }\n    protected Integer GetRowIndex(){\n        return row.getValue();\n    }\n    protected Integer GetColumnIndex(){\n        return column.getValue();\n    }\n\n\n\n}\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/src/Grid/GridCell.java b/src/Grid/GridCell.java
++--- a/src/Grid/GridCell.java	(revision 8cdb2ecb895f3cd825608cc3acc274b210bded88)
+++++ b/src/Grid/GridCell.java	(date 1667061084605)
++@@ -1,9 +1,21 @@
++ package Grid;
++ 
+++import Boats.AbstractBoat;
+++import Boats.type.Battleship;
+++
+++
++ public class GridCell {
++     private final Row row;
++     private final Column column;
++ 
+++    //know if cell has a boat on it
+++    boolean wasShot = false;
+++
+++    //know if boat is on it
+++    boolean isOccupied = false;
+++
+++
+++
++     public GridCell(Row a, Column b){
++         this.row=a;
++         this.column=b;
++@@ -15,6 +27,4 @@
++         return column.getValue();
++     }
++ 
++-
++-
++ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"enum Matrix with GridCells in them\">\n      <change afterPath=\"$PROJECT_DIR$/src/Grid/GridIterator.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/Grid/Iterator.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Grid/Grid.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Grid/Grid.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"Class\" />\n        <option value=\"Interface\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"SET_USER_NAME_GLOBALLY\" value=\"false\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;\n  }\n}</component>\n  <component name=\"RunManager\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\n      <module name=\"Softcon_Assignement_01\" />\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-ea\" />\n      <option name=\"VM_PARAMETERS\" value=\"-ea\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\n      <created>1666123221376</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1666123221376</updated>\n      <workItem from=\"1666123222899\" duration=\"950000\" />\n      <workItem from=\"1666161409963\" duration=\"316000\" />\n      <workItem from=\"1666516279938\" duration=\"335000\" />\n      <workItem from=\"1666793806811\" duration=\"2440000\" />\n      <workItem from=\"1666799024425\" duration=\"2935000\" />\n      <workItem from=\"1666802202614\" duration=\"2000\" />\n      <workItem from=\"1666852426563\" duration=\"18851000\" />\n      <workItem from=\"1666987352224\" duration=\"171000\" />\n      <workItem from=\"1667032503106\" duration=\"737000\" />\n      <workItem from=\"1667061188012\" duration=\"3731000\" />\n      <workItem from=\"1667065182231\" duration=\"211000\" />\n      <workItem from=\"1667065899883\" duration=\"623000\" />\n      <workItem from=\"1667146194625\" duration=\"6171000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\n      <created>1666123243096</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666123243096</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\n      <created>1666124277982</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666124277982</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"General Methods abstract Player\">\n      <created>1666379766123</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666379766123</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"extends absboat\">\n      <created>1666460948362</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666460948362</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"naming convention\">\n      <created>1666793778700</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666793778700</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"boatclassfinishid starting with fleet\">\n      <created>1666795360272</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666795360272</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"new enums need to use stratergy later\">\n      <created>1666801948258</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666801948258</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"new enums need to use stratergy later\">\n      <created>1666801975301</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666801975301</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"used enums to introduce gridcell and grid\">\n      <created>1666857046741</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666857046741</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"renamed FleetManager\">\n      <created>1666857621892</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666857621892</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"fleet working isfleetplaced and isfleetdestroyed relevant for game manager\">\n      <created>1666955369616</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666955369616</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\">\n      <created>1666962807154</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666962807154</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"extends absboat\">\n      <created>1667062082901</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1667062082902</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"ArrayList Matrix with GridCells in them\">\n      <created>1667065111601</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1667065111601</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"15\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/master\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"creat git repository\" />\n    <MESSAGE value=\"General Methods abstract Player\" />\n    <MESSAGE value=\"Grobi Ordnerstruktur\" />\n    <MESSAGE value=\"naming convention\" />\n    <MESSAGE value=\"boatclassfinishid starting with fleet\" />\n    <MESSAGE value=\"new enums need to use stratergy later\" />\n    <MESSAGE value=\"used enums to introduce gridcell and grid\" />\n    <MESSAGE value=\"renamed FleetManager\" />\n    <MESSAGE value=\"fleet working isfleetplaced and isfleetdestroyed relevant for game manager\" />\n    <MESSAGE value=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\" />\n    <MESSAGE value=\"extends absboat\" />\n    <MESSAGE value=\"ArrayList Matrix with GridCells in them\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ArrayList Matrix with GridCells in them\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 206afead59324ee3f33e39059bde20d17ed49e7e)
++++ b/.idea/workspace.xml	(date 1667164716927)
+@@ -4,11 +4,20 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
++<<<<<<< HEAD
+     <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="enum Matrix with GridCells in them">
+       <change afterPath="$PROJECT_DIR$/src/Grid/GridIterator.java" afterDir="false" />
+       <change afterPath="$PROJECT_DIR$/src/Grid/Iterator.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
++=======
++    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="list list implemetned">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Boats/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/Boat.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Boats/HitpointManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/HitpointManager.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++>>>>>>> origin/master
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -88,11 +97,18 @@
+       <workItem from="1666802202614" duration="2000" />
+       <workItem from="1666852426563" duration="18851000" />
+       <workItem from="1666987352224" duration="171000" />
++<<<<<<< HEAD
+       <workItem from="1667032503106" duration="737000" />
+       <workItem from="1667061188012" duration="3731000" />
+       <workItem from="1667065182231" duration="211000" />
+       <workItem from="1667065899883" duration="623000" />
+       <workItem from="1667146194625" duration="6171000" />
++=======
++      <workItem from="1667032503106" duration="13922000" />
++      <workItem from="1667132729308" duration="31000" />
++      <workItem from="1667134563335" duration="679000" />
++      <workItem from="1667138211834" duration="12877000" />
++>>>>>>> origin/master
+     </task>
+     <task id="LOCAL-00001" summary="creat git repository">
+       <created>1666123243096</created>
+@@ -192,7 +208,39 @@
+       <option name="project" value="LOCAL" />
+       <updated>1667065111601</updated>
+     </task>
++<<<<<<< HEAD
+     <option name="localTasksCounter" value="15" />
++=======
++    <task id="LOCAL-00015" summary="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly">
++      <created>1667132668270</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1667132668270</updated>
++    </task>
++    <task id="LOCAL-00016" summary="iavaliaBLE">
++      <created>1667139095232</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1667139095232</updated>
++    </task>
++    <task id="LOCAL-00017" summary="isfleetplaced updated so that works with current style">
++      <created>1667154244055</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1667154244055</updated>
++    </task>
++    <task id="LOCAL-00018" summary="new">
++      <created>1667158029334</created>
++      <option name="number" value="00018" />
++      <option name="presentableId" value="LOCAL-00018" />
++      <option name="project" value="LOCAL" />
++      <updated>1667158029334</updated>
++    </task>
++    <option name="localTasksCounter" value="19" />
++>>>>>>> origin/master
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -232,8 +280,33 @@
+     <MESSAGE value="renamed FleetManager" />
+     <MESSAGE value="fleet working isfleetplaced and isfleetdestroyed relevant for game manager" />
+     <MESSAGE value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
++<<<<<<< HEAD
+     <MESSAGE value="extends absboat" />
+     <MESSAGE value="ArrayList Matrix with GridCells in them" />
+     <option name="LAST_COMMIT_MESSAGE" value="ArrayList Matrix with GridCells in them" />
++=======
++    <MESSAGE value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
++    <MESSAGE value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
++    <MESSAGE value="iavaliaBLE" />
++    <MESSAGE value="isfleetplaced updated so that works with current style" />
++    <MESSAGE value="new" />
++    <MESSAGE value="list list implemetned" />
++    <option name="LAST_COMMIT_MESSAGE" value="list list implemetned" />
++  </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/Main.java</url>
++          <line>10</line>
++          <option name="timeStamp" value="1" />
++        </line-breakpoint>
++        <breakpoint enabled="true" type="java-exception">
++          <properties class="java.lang.AssertionError" package="java.lang" />
++          <option name="timeStamp" value="2" />
++        </breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++>>>>>>> origin/master
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_28_10_22,_23_19_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22,_23_19_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22,_23_19_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1666992011231)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22,_23_19_[Changes]/shelved.patch	(date 1666992011231)
+@@ -0,0 +1,43 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	
+++++ b/.idea/workspace.xml	
++@@ -1,9 +1,11 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++ <project version="4">
+++  <component name="AutoImportSettings">
+++    <option name="autoReloadType" value="SELECTIVE" />
+++  </component>
++   <component name="ChangeListManager">
++     <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="extends absboat">
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" afterDir="false" />
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -33,7 +35,11 @@
++     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
++   }
++ }</component>
++   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++@@ -47,6 +53,8 @@
++       <workItem from="1666123222899" duration="950000" />
++       <workItem from="1666161409963" duration="316000" />
++       <workItem from="1666516279938" duration="335000" />
+++      <workItem from="1666538063616" duration="394000" />
+++      <workItem from="1666541223323" duration="172000" />
++     </task>
++     <task id="LOCAL-00001" summary="creat git repository">
++       <created>1666123243096</created>
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import UI.Display;\n\nimport static java.lang.System.exit;\n\npublic class Main {\n    public static void main(String[] args) {\n\n\n    GameManager gameManager = GameManager.getInstance();\n    gameManager.ManageGame();\n    exit(0);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 206afead59324ee3f33e39059bde20d17ed49e7e)
++++ b/src/Main.java	(date 1667164535909)
+@@ -1,3 +1,4 @@
++import Boats.FleetManager;
+ import UI.Display;
+ 
+ import static java.lang.System.exit;
+@@ -6,8 +7,7 @@
+     public static void main(String[] args) {
+ 
+ 
+-    GameManager gameManager = GameManager.getInstance();
+-    gameManager.ManageGame();
+-    exit(0);
++        FleetManager fleet=new FleetManager();
++        System.out.println(fleet.BoatsToBePlaced());
+     }
+ }
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_30_10_22,_17_03_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22,_17_03_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22,_17_03_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1667145804282)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22,_17_03_[Changes]/shelved.patch	(date 1667145804282)
+@@ -0,0 +1,126 @@
++Index: .idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch
++===================================================================
++diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch
++deleted file mode 100644
++--- a/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch	(revision 258e3aa8d000265b0444a8f0364f0885737c196f)
+++++ /dev/null	(revision 258e3aa8d000265b0444a8f0364f0885737c196f)
++@@ -1,50 +0,0 @@
++-Index: .idea/workspace.xml
++-IDEA additional info:
++-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"General Methods abstract Player\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Player/AbstractPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/AbstractPlayer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Player/type/ComputerPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/type/ComputerPlayer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Player/type/HumanPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Player/type/HumanPlayer.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\"\n  }\n}]]></component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\n      <created>1666123221376</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1666123221376</updated>\n      <workItem from=\"1666123222899\" duration=\"950000\" />\n      <workItem from=\"1666161409963\" duration=\"316000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\n      <created>1666123243096</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666123243096</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\n      <created>1666124277982</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666124277982</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"General Methods abstract Player\">\n      <created>1666379766123</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666379766123</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"creat git repository\" />\n    <MESSAGE value=\"General Methods abstract Player\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"General Methods abstract Player\" />\n  </component>\n</project>
++-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++-<+>UTF-8
++-===================================================================
++-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++---- a/.idea/workspace.xml	(revision 14369f40e73c191fccff7e4d78acecf008ef42fc)
++-+++ b/.idea/workspace.xml	(date 1666380858021)
++-@@ -1,12 +1,7 @@
++- <?xml version="1.0" encoding="UTF-8"?>
++- <project version="4">
++-   <component name="ChangeListManager">
++--    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="General Methods abstract Player">
++--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++--      <change beforePath="$PROJECT_DIR$/src/Player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/AbstractPlayer.java" afterDir="false" />
++--      <change beforePath="$PROJECT_DIR$/src/Player/type/ComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/type/ComputerPlayer.java" afterDir="false" />
++--      <change beforePath="$PROJECT_DIR$/src/Player/type/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player/type/HumanPlayer.java" afterDir="false" />
++--    </list>
++-+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="Human and Computerplayer Class created" />
++-     <option name="SHOW_DIALOG" value="false" />
++-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++-@@ -70,7 +65,14 @@
++-       <option name="project" value="LOCAL" />
++-       <updated>1666379766123</updated>
++-     </task>
++--    <option name="localTasksCounter" value="4" />
++-+    <task id="LOCAL-00004" summary="Human and Computerplayer Class created">
++-+      <created>1666380832564</created>
++-+      <option name="number" value="00004" />
++-+      <option name="presentableId" value="LOCAL-00004" />
++-+      <option name="project" value="LOCAL" />
++-+      <updated>1666380832564</updated>
++-+    </task>
++-+    <option name="localTasksCounter" value="5" />
++-     <servers />
++-   </component>
++-   <component name="TypeScriptGeneratedFilesManager">
++-@@ -90,6 +92,7 @@
++-   <component name="VcsManagerConfiguration">
++-     <MESSAGE value="creat git repository" />
++-     <MESSAGE value="General Methods abstract Player" />
++--    <option name="LAST_COMMIT_MESSAGE" value="General Methods abstract Player" />
++-+    <MESSAGE value="Human and Computerplayer Class created" />
++-+    <option name="LAST_COMMIT_MESSAGE" value="Human and Computerplayer Class created" />
++-   </component>
++- </project>
++-\ No newline at end of file
++Index: .idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml
++===================================================================
++diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml
++deleted file mode 100644
++--- a/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22__11_56__Changes_.xml	(revision 258e3aa8d000265b0444a8f0364f0885737c196f)
+++++ /dev/null	(revision 258e3aa8d000265b0444a8f0364f0885737c196f)
++@@ -1,4 +0,0 @@
++-<changelist name="Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]" date="1666519019611" recycled="true" deleted="true">
++-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_22,_11_56_[Changes]/shelved.patch" />
++-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 23.10.22, 11:56 [Changes]" />
++-</changelist>
++\ No newline at end of file
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"ArrayList Matrix with GridCells in them\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/Grid/Grid.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Grid/Grid.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n        <option value=\"Enum\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"SET_USER_NAME_GLOBALLY\" value=\"false\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;\n  }\n}</component>\n  <component name=\"RunManager\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\n      <module name=\"Softcon_Assignement_01\" />\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-ea\" />\n      <option name=\"VM_PARAMETERS\" value=\"-ea\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\n      <created>1666123221376</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1666123221376</updated>\n      <workItem from=\"1666123222899\" duration=\"950000\" />\n      <workItem from=\"1666161409963\" duration=\"316000\" />\n      <workItem from=\"1666516279938\" duration=\"335000\" />\n      <workItem from=\"1666793806811\" duration=\"2440000\" />\n      <workItem from=\"1666799024425\" duration=\"2935000\" />\n      <workItem from=\"1666802202614\" duration=\"2000\" />\n      <workItem from=\"1666852426563\" duration=\"18851000\" />\n      <workItem from=\"1666987352224\" duration=\"171000\" />\n      <workItem from=\"1667032503106\" duration=\"737000\" />\n      <workItem from=\"1667061188012\" duration=\"3731000\" />\n      <workItem from=\"1667065182231\" duration=\"211000\" />\n      <workItem from=\"1667065899883\" duration=\"623000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\n      <created>1666123243096</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666123243096</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\n      <created>1666124277982</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666124277982</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"General Methods abstract Player\">\n      <created>1666379766123</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666379766123</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"extends absboat\">\n      <created>1666460948362</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666460948362</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"naming convention\">\n      <created>1666793778700</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666793778700</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"boatclassfinishid starting with fleet\">\n      <created>1666795360272</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666795360272</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"new enums need to use stratergy later\">\n      <created>1666801948258</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666801948258</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"new enums need to use stratergy later\">\n      <created>1666801975301</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666801975301</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"used enums to introduce gridcell and grid\">\n      <created>1666857046741</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666857046741</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"renamed FleetManager\">\n      <created>1666857621892</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666857621892</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"fleet working isfleetplaced and isfleetdestroyed relevant for game manager\">\n      <created>1666955369616</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666955369616</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\">\n      <created>1666962807154</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666962807154</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"extends absboat\">\n      <created>1667062082901</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1667062082902</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"ArrayList Matrix with GridCells in them\">\n      <created>1667065111601</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1667065111601</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"15\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/master\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"creat git repository\" />\n    <MESSAGE value=\"General Methods abstract Player\" />\n    <MESSAGE value=\"Grobi Ordnerstruktur\" />\n    <MESSAGE value=\"naming convention\" />\n    <MESSAGE value=\"boatclassfinishid starting with fleet\" />\n    <MESSAGE value=\"new enums need to use stratergy later\" />\n    <MESSAGE value=\"used enums to introduce gridcell and grid\" />\n    <MESSAGE value=\"renamed FleetManager\" />\n    <MESSAGE value=\"fleet working isfleetplaced and isfleetdestroyed relevant for game manager\" />\n    <MESSAGE value=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\" />\n    <MESSAGE value=\"extends absboat\" />\n    <MESSAGE value=\"ArrayList Matrix with GridCells in them\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ArrayList Matrix with GridCells in them\" />\n  </component>\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	(revision 258e3aa8d000265b0444a8f0364f0885737c196f)
+++++ b/.idea/workspace.xml	(date 1667081648930)
++@@ -4,9 +4,8 @@
++     <option name="autoReloadType" value="SELECTIVE" />
++   </component>
++   <component name="ChangeListManager">
++-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="ArrayList Matrix with GridCells in them">
+++    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="enum Matrix with GridCells in them">
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -88,7 +87,8 @@
++       <workItem from="1667032503106" duration="737000" />
++       <workItem from="1667061188012" duration="3731000" />
++       <workItem from="1667065182231" duration="211000" />
++-      <workItem from="1667065899883" duration="623000" />
+++      <workItem from="1667065899883" duration="676000" />
+++      <workItem from="1667081564995" duration="84000" />
++     </task>
++     <task id="LOCAL-00001" summary="creat git repository">
++       <created>1666123243096</created>
++@@ -188,7 +188,14 @@
++       <option name="project" value="LOCAL" />
++       <updated>1667065111601</updated>
++     </task>
++-    <option name="localTasksCounter" value="15" />
+++    <task id="LOCAL-00015" summary="enum Matrix with GridCells in them">
+++      <created>1667066596731</created>
+++      <option name="number" value="00015" />
+++      <option name="presentableId" value="LOCAL-00015" />
+++      <option name="project" value="LOCAL" />
+++      <updated>1667066596731</updated>
+++    </task>
+++    <option name="localTasksCounter" value="16" />
++     <servers />
++   </component>
++   <component name="TypeScriptGeneratedFilesManager">
++@@ -230,6 +237,7 @@
++     <MESSAGE value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
++     <MESSAGE value="extends absboat" />
++     <MESSAGE value="ArrayList Matrix with GridCells in them" />
++-    <option name="LAST_COMMIT_MESSAGE" value="ArrayList Matrix with GridCells in them" />
+++    <MESSAGE value="enum Matrix with GridCells in them" />
+++    <option name="LAST_COMMIT_MESSAGE" value="enum Matrix with GridCells in them" />
++   </component>
++ </project>
++\ No newline at end of file
+Index: src/Boats/FleetManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\n\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\n\nimport static java.lang.Math.abs;\n\n\npublic class FleetManager {\n    private List<Boat> fleet=new ArrayList<>();\n    private AllowedBoats allowedCarrier=AllowedBoats.One;\n    private AllowedBoats allowedBattleships=AllowedBoats.Two;\n    private AllowedBoats allowedSubmarines=AllowedBoats.Three;\n    private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;\n\n\n\n\n\n\n\n\n\n\n\n\n    public void addBoat (Boat a){\n         //check\n        int max = 10;\n        assert fleet.size()< max;\n         fleet.add(a);\n     }\n\n     private List<AllowedBoats> requiredBoats=new ArrayList<>();\n\n\n    public boolean isavailabe (int length){\n        int len=abs(length);\n        for (int i=0;i<requiredBoats.size();i++){\n            Boat temp=fleet.get(i);\n            if (!temp.isPlaced && temp.hitpoints.getHitpointValue()==length){\n                return true;\n            }\n        }\n        return false;\n    }\n\n\n\n\n    //list die sagt was man noch setzen muss\n\n    public FleetManager(){\n        for (BoatTypes boat: BoatTypes.values()){\n            int allowed=boat.boatsAllowed;\n            for (int i=0;i<allowed;i++){\n                Boat temp=new Boat(boat.startingHitPoints, boat.representationCharacter);\n                fleet.add(temp);\n            }\n        }\n    }\n\n\n\n    public boolean isFleetplaced(){\n        return allowedCarrier == AllowedBoats.Zero && allowedBattleships == AllowedBoats.Zero && allowedSubmarines == AllowedBoats.Zero && allowedPatrolBoats == AllowedBoats.Zero;\n    }\n\n\n\n\n    public boolean isFleetDestroyed(){\n        int i=0;\n\n        while (fleet.size()>i){\n\n            if (!fleet.get(i).isSunk()){\n                return false;\n            }\n            i++;\n        }\n        return true;\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/FleetManager.java b/src/Boats/FleetManager.java
+--- a/src/Boats/FleetManager.java	(revision 206afead59324ee3f33e39059bde20d17ed49e7e)
++++ b/src/Boats/FleetManager.java	(date 1667164535907)
+@@ -1,27 +1,13 @@
+ package Boats;
+ 
+-import java.util.ArrayList;
+-import java.util.HashMap;
+-import java.util.List;
++
++import java.util.*;
+ 
+ import static java.lang.Math.abs;
+ 
+ 
+ public class FleetManager {
+     private List<Boat> fleet=new ArrayList<>();
+-    private AllowedBoats allowedCarrier=AllowedBoats.One;
+-    private AllowedBoats allowedBattleships=AllowedBoats.Two;
+-    private AllowedBoats allowedSubmarines=AllowedBoats.Three;
+-    private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ 
+ 
+ 
+@@ -32,12 +18,12 @@
+          fleet.add(a);
+      }
+ 
+-     private List<AllowedBoats> requiredBoats=new ArrayList<>();
+ 
+ 
+-    public boolean isavailabe (int length){
++
++    public boolean isAvailabe (int length){
+         int len=abs(length);
+-        for (int i=0;i<requiredBoats.size();i++){
++        for (int i=0;i<fleet.size();i++){
+             Boat temp=fleet.get(i);
+             if (!temp.isPlaced && temp.hitpoints.getHitpointValue()==length){
+                 return true;
+@@ -46,28 +32,55 @@
+         return false;
+     }
+ 
+-
+-
+-
+     //list die sagt was man noch setzen muss
+ 
+     public FleetManager(){
+         for (BoatTypes boat: BoatTypes.values()){
+             int allowed=boat.boatsAllowed;
++            HitpointManager hitpoints=HitpointManager.valueOf(boat.startingHitPoints);
+             for (int i=0;i<allowed;i++){
+-                Boat temp=new Boat(boat.startingHitPoints, boat.representationCharacter);
++                Boat temp=new Boat(hitpoints, boat.representationCharacter);
+                 fleet.add(temp);
+             }
+         }
+     }
++    public List<List<Integer>> BoatsToBePlaced(){
++
+ 
++        List<List<Integer>> required=new ArrayList<>();
++        Map<Integer, Integer> map = new LinkedHashMap<>();
++        for (Boat boat:fleet){
++            if (!boat.isPlaced){
++                int length=boat.gethitpoints();
++                if (map.containsKey(length)){
++                    map.put(length, map.get(length) + 1);
++                }
++                else{
++                    map.put(length,1);
++                }
++            }
++        }
++        List<Integer> keys=new ArrayList(map.keySet());
++        List<Integer> values=new ArrayList(map.values());
++        for (int i=0;i< keys.size();i++){
++            ArrayList<Integer> temp=new ArrayList<>();
++            temp.add(keys.get(i));
++            temp.add(values.get(i));
++            required.add(temp);
++        }
++        return required;
+ 
++
++    }
+ 
+     public boolean isFleetplaced(){
+-        return allowedCarrier == AllowedBoats.Zero && allowedBattleships == AllowedBoats.Zero && allowedSubmarines == AllowedBoats.Zero && allowedPatrolBoats == AllowedBoats.Zero;
++        for (Boat boat : fleet) {
++            if (!boat.isPlaced) {
++                return false;
++            }
++        }
++        return true;
+     }
+-
+-
+ 
+ 
+     public boolean isFleetDestroyed(){
+Index: src/Boats/BoatTypes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\n//Das isch en Vorschlag, aber es chönt glaubs einigi vo eusne Problem Löse\npublic enum BoatTypes {\n\n    Battleship(2, HitpointManager.FourHitPoints,'B'),\n    Carrier(1, HitpointManager.FiveHitPoints,'C'), //müest 6 Hitpoints ha\n    PatrolBoat(4, HitpointManager.TwoHitPoints,'P'),\n    Submarine(3, HitpointManager.ThreeHitPoints,'S');\n\n    public final Integer boatsAllowed;\n    public final HitpointManager startingHitPoints;\n    public final Character representationCharacter;\n    BoatTypes (Integer boatsAllowed, HitpointManager startingHitPoints, Character representationCharacter) {\n        this.boatsAllowed =boatsAllowed;\n        this.startingHitPoints = startingHitPoints;\n        this.representationCharacter = representationCharacter;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/BoatTypes.java b/src/Boats/BoatTypes.java
+--- a/src/Boats/BoatTypes.java	(revision 206afead59324ee3f33e39059bde20d17ed49e7e)
++++ b/src/Boats/BoatTypes.java	(date 1667164535906)
+@@ -2,15 +2,15 @@
+ //Das isch en Vorschlag, aber es chönt glaubs einigi vo eusne Problem Löse
+ public enum BoatTypes {
+ 
+-    Battleship(2, HitpointManager.FourHitPoints,'B'),
+-    Carrier(1, HitpointManager.FiveHitPoints,'C'), //müest 6 Hitpoints ha
+-    PatrolBoat(4, HitpointManager.TwoHitPoints,'P'),
+-    Submarine(3, HitpointManager.ThreeHitPoints,'S');
++    Battleship(2, 4,'B'),
++    Carrier(1, 6,'C'),
++    PatrolBoat(4, 2,'P'),
++    Submarine(3, 3,'S');
+ 
+     public final Integer boatsAllowed;
+-    public final HitpointManager startingHitPoints;
++    public final Integer startingHitPoints;
+     public final Character representationCharacter;
+-    BoatTypes (Integer boatsAllowed, HitpointManager startingHitPoints, Character representationCharacter) {
++    BoatTypes (Integer boatsAllowed, Integer startingHitPoints, Character representationCharacter) {
+         this.boatsAllowed =boatsAllowed;
+         this.startingHitPoints = startingHitPoints;
+         this.representationCharacter = representationCharacter;
+Index: src/Boats/Boat.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\n\npublic  class Boat {\n\n\n    protected HitpointManager hitpoints;\n    private char sunkLetter;\n    boolean isPlaced=false;\n\n\n    public boolean isSunk(){\n        return hitpoints == HitpointManager.ZeroHitPoints;\n    }\n    public void isHit(){\n        assert !isSunk();\n        hitpoints=HitpointManager.valueOf(hitpoints.getHitpointValue()-1);\n    }\n\n    public char getSunkLetter() {\n        return sunkLetter;\n    }\n    public Boat(HitpointManager health,char sunk){\n        sunkLetter=sunk;\n        hitpoints=health;\n\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/Boat.java b/src/Boats/Boat.java
+--- a/src/Boats/Boat.java	(revision 206afead59324ee3f33e39059bde20d17ed49e7e)
++++ b/src/Boats/Boat.java	(date 1667164535906)
+@@ -6,6 +6,19 @@
+     protected HitpointManager hitpoints;
+     private char sunkLetter;
+     boolean isPlaced=false;
++    protected int gethitpoints(){
++        return hitpoints.getHitpointValue();
++    }
++
++    public Boat(HitpointManager health,char sunk){
++        assert health!=null;
++
++        sunkLetter=sunk;
++        hitpoints=health;
++
++    }public void Place(){
++        isPlaced=true;
++    }
+ 
+ 
+     public boolean isSunk(){
+@@ -19,10 +32,6 @@
+     public char getSunkLetter() {
+         return sunkLetter;
+     }
+-    public Boat(HitpointManager health,char sunk){
+-        sunkLetter=sunk;
+-        hitpoints=health;
+ 
+-    }
+ 
+ }
+Index: src/Boats/HitpointManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\n\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic enum HitpointManager {\n\n        ZeroHitPoints(0),\n\n        OneHitPoint(1),\n        TwoHitPoints(2),\n        ThreeHitPoints(3),\n        FourHitPoints(4),\n        FiveHitPoints(5);\n        private final int value;\n        private static Map map = new HashMap<>();\n        HitpointManager(int value){\n            this.value=value;\n        }\n\n        static {\n            for (HitpointManager HITPOINTCLASS : HitpointManager.values()) {\n                map.put(HITPOINTCLASS.value, HITPOINTCLASS);\n            }\n\n        }\n        public static HitpointManager valueOf(int value) {\n            return (HitpointManager) map.get(value);\n        }\n        int getHitpointValue(){\n            return value;\n        }\n    }\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/HitpointManager.java b/src/Boats/HitpointManager.java
+--- a/src/Boats/HitpointManager.java	(revision 206afead59324ee3f33e39059bde20d17ed49e7e)
++++ b/src/Boats/HitpointManager.java	(date 1667164535909)
+@@ -11,9 +11,11 @@
+         TwoHitPoints(2),
+         ThreeHitPoints(3),
+         FourHitPoints(4),
+-        FiveHitPoints(5);
++        FiveHitPoints(5),
++        SixHitPoints(6);
++
+         private final int value;
+-        private static Map map = new HashMap<>();
++        private static final Map<Integer,HitpointManager> map = new HashMap<>();
+         HitpointManager(int value){
+             this.value=value;
+         }
+@@ -25,7 +27,7 @@
+ 
+         }
+         public static HitpointManager valueOf(int value) {
+-            return (HitpointManager) map.get(value);
++            return map.get(value);
+         }
+         int getHitpointValue(){
+             return value;
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_30_10_22__17_03__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22__17_03__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22__17_03__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1667146195061)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22__17_03__Changes_.xml	(date 1667146195061)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_30_10_22,_17_03_[Changes]" date="1667145824882" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22,_17_03_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 30.10.22, 17:03 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1667053080263)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]/shelved.patch	(date 1667053080263)
+@@ -0,0 +1,72 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	
+++++ b/.idea/workspace.xml	
++@@ -1,13 +1,9 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++ <project version="4">
++   <component name="ChangeListManager">
++-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="fleet working isfleetplaced and isfleetdestroyed relevant for game manager">
+++    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="extends absboat">
+++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch" beforeDir="false" />
++       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Grid/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Column.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/Grid/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Row.java" afterDir="false" />
++     </list>
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++@@ -33,21 +29,25 @@
++   <component name="ProjectViewState">
++     <option name="showLibraryContents" value="true" />
++   </component>
++-  <component name="PropertiesComponent">{
++-  &quot;keyToString&quot;: {
++-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
++-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
++-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+++  <component name="PropertiesComponent"><![CDATA[{
+++  "keyToString": {
+++    "Downloaded.Files.Path.Enabled": "false",
+++    "Repository.Attach.Annotations": "false",
+++    "Repository.Attach.JavaDocs": "false",
+++    "Repository.Attach.Sources": "false",
+++    "RunOnceActivity.OpenProjectViewOnStart": "true",
+++    "RunOnceActivity.ShowReadmeOnStart": "true",
+++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+++    "WebServerToolWindowFactoryState": "false",
+++    "node.js.detected.package.eslint": "true",
+++    "node.js.detected.package.tslint": "true",
+++    "node.js.selected.package.eslint": "(autodetect)",
+++    "node.js.selected.package.tslint": "(autodetect)",
+++    "project.structure.last.edited": "Libraries",
+++    "project.structure.proportion": "0.0",
+++    "project.structure.side.proportion": "0.0"
++   }
++-}</component>
+++}]]></component>
++   <component name="RunManager">
++     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++       <option name="MAIN_CLASS_NAME" value="Main" />
++@@ -79,6 +79,7 @@
++       <workItem from="1666799024425" duration="2935000" />
++       <workItem from="1666802202614" duration="2000" />
++       <workItem from="1666852426563" duration="16286000" />
+++      <workItem from="1667052736894" duration="266000" />
++     </task>
++     <task id="LOCAL-00001" summary="creat git repository">
++       <created>1666123243096</created>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]1/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]1/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]1/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1667053080267)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]1/shelved.patch	(date 1667053080267)
+@@ -0,0 +1,116 @@
++Index: .idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch
++===================================================================
++diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch
++deleted file mode 100644
++--- a/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch	
+++++ /dev/null	
++@@ -1,97 +0,0 @@
++-Index: .idea/workspace.xml
++-IDEA additional info:
++-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"creat git repository\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\n      <created>1666123221376</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1666123221376</updated>\n      <workItem from=\"1666123222899\" duration=\"950000\" />\n      <workItem from=\"1666161409963\" duration=\"316000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\n      <created>1666123243096</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666123243096</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\n      <created>1666124277982</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1666124277982</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"creat git repository\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"creat git repository\" />\n  </component>\n</project>
++-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++-<+>UTF-8
++-===================================================================
++-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++---- a/.idea/workspace.xml	(revision 765fb8e0cead6d673a78ec5260d3f644812b33d7)
++-+++ b/.idea/workspace.xml	(date 1666181509772)
++-@@ -1,13 +1,20 @@
++- <?xml version="1.0" encoding="UTF-8"?>
++- <project version="4">
++-   <component name="ChangeListManager">
++--    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="creat git repository">
++-+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="changed workspace">
++-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-     </list>
++-     <option name="SHOW_DIALOG" value="false" />
++-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++-     <option name="LAST_RESOLUTION" value="IGNORE" />
++-+  </component>
++-+  <component name="FileTemplateManagerImpl">
++-+    <option name="RECENT_TEMPLATES">
++-+      <list>
++-+        <option value="Class" />
++-+      </list>
++-+    </option>
++-   </component>
++-   <component name="Git.Settings">
++-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++-@@ -36,7 +43,8 @@
++-       <option name="presentableId" value="Default" />
++-       <updated>1666123221376</updated>
++-       <workItem from="1666123222899" duration="950000" />
++--      <workItem from="1666161409963" duration="316000" />
++-+      <workItem from="1666161409963" duration="766000" />
++-+      <workItem from="1666181335853" duration="174000" />
++-     </task>
++-     <task id="LOCAL-00001" summary="creat git repository">
++-       <created>1666123243096</created>
++-@@ -52,7 +60,21 @@
++-       <option name="project" value="LOCAL" />
++-       <updated>1666124277982</updated>
++-     </task>
++--    <option name="localTasksCounter" value="3" />
++-+    <task id="LOCAL-00003" summary="workspace.xml added">
++-+      <created>1666161905198</created>
++-+      <option name="number" value="00003" />
++-+      <option name="presentableId" value="LOCAL-00003" />
++-+      <option name="project" value="LOCAL" />
++-+      <updated>1666161905198</updated>
++-+    </task>
++-+    <task id="LOCAL-00004" summary="added a boat">
++-+      <created>1666162085221</created>
++-+      <option name="number" value="00004" />
++-+      <option name="presentableId" value="LOCAL-00004" />
++-+      <option name="project" value="LOCAL" />
++-+      <updated>1666162085221</updated>
++-+    </task>
++-+    <option name="localTasksCounter" value="5" />
++-     <servers />
++-   </component>
++-   <component name="TypeScriptGeneratedFilesManager">
++-@@ -63,7 +85,19 @@
++-       <map>
++-         <entry key="MAIN">
++-           <value>
++--            <State />
++-+            <State>
++-+              <option name="FILTERS">
++-+                <map>
++-+                  <entry key="branch">
++-+                    <value>
++-+                      <list>
++-+                        <option value="master" />
++-+                      </list>
++-+                    </value>
++-+                  </entry>
++-+                </map>
++-+              </option>
++-+            </State>
++-           </value>
++-         </entry>
++-       </map>
++-@@ -71,6 +105,8 @@
++-   </component>
++-   <component name="VcsManagerConfiguration">
++-     <MESSAGE value="creat git repository" />
++--    <option name="LAST_COMMIT_MESSAGE" value="creat git repository" />
++-+    <MESSAGE value="workspace.xml added" />
++-+    <MESSAGE value="added a boat" />
++-+    <option name="LAST_COMMIT_MESSAGE" value="added a boat" />
++-   </component>
++- </project>
++-\ No newline at end of file
++Index: .idea/shelf/Uncommitted_changes_before_Update_at_21_10_22__21_04__Changes_.xml
++===================================================================
++diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22__21_04__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22__21_04__Changes_.xml
++deleted file mode 100644
++--- a/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22__21_04__Changes_.xml	
+++++ /dev/null	
++@@ -1,4 +0,0 @@
++-<changelist name="Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]" date="1666379100218" recycled="true" deleted="true">
++-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_10_22,_21_04_[Changes]/shelved.patch" />
++-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 21.10.22, 21:04 [Changes]" />
++-</changelist>
++\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__16_17__Changes_1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__16_17__Changes_1.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__16_17__Changes_1.xml
+new file mode 100644
+--- /dev/null	(date 1667146195094)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__16_17__Changes_1.xml	(date 1667146195094)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]1" date="1667053080267" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]1/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 29.10.22, 16:17 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__16_17__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__16_17__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__16_17__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1667146195083)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22__16_17__Changes_.xml	(date 1667146195083)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]" date="1667053072642" recycled="false" toDelete="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_10_22,_16_17_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 29.10.22, 16:17 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_28_10_22__23_19__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22__23_19__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22__23_19__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1667146195088)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22__23_19__Changes_.xml	(date 1667146195088)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_28_10_22,_23_19_[Changes]" date="1666991986365" recycled="false" toDelete="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22,_23_19_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 28.10.22, 23:19 [Changes]" />
++</changelist>
+\ No newline at end of file
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22,_23_19_[Changes]1/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_22,_23_19_[Changes]1/shelved.patch
+new file mode 100644

@@ -10,6 +10,11 @@ Choose from:
     "lost" when the UserPlayer has lost
  */
 public class Display{
+    final String targetTitle = "===== TARGET GRID =====\n";
+    final String letters = "A B C D E F G H I J \n";
+    final String symbols = "+-+-+-+-+-+-+-+-+-+-+-+\n";
+    final String line = "-----------------------\n";
+    final String equals = "=======================\n";
     public void DisplayMaster(int[] target, int[] ocean, String what){
         System.out.println("I am the display master");
         if(what == "boats"){

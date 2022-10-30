@@ -1,3 +1,6 @@
+import Exceptions.BoatPlacement.BoatPositionOccupiedException;
+import Exceptions.IllegalShotException;
+import Grid.*;
 import Boats.FleetManager;
 import UI.Display;
 
@@ -9,5 +12,9 @@ public class Main {
 
         FleetManager fleet=new FleetManager();
         System.out.println(fleet.BoatsToBePlaced());
+
+    GameManager gameManager = GameManager.getInstance();
+    gameManager.ManageGame();
+    exit(0);
     }
 }

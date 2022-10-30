@@ -49,12 +49,9 @@ public class Grid {
         }
     }
 
-    //create enum Matrix with GridCells in them
-
-
-
-
-
+    public Iterator createIterator(){
+        return new GridIterator(rowList);
+    }
 
         /*public int getDistance (GridCell a, GridCell b){
             int columDelta = abs(a.GetColumnIndex() - b.GetColumnIndex());
