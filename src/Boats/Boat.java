@@ -6,6 +6,19 @@ public  class Boat {
     protected HitpointManager hitpoints;
     private char sunkLetter;
     boolean isPlaced=false;
+    protected int gethitpoints(){
+        return hitpoints.getHitpointValue();
+    }
+
+    public Boat(HitpointManager health,char sunk){
+        assert health!=null;
+
+        sunkLetter=sunk;
+        hitpoints=health;
+
+    }public void Place(){
+        isPlaced=true;
+    }
 
 
     public boolean isSunk(){
@@ -19,10 +32,6 @@ public  class Boat {
     public char getSunkLetter() {
         return sunkLetter;
     }
-    public Boat(HitpointManager health,char sunk){
-        sunkLetter=sunk;
-        hitpoints=health;
 
-    }
 
 }
