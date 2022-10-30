@@ -16,9 +16,11 @@ public  class Boat {
         sunkLetter=sunk;
         hitpoints=health;
 
-    }public void Place(){
+    }
+    public void place(){
         isPlaced=true;
     }
+
 
 
     public boolean isSunk(){

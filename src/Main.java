@@ -9,5 +9,9 @@ public class Main {
 
         FleetManager fleet=new FleetManager();
         System.out.println(fleet.BoatsToBePlaced());
+        fleet.placeBoat(2);
+        System.out.println(fleet.BoatsToBePlaced());
+        fleet.placeBoat(6);
+        System.out.println(fleet.BoatsToBePlaced());
     }
 }
