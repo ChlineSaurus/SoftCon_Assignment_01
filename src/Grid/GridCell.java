@@ -1,10 +1,13 @@
 package Grid;
 
+import Boats.Boat;
+
 public class GridCell {
 
 
 
     //know if cell has a boat on it
+    public Boat t;
     private boolean wasShot = false;
 
     //know if boat is on it
@@ -17,6 +20,12 @@ public class GridCell {
     public boolean WasShot() {
         return wasShot;
     }
+    public void isShot(){
+        if (WasShot()){
+
+        }
+    }
+
 
     public GridCell(){
 

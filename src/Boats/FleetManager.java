@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public class FleetManager {
-     private List<Boat> fleet=new ArrayList<>();
+    private List<Boat> fleet=new ArrayList<>();
     private AllowedBoats allowedCarrier=AllowedBoats.One;
     private AllowedBoats allowedBattleships=AllowedBoats.Two;
     private AllowedBoats allowedSubmarines=AllowedBoats.Three;
@@ -46,6 +46,7 @@ public class FleetManager {
             }
         }
     }
+
 
     public boolean isFleetplaced(){
         return allowedCarrier == AllowedBoats.Zero && allowedBattleships == AllowedBoats.Zero && allowedSubmarines == AllowedBoats.Zero && allowedPatrolBoats == AllowedBoats.Zero;

@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="create hashmap to show how many boats need to be placed of each type... put is not working">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/AbstractBoat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/Boat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boats/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/Boat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Battleship.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Carrier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/PatrolBoats.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/type/Submarine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667033442264</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly">
+      <created>1667114781321</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667114781321</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +220,7 @@
     <MESSAGE value="fleet working isfleetplaced and isfleetdestroyed relevant for game manager" />
     <MESSAGE value="getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY" />
     <MESSAGE value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
+    <MESSAGE value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
   </component>
 </project>
