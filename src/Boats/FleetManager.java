@@ -15,16 +15,6 @@ public class FleetManager {
     private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;
 
 
-
-
-
-
-
-
-
-
-
-
     public void addBoat (Boat a){
          //check
         int max = 10;
@@ -37,7 +27,7 @@ public class FleetManager {
 
     public boolean isavailabe (int length){
         int len=abs(length);
-        for (int i=0;i<requiredBoats.size();i++){
+        for (int i=0;i<fleet.size();i++){
             Boat temp=fleet.get(i);
             if (!temp.isPlaced && temp.hitpoints.getHitpointValue()==length){
                 return true;
@@ -45,6 +35,7 @@ public class FleetManager {
         }
         return false;
     }
+
 
 
 
@@ -64,7 +55,12 @@ public class FleetManager {
 
 
     public boolean isFleetplaced(){
-        return allowedCarrier == AllowedBoats.Zero && allowedBattleships == AllowedBoats.Zero && allowedSubmarines == AllowedBoats.Zero && allowedPatrolBoats == AllowedBoats.Zero;
+        for (int i=0;i<fleet.size();i++){
+            if (!fleet.get(i).isPlaced){
+                return false;
+            }
+        }
+        return true;
     }
 
 
