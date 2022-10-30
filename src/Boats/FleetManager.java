@@ -9,10 +9,7 @@ import static java.lang.Math.abs;
 
 public class FleetManager {
     private List<Boat> fleet=new ArrayList<>();
-    private AllowedBoats allowedCarrier=AllowedBoats.One;
-    private AllowedBoats allowedBattleships=AllowedBoats.Two;
-    private AllowedBoats allowedSubmarines=AllowedBoats.Three;
-    private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;
+
 
 
     public void addBoat (Boat a){
@@ -22,10 +19,10 @@ public class FleetManager {
          fleet.add(a);
      }
 
-     private List<AllowedBoats> requiredBoats=new ArrayList<>();
 
 
-    public boolean isavailabe (int length){
+
+    public boolean isAvailabe (int length){
         int len=abs(length);
         for (int i=0;i<fleet.size();i++){
             Boat temp=fleet.get(i);
@@ -35,10 +32,6 @@ public class FleetManager {
         }
         return false;
     }
-
-
-
-
 
     //list die sagt was man noch setzen muss
 
@@ -51,19 +44,21 @@ public class FleetManager {
             }
         }
     }
-
-
+    public List<List<Integer>> Boatstobeplaced(){
+        List<List<Integer>> required;
+        for (Boat boat:fleet){
+            if (!boat.isPlaced)
+        }
+    }
 
     public boolean isFleetplaced(){
-        for (int i=0;i<fleet.size();i++){
-            if (!fleet.get(i).isPlaced){
+        for (Boat boat : fleet) {
+            if (!boat.isPlaced) {
                 return false;
             }
         }
         return true;
     }
-
-
 
 
     public boolean isFleetDestroyed(){

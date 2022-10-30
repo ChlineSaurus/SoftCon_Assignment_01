@@ -7,6 +7,15 @@ public  class Boat {
     private char sunkLetter;
     boolean isPlaced=false;
 
+    public Boat(HitpointManager health,char sunk){
+        assert health!=null;
+        sunkLetter=sunk;
+        hitpoints=health;
+
+    }public void Place(){
+        isPlaced=true;
+    }
+
 
     public boolean isSunk(){
         return hitpoints == HitpointManager.ZeroHitPoints;
@@ -19,10 +28,6 @@ public  class Boat {
     public char getSunkLetter() {
         return sunkLetter;
     }
-    public Boat(HitpointManager health,char sunk){
-        sunkLetter=sunk;
-        hitpoints=health;
 
-    }
 
 }
