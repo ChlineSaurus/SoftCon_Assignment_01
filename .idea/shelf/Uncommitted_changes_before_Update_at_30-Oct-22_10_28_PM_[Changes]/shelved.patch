@@ -1,0 +1,199 @@
+Index: src/Boats/HitpointManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic enum HitpointManager {\r\n\r\n        ZeroHitPoints(0),\r\n\r\n        OneHitPoint(1),\r\n        TwoHitPoints(2),\r\n        ThreeHitPoints(3),\r\n        FourHitPoints(4),\r\n        FiveHitPoints(5),\r\n        SixHitPoints(6);\r\n\r\n        private final int value;\r\n        private static final Map<Integer,HitpointManager> map = new HashMap<>();\r\n        HitpointManager(int value){\r\n            this.value=value;\r\n        }\r\n\r\n        static {\r\n            for (HitpointManager HITPOINTCLASS : HitpointManager.values()) {\r\n                map.put(HITPOINTCLASS.value, HITPOINTCLASS);\r\n            }\r\n\r\n        }\r\n        public static HitpointManager valueOf(int value) {\r\n            return map.get(value);\r\n        }\r\n        int getHitpointValue(){\r\n            return value;\r\n        }\r\n    }\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/HitpointManager.java b/src/Boats/HitpointManager.java
+--- a/src/Boats/HitpointManager.java	(revision 605d71d3e6fd02c546d1708fe7c02b78660eabac)
++++ b/src/Boats/HitpointManager.java	(date 1667165064261)
+@@ -11,11 +11,9 @@
+         TwoHitPoints(2),
+         ThreeHitPoints(3),
+         FourHitPoints(4),
+-        FiveHitPoints(5),
+-        SixHitPoints(6);
+-
++        FiveHitPoints(5);
+         private final int value;
+-        private static final Map<Integer,HitpointManager> map = new HashMap<>();
++        private static Map map = new HashMap<>();
+         HitpointManager(int value){
+             this.value=value;
+         }
+@@ -27,7 +25,7 @@
+ 
+         }
+         public static HitpointManager valueOf(int value) {
+-            return map.get(value);
++            return (HitpointManager) map.get(value);
+         }
+         int getHitpointValue(){
+             return value;
+Index: src/Boats/FleetManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\r\n\r\n\r\nimport org.apache.avro.JsonProperties;\r\n\r\nimport java.util.*;\r\n\r\nimport static java.lang.Math.abs;\r\n\r\n\r\npublic class FleetManager {\r\n    private List<Boat> fleet=new ArrayList<>();\r\n\r\n\r\n\r\n    public void addBoat (Boat a){\r\n         //check\r\n        int max = 10;\r\n        assert fleet.size()< max;\r\n         fleet.add(a);\r\n     }\r\n\r\n\r\n\r\n\r\n    public boolean isAvailabe (int length){\r\n        int len=abs(length);\r\n        for (Boat temp : fleet) {\r\n            if (!temp.isPlaced && temp.hitpoints.getHitpointValue() == length) {\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n    public Boat placeBoat(int length){\r\n        for (Boat boat: fleet){\r\n            if (boat.hitpoints.getHitpointValue()==length && !boat.isPlaced){\r\n                boat.place();\r\n                return boat;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n\r\n\r\n    public FleetManager(){\r\n        for (BoatTypes boat: BoatTypes.values()){\r\n            int allowed=boat.boatsAllowed;\r\n            HitpointManager hitpoints=HitpointManager.valueOf(boat.startingHitPoints);\r\n            for (int i=0;i<allowed;i++){\r\n                Boat temp=new Boat(hitpoints, boat.representationCharacter);\r\n                fleet.add(temp);\r\n            }\r\n        }\r\n    }\r\n    public List<List<Integer>> BoatsToBePlaced(){\r\n\r\n\r\n        List<List<Integer>> required=new ArrayList<>();\r\n        Map<Integer, Integer> map = new LinkedHashMap<>();\r\n        for (Boat boat:fleet){\r\n            if (!boat.isPlaced){\r\n                int length=boat.gethitpoints();\r\n                if (map.containsKey(length)){\r\n                    map.put(length, map.get(length) + 1);\r\n                }\r\n                else{\r\n                    map.put(length,1);\r\n                }\r\n            }\r\n        }\r\n        List<Integer> keys=new ArrayList(map.keySet());\r\n        List<Integer> values=new ArrayList(map.values());\r\n        for (int i=0;i< keys.size();i++){\r\n            ArrayList<Integer> temp=new ArrayList<>();\r\n            temp.add(keys.get(i));\r\n            temp.add(values.get(i));\r\n            required.add(temp);\r\n        }\r\n        return required;\r\n\r\n\r\n    }\r\n\r\n    public boolean isFleetplaced(){\r\n        for (Boat boat : fleet) {\r\n            if (!boat.isPlaced) {\r\n                return false;\r\n            }\r\n        }\r\n        return true;\r\n    }\r\n\r\n\r\n    public boolean isFleetDestroyed(){\r\n        int i=0;\r\n        while (fleet.size()>i){\r\n\r\n            if (!fleet.get(i).isSunk()){\r\n                return false;\r\n            }\r\n            i++;\r\n        }\r\n        return true;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/FleetManager.java b/src/Boats/FleetManager.java
+--- a/src/Boats/FleetManager.java	(revision 605d71d3e6fd02c546d1708fe7c02b78660eabac)
++++ b/src/Boats/FleetManager.java	(date 1667165064259)
+@@ -1,8 +1,6 @@
+ package Boats;
+ 
+ 
+-import org.apache.avro.JsonProperties;
+-
+ import java.util.*;
+ 
+ import static java.lang.Math.abs;
+@@ -25,24 +23,16 @@
+ 
+     public boolean isAvailabe (int length){
+         int len=abs(length);
+-        for (Boat temp : fleet) {
+-            if (!temp.isPlaced && temp.hitpoints.getHitpointValue() == length) {
++        for (int i=0;i<fleet.size();i++){
++            Boat temp=fleet.get(i);
++            if (!temp.isPlaced && temp.hitpoints.getHitpointValue()==length){
+                 return true;
+             }
+         }
+         return false;
+     }
+-    public Boat placeBoat(int length){
+-        for (Boat boat: fleet){
+-            if (boat.hitpoints.getHitpointValue()==length && !boat.isPlaced){
+-                boat.place();
+-                return boat;
+-            }
+-        }
+-        return null;
+-    }
+ 
+-
++    //list die sagt was man noch setzen muss
+ 
+     public FleetManager(){
+         for (BoatTypes boat: BoatTypes.values()){
+@@ -95,6 +85,7 @@
+ 
+     public boolean isFleetDestroyed(){
+         int i=0;
++
+         while (fleet.size()>i){
+ 
+             if (!fleet.get(i).isSunk()){
+Index: src/Grid/Grid.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Grid;\r\n\r\nimport java.util.ArrayList;\r\n\r\nimport static java.lang.Math.abs;\r\nimport static java.lang.Math.max;\r\n\r\n\r\npublic class Grid {\r\n\r\n    public Grid() {\r\n\r\n    }\r\n    /*\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n            [A,B,C,D,E,F,G,H,I,J],\r\n\r\n     */\r\n    static ArrayList<GridCell> rowList = new ArrayList<GridCell>();\r\n    static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();\r\n\r\n    //create ArrayList Matrix with GridCells in them\r\n    public void shoot(CoordinatesTuple c){\r\n        ArrayList<GridCell> a=gridList.get(c.row.value);\r\n        GridCell temp= a.get(c.column.value);\r\n        if (temp.WasShot()){\r\n            //create Error\r\n        }\r\n        else{\r\n            //to do wasshot to false\r\n\r\n\r\n        }\r\n    }\r\n    public void arraylistMatrix() {\r\n        for (Row row : Row.values()) {\r\n            gridList.add(rowList = new ArrayList<GridCell>());\r\n            for (Column column : Column.values()) {\r\n                GridCell temp = new GridCell();\r\n                rowList.add(temp);\r\n            }\r\n        }\r\n    }\r\n\r\n    //create enum Matrix with GridCells in them\r\n\r\n\r\n\r\n\r\n\r\n\r\n        /*public int getDistance (GridCell a, GridCell b){\r\n            int columDelta = abs(a.GetColumnIndex() - b.GetColumnIndex());\r\n            int rowDelta = abs(a.GetRowIndex() - b.GetRowIndex());\r\n            //this function to check if the distance of the user is valid for instance\r\n            if (columDelta != 0 && rowDelta != 0) {\r\n                //error Message\r\n            }\r\n            return max(columDelta, rowDelta);\r\n\r\n         */\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Grid/Grid.java b/src/Grid/Grid.java
+--- a/src/Grid/Grid.java	(revision 605d71d3e6fd02c546d1708fe7c02b78660eabac)
++++ b/src/Grid/Grid.java	(date 1667165064263)
+@@ -49,12 +49,9 @@
+         }
+     }
+ 
+-    //create enum Matrix with GridCells in them
+-
+-
+-
+-
+-
++    public Iterator createIterator(){
++        return new GridIterator(rowList);
++    }
+ 
+         /*public int getDistance (GridCell a, GridCell b){
+             int columDelta = abs(a.GetColumnIndex() - b.GetColumnIndex());
+@@ -67,6 +64,4 @@
+ 
+          */
+ 
+-
+ }
+-
+Index: src/Boats/BoatTypes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\r\n//Das isch en Vorschlag, aber es chönt glaubs einigi vo eusne Problem Löse\r\npublic enum BoatTypes {\r\n\r\n    Battleship(2, 4,'B'),\r\n    Carrier(1, 6,'C'),\r\n    PatrolBoat(4, 2,'P'),\r\n    Submarine(3, 3,'S');\r\n\r\n    public final Integer boatsAllowed;\r\n    public final Integer startingHitPoints;\r\n    public final Character representationCharacter;\r\n    BoatTypes (Integer boatsAllowed, Integer startingHitPoints, Character representationCharacter) {\r\n        this.boatsAllowed =boatsAllowed;\r\n        this.startingHitPoints = startingHitPoints;\r\n        this.representationCharacter = representationCharacter;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/BoatTypes.java b/src/Boats/BoatTypes.java
+--- a/src/Boats/BoatTypes.java	(revision 605d71d3e6fd02c546d1708fe7c02b78660eabac)
++++ b/src/Boats/BoatTypes.java	(date 1667165064257)
+@@ -2,15 +2,15 @@
+ //Das isch en Vorschlag, aber es chönt glaubs einigi vo eusne Problem Löse
+ public enum BoatTypes {
+ 
+-    Battleship(2, 4,'B'),
+-    Carrier(1, 6,'C'),
+-    PatrolBoat(4, 2,'P'),
+-    Submarine(3, 3,'S');
++    Battleship(2, HitpointManager.FourHitPoints,'B'),
++    Carrier(1, HitpointManager.FiveHitPoints,'C'), //müest 6 Hitpoints ha
++    PatrolBoat(4, HitpointManager.TwoHitPoints,'P'),
++    Submarine(3, HitpointManager.ThreeHitPoints,'S');
+ 
+     public final Integer boatsAllowed;
+-    public final Integer startingHitPoints;
++    public final HitpointManager startingHitPoints;
+     public final Character representationCharacter;
+-    BoatTypes (Integer boatsAllowed, Integer startingHitPoints, Character representationCharacter) {
++    BoatTypes (Integer boatsAllowed, HitpointManager startingHitPoints, Character representationCharacter) {
+         this.boatsAllowed =boatsAllowed;
+         this.startingHitPoints = startingHitPoints;
+         this.representationCharacter = representationCharacter;
+Index: src/Boats/Boat.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\r\n\r\npublic  class Boat {\r\n\r\n\r\n    protected HitpointManager hitpoints;\r\n    private char sunkLetter;\r\n    boolean isPlaced=false;\r\n    protected int gethitpoints(){\r\n        return hitpoints.getHitpointValue();\r\n    }\r\n\r\n    public Boat(HitpointManager health,char sunk){\r\n        assert health!=null;\r\n\r\n        sunkLetter=sunk;\r\n        hitpoints=health;\r\n\r\n    }\r\n    public void place(){\r\n        isPlaced=true;\r\n    }\r\n\r\n\r\n\r\n    public boolean isSunk(){\r\n        return hitpoints == HitpointManager.ZeroHitPoints;\r\n    }\r\n    public void isHit(){\r\n        assert !isSunk();\r\n        hitpoints=HitpointManager.valueOf(hitpoints.getHitpointValue()-1);\r\n    }\r\n\r\n    public char getSunkLetter() {\r\n        return sunkLetter;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/Boat.java b/src/Boats/Boat.java
+--- a/src/Boats/Boat.java	(revision 605d71d3e6fd02c546d1708fe7c02b78660eabac)
++++ b/src/Boats/Boat.java	(date 1667165064254)
+@@ -16,13 +16,11 @@
+         sunkLetter=sunk;
+         hitpoints=health;
+ 
+-    }
+-    public void place(){
++    }public void Place(){
+         isPlaced=true;
+     }
+ 
+ 
+-
+     public boolean isSunk(){
+         return hitpoints == HitpointManager.ZeroHitPoints;
+     }
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Boats.FleetManager;\r\nimport UI.Display;\r\n\r\nimport static java.lang.System.exit;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n\r\n        FleetManager fleet=new FleetManager();\r\n        System.out.println(fleet.BoatsToBePlaced());\r\n        fleet.placeBoat(2);\r\n        System.out.println(fleet.BoatsToBePlaced());\r\n        fleet.placeBoat(6);\r\n        System.out.println(fleet.BoatsToBePlaced());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 605d71d3e6fd02c546d1708fe7c02b78660eabac)
++++ b/src/Main.java	(date 1667165064268)
+@@ -9,9 +9,5 @@
+ 
+         FleetManager fleet=new FleetManager();
+         System.out.println(fleet.BoatsToBePlaced());
+-        fleet.placeBoat(2);
+-        System.out.println(fleet.BoatsToBePlaced());
+-        fleet.placeBoat(6);
+-        System.out.println(fleet.BoatsToBePlaced());
+     }
+ }

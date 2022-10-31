@@ -1,0 +1,189 @@
+Index: src/Boats/HitpointManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic enum HitpointManager {\r\n\r\n        ZeroHitPoints(0),\r\n\r\n        OneHitPoint(1),\r\n        TwoHitPoints(2),\r\n        ThreeHitPoints(3),\r\n        FourHitPoints(4),\r\n        FiveHitPoints(5);\r\n        private final int value;\r\n        private static Map map = new HashMap<>();\r\n        HitpointManager(int value){\r\n            this.value=value;\r\n        }\r\n\r\n        static {\r\n            for (HitpointManager HITPOINTCLASS : HitpointManager.values()) {\r\n                map.put(HITPOINTCLASS.value, HITPOINTCLASS);\r\n            }\r\n\r\n        }\r\n        public static HitpointManager valueOf(int value) {\r\n            return (HitpointManager) map.get(value);\r\n        }\r\n        int getHitpointValue(){\r\n            return value;\r\n        }\r\n    }\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/HitpointManager.java b/src/Boats/HitpointManager.java
+--- a/src/Boats/HitpointManager.java	(revision 8484f8fd330753b6d73ea85758d4e3775713fc7c)
++++ b/src/Boats/HitpointManager.java	(date 1667157809649)
+@@ -12,6 +12,7 @@
+         ThreeHitPoints(3),
+         FourHitPoints(4),
+         FiveHitPoints(5);
++
+         private final int value;
+         private static Map map = new HashMap<>();
+         HitpointManager(int value){
+Index: src/Boats/FleetManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\n\r\nimport static java.lang.Math.abs;\r\n\r\n\r\npublic class FleetManager {\r\n    private List<Boat> fleet=new ArrayList<>();\r\n    private AllowedBoats allowedCarrier=AllowedBoats.One;\r\n    private AllowedBoats allowedBattleships=AllowedBoats.Two;\r\n    private AllowedBoats allowedSubmarines=AllowedBoats.Three;\r\n    private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;\r\n\r\n\r\n    public void addBoat (Boat a){\r\n         //check\r\n        int max = 10;\r\n        assert fleet.size()< max;\r\n         fleet.add(a);\r\n     }\r\n\r\n     private List<AllowedBoats> requiredBoats=new ArrayList<>();\r\n\r\n\r\n    public boolean isavailabe (int length){\r\n        int len=abs(length);\r\n        for (int i=0;i<fleet.size();i++){\r\n            Boat temp=fleet.get(i);\r\n            if (!temp.isPlaced && temp.hitpoints.getHitpointValue()==length){\r\n                return true;\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    //list die sagt was man noch setzen muss\r\n\r\n    public FleetManager(){\r\n        for (BoatTypes boat: BoatTypes.values()){\r\n            int allowed=boat.boatsAllowed;\r\n            for (int i=0;i<allowed;i++){\r\n                Boat temp=new Boat(boat.startingHitPoints, boat.representationCharacter);\r\n                fleet.add(temp);\r\n            }\r\n        }\r\n    }\r\n\r\n\r\n\r\n    public boolean isFleetplaced(){\r\n        for (int i=0;i<fleet.size();i++){\r\n            if (!fleet.get(i).isPlaced){\r\n                return false;\r\n            }\r\n        }\r\n        return true;\r\n    }\r\n\r\n\r\n\r\n\r\n    public boolean isFleetDestroyed(){\r\n        int i=0;\r\n\r\n        while (fleet.size()>i){\r\n\r\n            if (!fleet.get(i).isSunk()){\r\n                return false;\r\n            }\r\n            i++;\r\n        }\r\n        return true;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/FleetManager.java b/src/Boats/FleetManager.java
+--- a/src/Boats/FleetManager.java	(revision 8484f8fd330753b6d73ea85758d4e3775713fc7c)
++++ b/src/Boats/FleetManager.java	(date 1667157077767)
+@@ -9,10 +9,7 @@
+ 
+ public class FleetManager {
+     private List<Boat> fleet=new ArrayList<>();
+-    private AllowedBoats allowedCarrier=AllowedBoats.One;
+-    private AllowedBoats allowedBattleships=AllowedBoats.Two;
+-    private AllowedBoats allowedSubmarines=AllowedBoats.Three;
+-    private AllowedBoats allowedPatrolBoats=AllowedBoats.Four;
++
+ 
+ 
+     public void addBoat (Boat a){
+@@ -22,10 +19,10 @@
+          fleet.add(a);
+      }
+ 
+-     private List<AllowedBoats> requiredBoats=new ArrayList<>();
+ 
+ 
+-    public boolean isavailabe (int length){
++
++    public boolean isAvailabe (int length){
+         int len=abs(length);
+         for (int i=0;i<fleet.size();i++){
+             Boat temp=fleet.get(i);
+@@ -36,10 +33,6 @@
+         return false;
+     }
+ 
+-
+-
+-
+-
+     //list die sagt was man noch setzen muss
+ 
+     public FleetManager(){
+@@ -51,12 +44,16 @@
+             }
+         }
+     }
+-
+-
++    public List<List<Integer>> Boatstobeplaced(){
++        List<List<Integer>> required;
++        for (Boat boat:fleet){
++            if (!boat.isPlaced)
++        }
++    }
+ 
+     public boolean isFleetplaced(){
+-        for (int i=0;i<fleet.size();i++){
+-            if (!fleet.get(i).isPlaced){
++        for (Boat boat : fleet) {
++            if (!boat.isPlaced) {
+                 return false;
+             }
+         }
+@@ -64,8 +61,6 @@
+     }
+ 
+ 
+-
+-
+     public boolean isFleetDestroyed(){
+         int i=0;
+ 
+Index: src/Boats/Boat.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Boats;\r\n\r\npublic  class Boat {\r\n\r\n\r\n    protected HitpointManager hitpoints;\r\n    private char sunkLetter;\r\n    boolean isPlaced=false;\r\n\r\n\r\n    public boolean isSunk(){\r\n        return hitpoints == HitpointManager.ZeroHitPoints;\r\n    }\r\n    public void isHit(){\r\n        assert !isSunk();\r\n        hitpoints=HitpointManager.valueOf(hitpoints.getHitpointValue()-1);\r\n    }\r\n\r\n    public char getSunkLetter() {\r\n        return sunkLetter;\r\n    }\r\n    public Boat(HitpointManager health,char sunk){\r\n        sunkLetter=sunk;\r\n        hitpoints=health;\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Boats/Boat.java b/src/Boats/Boat.java
+--- a/src/Boats/Boat.java	(revision 8484f8fd330753b6d73ea85758d4e3775713fc7c)
++++ b/src/Boats/Boat.java	(date 1667156210040)
+@@ -7,6 +7,15 @@
+     private char sunkLetter;
+     boolean isPlaced=false;
+ 
++    public Boat(HitpointManager health,char sunk){
++        assert health!=null;
++        sunkLetter=sunk;
++        hitpoints=health;
++
++    }public void Place(){
++        isPlaced=true;
++    }
++
+ 
+     public boolean isSunk(){
+         return hitpoints == HitpointManager.ZeroHitPoints;
+@@ -19,10 +28,6 @@
+     public char getSunkLetter() {
+         return sunkLetter;
+     }
+-    public Boat(HitpointManager health,char sunk){
+-        sunkLetter=sunk;
+-        hitpoints=health;
+ 
+-    }
+ 
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"iavaliaBLE\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Boats/FleetManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Boats/FleetManager.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"Enum\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GK2zw1RuKHHfKBWTSWpnsWnEjT\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"Softcon_Assignement_01\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"-ea\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"-ea\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"78742255-1aad-482c-92b7-d9d45e264ce0\" name=\"Changes\" comment=\"\" />\r\n      <created>1666123221376</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666123221376</updated>\r\n      <workItem from=\"1666123222899\" duration=\"950000\" />\r\n      <workItem from=\"1666161409963\" duration=\"316000\" />\r\n      <workItem from=\"1666516279938\" duration=\"335000\" />\r\n      <workItem from=\"1666793806811\" duration=\"2440000\" />\r\n      <workItem from=\"1666799024425\" duration=\"2935000\" />\r\n      <workItem from=\"1666802202614\" duration=\"2000\" />\r\n      <workItem from=\"1666852426563\" duration=\"18851000\" />\r\n      <workItem from=\"1666987352224\" duration=\"171000\" />\r\n      <workItem from=\"1667032503106\" duration=\"13922000\" />\r\n      <workItem from=\"1667132729308\" duration=\"31000\" />\r\n      <workItem from=\"1667134563335\" duration=\"679000\" />\r\n      <workItem from=\"1667138211834\" duration=\"5107000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"creat git repository\">\r\n      <created>1666123243096</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666123243096</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"creat git repository\">\r\n      <created>1666124277982</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666124277982</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"General Methods abstract Player\">\r\n      <created>1666379766123</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666379766123</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"extends absboat\">\r\n      <created>1666460948362</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666460948362</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"naming convention\">\r\n      <created>1666793778700</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666793778700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"boatclassfinishid starting with fleet\">\r\n      <created>1666795360272</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666795360272</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"new enums need to use stratergy later\">\r\n      <created>1666801948258</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666801948258</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"new enums need to use stratergy later\">\r\n      <created>1666801975301</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666801975301</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"used enums to introduce gridcell and grid\">\r\n      <created>1666857046741</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666857046741</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"renamed FleetManager\">\r\n      <created>1666857621892</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666857621892</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"fleet working isfleetplaced and isfleetdestroyed relevant for game manager\">\r\n      <created>1666955369616</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666955369616</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\">\r\n      <created>1666962807154</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666962807154</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk\">\r\n      <created>1667033442264</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667033442264</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly\">\r\n      <created>1667114781321</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667114781321</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly\">\r\n      <created>1667132668270</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667132668270</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"iavaliaBLE\">\r\n      <created>1667139095232</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667139095232</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"17\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"creat git repository\" />\r\n    <MESSAGE value=\"General Methods abstract Player\" />\r\n    <MESSAGE value=\"extends absboat\" />\r\n    <MESSAGE value=\"Grobi Ordnerstruktur\" />\r\n    <MESSAGE value=\"naming convention\" />\r\n    <MESSAGE value=\"boatclassfinishid starting with fleet\" />\r\n    <MESSAGE value=\"new enums need to use stratergy later\" />\r\n    <MESSAGE value=\"used enums to introduce gridcell and grid\" />\r\n    <MESSAGE value=\"renamed FleetManager\" />\r\n    <MESSAGE value=\"fleet working isfleetplaced and isfleetdestroyed relevant for game manager\" />\r\n    <MESSAGE value=\"getdistance of two points a3 and b3 introduce still need to make sure that it handels exception for the case two a3 c4 BOATS can not be placed DIAGONALLY\" />\r\n    <MESSAGE value=\"Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk\" />\r\n    <MESSAGE value=\"need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly\" />\r\n    <MESSAGE value=\"iavaliaBLE\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"iavaliaBLE\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8484f8fd330753b6d73ea85758d4e3775713fc7c)
++++ b/.idea/workspace.xml	(date 1667157810102)
+@@ -1,9 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="iavaliaBLE">
++    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="isfleetplaced updated so that works with current style">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Boats/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/Boat.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Boats/HitpointManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/HitpointManager.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -79,7 +81,7 @@
+       <workItem from="1667032503106" duration="13922000" />
+       <workItem from="1667132729308" duration="31000" />
+       <workItem from="1667134563335" duration="679000" />
+-      <workItem from="1667138211834" duration="5107000" />
++      <workItem from="1667138211834" duration="8185000" />
+     </task>
+     <task id="LOCAL-00001" summary="creat git repository">
+       <created>1666123243096</created>
+@@ -193,7 +195,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1667139095232</updated>
+     </task>
+-    <option name="localTasksCounter" value="17" />
++    <task id="LOCAL-00017" summary="isfleetplaced updated so that works with current style">
++      <created>1667154244055</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1667154244055</updated>
++    </task>
++    <option name="localTasksCounter" value="18" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -237,6 +246,7 @@
+     <MESSAGE value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
+     <MESSAGE value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
+     <MESSAGE value="iavaliaBLE" />
+-    <option name="LAST_COMMIT_MESSAGE" value="iavaliaBLE" />
++    <MESSAGE value="isfleetplaced updated so that works with current style" />
++    <option name="LAST_COMMIT_MESSAGE" value="isfleetplaced updated so that works with current style" />
+   </component>
+ </project>
+\ No newline at end of file
