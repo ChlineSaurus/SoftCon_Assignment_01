@@ -22,7 +22,9 @@ public class Display {
 
     public void DisplayAsOwn(Iterator grid){
         System.out.println(targetTitle+letters+symbols);
-        System.out.println("emum");//do some strings with enum
+        while(grid.hasNext()){
+            String field = grid.next().toString();
+        }
         System.out.println(equals+line);
     }
     public void DisplayAsOpponent(){

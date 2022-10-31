@@ -1,5 +1,6 @@
 package Grid;
 
+import Boats.Boat;
 import Boats.FleetManager;
 import Boats.FleetManager;
 import Exceptions.BoatPlacement.BoatPositionOccupiedException;
@@ -61,7 +62,9 @@ public class Grid {
             if(c.column.value-e.column.value<0){
                 checkDown(c,difference);
                 if(Fleet.isAvailable(difference)) {
-                    setDown(c, difference);
+
+                    Boat boat = Fleet.placeBoat(difference);
+                    setDown(c, difference, boat);
                 }
                 else{
                     throw new IllegalBoatException("You do not have such a boat type");
@@ -70,7 +73,8 @@ public class Grid {
             else{
                 checkDown(e,difference);
                 if(Fleet.isAvailable(difference)) {
-                    setDown(c, difference);
+                    Boat boat = Fleet.placeBoat(difference);
+                    setDown(c, difference, boat);
                 }
                 else{
                     throw new IllegalBoatException("You do not have such a boat type");
@@ -82,7 +86,8 @@ public class Grid {
             if(c.row.value-e.row.value<0){
                 checkFlat(c,difference);
                 if(Fleet.isAvailable(difference)) {
-                    setFlat(c,difference);
+                    Boat boat = Fleet.placeBoat(difference);
+                    setFlat(c,difference, boat);
                 }
                 else{
                     throw new IllegalBoatException("You do not have such a boat type");
@@ -91,7 +96,8 @@ public class Grid {
             else{
                 checkFlat(e,difference);
                 if(Fleet.isAvailable(difference)) {
-                    setFlat(c,difference);
+                    Boat boat = Fleet.placeBoat(difference);
+                    setFlat(c,difference, boat);
                 }
                 else{
                     throw new IllegalBoatException("You do not have such a boat type");
@@ -101,18 +107,18 @@ public class Grid {
 
         // implement set boat
     }
-    private void setDown(CoordinatesTuple c, int range){
+    private void setDown(CoordinatesTuple c, int range, Boat boat){
         int row = c.row.value;
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
-            gridList.get(c.column.value).get(i).getBoat();
+            gridList.get(c.column.value).get(i).takeBoat(boat);
         }
     }
-    private void setFlat(CoordinatesTuple c, int range){
+    private void setFlat(CoordinatesTuple c, int range,Boat boat){
         int col = c.column.value;
         int colRange = col + range;
         for(int i = col;i<colRange;i++){
-            gridList.get(c.row.value).get(i).getBoat();
+            gridList.get(c.row.value).get(i).takeBoat(boat);
         }
 
     }
