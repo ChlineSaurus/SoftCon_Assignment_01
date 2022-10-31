@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="How to place ships_finito">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="fleetmaager">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22__22_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22__22_19__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,7 @@
       <workItem from="1667132729308" duration="31000" />
       <workItem from="1667134563335" duration="679000" />
       <workItem from="1667138211834" duration="863000" />
-      <workItem from="1667204334726" duration="10406000" />
+      <workItem from="1667204334726" duration="511000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -196,21 +196,7 @@
       <option name="project" value="LOCAL" />
       <updated>1667165515458</updated>
     </task>
-    <task id="LOCAL-00017" summary="How to place ships">
-      <created>1667204881425</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1667204881425</updated>
-    </task>
-    <task id="LOCAL-00018" summary="How to place ships_finito">
-      <created>1667209999621</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1667209999621</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,8 +240,6 @@
     <MESSAGE value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
     <MESSAGE value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
     <MESSAGE value="fleetmaager" />
-    <MESSAGE value="How to place ships" />
-    <MESSAGE value="How to place ships_finito" />
-    <option name="LAST_COMMIT_MESSAGE" value="How to place ships_finito" />
+    <option name="LAST_COMMIT_MESSAGE" value="fleetmaager" />
   </component>
 </project>

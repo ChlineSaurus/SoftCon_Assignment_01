@@ -1,25 +1,32 @@
 package Grid;
 
 import Boats.FleetManager;
+import Boats.FleetManager;
 import Exceptions.BoatPlacement.BoatPositionOccupiedException;
 import Exceptions.BoatPlacement.IllegalBoatException;
 import Exceptions.IllegalShotException;
 
 import java.util.ArrayList;
-
 import static java.lang.Math.abs;
 import static java.lang.Math.max;
 
 
 public class Grid {
-
     protected final FleetManager Fleet;
 
-
-    private Grid() {
+    public Grid() {
         this.Fleet = new FleetManager();
-        this.arraylistMatrix();
+
+
+        for (Row row : Row.values()) {
+            gridList.add(rowList = new ArrayList<GridCell>());
+            for (Column column : Column.values()) {
+                rowList.add(new GridCell());
+            }
+        }
     }
+
+
     /*
             [A,B,C,D,E,F,G,H,I,J],
             [A,B,C,D,E,F,G,H,I,J],
@@ -36,8 +43,6 @@ public class Grid {
     static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();
 
     //create ArrayList Matrix with GridCells in them
-
-
     public void shoot(CoordinatesTuple c) throws IllegalShotException {
         ArrayList<GridCell> a=gridList.get(c.row.value);
         GridCell temp= a.get(c.column.value);
@@ -83,8 +88,6 @@ public class Grid {
                     throw new IllegalBoatException("You do not have such a boat type");
                 }
             }
-
-
             else{
                 checkFlat(e,difference);
                 if(Fleet.isAvailabe(difference)) {
@@ -133,14 +136,7 @@ public class Grid {
 
         }
     }
-    public void arraylistMatrix() {
-        for (Row row : Row.values()) {
-            gridList.add(rowList = new ArrayList<GridCell>());
-            for (Column column : Column.values()) {
-                rowList.add(new GridCell());
-            }
-        }
-    }
+
 
     public Iterator createIterator(){
         return new GridIterator(rowList);

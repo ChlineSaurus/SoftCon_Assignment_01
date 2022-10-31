@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class GridIterator implements Iterator {
 
     ArrayList<GridCell> rowList;
+
     int position = 0;
 
     public GridIterator(ArrayList<GridCell> rowList) {
