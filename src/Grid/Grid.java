@@ -1,6 +1,8 @@
 package Grid;
 
+import Boats.FleetManager;
 import Exceptions.BoatPlacement.BoatPositionOccupiedException;
+import Exceptions.BoatPlacement.IllegalBoatException;
 import Exceptions.IllegalShotException;
 
 import java.util.ArrayList;
@@ -11,8 +13,12 @@ import static java.lang.Math.max;
 
 public class Grid {
 
-    public Grid() {
+    protected final FleetManager Fleet;
 
+
+    private Grid() {
+        this.Fleet = new FleetManager();
+        this.arraylistMatrix();
     }
     /*
             [A,B,C,D,E,F,G,H,I,J],
@@ -30,6 +36,8 @@ public class Grid {
     static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();
 
     //create ArrayList Matrix with GridCells in them
+
+
     public void shoot(CoordinatesTuple c) throws IllegalShotException {
         ArrayList<GridCell> a=gridList.get(c.row.value);
         GridCell temp= a.get(c.column.value);
@@ -41,32 +49,50 @@ public class Grid {
 
         }
     }
-    public void place(CoordinatesTuple c, CoordinatesTuple e) throws BoatPositionOccupiedException {
+    public void place(CoordinatesTuple c, CoordinatesTuple e) throws IllegalBoatException {
 
         if(c.row.equals(e.row)){
             int difference = Math.abs(c.column.value-e.column.value);
             if(c.column.value-e.column.value<0){
                 checkDown(c,difference);
-                //check in fleet
-                setDown(c,difference);
+                if(Fleet.isAvailabe(difference)) {
+                    setDown(c, difference);
+                }
+                else{
+                    throw new IllegalBoatException("You do not have such a boat type");
+                }
             }
             else{
                 checkDown(e,difference);
-                //check in fleet
-                setDown(c, difference);
+                if(Fleet.isAvailabe(difference)) {
+                    setDown(c, difference);
+                }
+                else{
+                    throw new IllegalBoatException("You do not have such a boat type");
+                }
             }
         }
         else{
             int difference = Math.abs(c.row.value-e.row.value);
             if(c.row.value-e.row.value<0){
                 checkFlat(c,difference);
-                //check in fleet
-                setFlat(c,difference);
+                if(Fleet.isAvailabe(difference)) {
+                    setFlat(c,difference);
+                }
+                else{
+                    throw new IllegalBoatException("You do not have such a boat type");
+                }
             }
+
+
             else{
                 checkFlat(e,difference);
-                //check in fleet
-                setFlat(e, difference);
+                if(Fleet.isAvailabe(difference)) {
+                    setFlat(c,difference);
+                }
+                else{
+                    throw new IllegalBoatException("You do not have such a boat type");
+                }
             }
         }
 
@@ -76,14 +102,14 @@ public class Grid {
         int row = c.row.value;
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
-            //what should be made in the Grid??
+            gridList.get(c.column.value).get(i).getBoat();
         }
     }
     private void setFlat(CoordinatesTuple c, int range){
         int col = c.column.value;
         int colRange = col + range;
         for(int i = col;i<colRange;i++){
-            //what should be made in the Grid??
+            gridList.get(c.row.value).get(i).getBoat();
         }
 
     }
