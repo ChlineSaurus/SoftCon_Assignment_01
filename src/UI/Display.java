@@ -12,7 +12,9 @@ Choose from:
     "lost" when the UserPlayer has lost
  */
 public class Display {
-
+    int lengthOfField = 0;
+    int row = 0;
+    String field = "";
     final String targetTitle = "===== TARGET GRID =====\n";
     final String oceanTitle = "===== OCEAN GRID =====\n";
     final String letters = "A B C D E F G H I J \n";
@@ -23,13 +25,29 @@ public class Display {
     public void DisplayAsOwn(Iterator grid){
         System.out.println(targetTitle+letters+symbols);
         while(grid.hasNext()){
-            String field = grid.next().toString();
+            if(lengthOfField == 0){
+                field += Integer.toString(row)+"|";
+            }
+            field += grid.next().toString()+"|";
+            if(lengthOfField==9){
+                field += Integer.toString(row) +"\n";
+                lengthOfField = 0;
+            }
         }
         System.out.println(equals+line);
     }
     public void DisplayAsOpponent(){
         System.out.println(oceanTitle+letters+symbols);
-        System.out.println("emum");//do some strings with enum
+        while(grid.hasNext()){
+            if(lengthOfField == 0){
+                field += Integer.toString(row)+"|";
+            }
+            field += grid.next().toString()+"|";
+            if(lengthOfField==9){
+                field += Integer.toString(row) +"\n";
+                lengthOfField = 0;
+            }
+        }
         System.out.println(symbols+letters+equals);
     }
 }
