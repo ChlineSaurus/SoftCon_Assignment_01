@@ -133,11 +133,6 @@ public class Grid{
         return new GridIterator(gridList, gridCellDisplayer);
     }
 
-
-
-
-
-
         /*public int getDistance (GridCell a, GridCell b){
             int columDelta = abs(a.GetColumnIndex() - b.GetColumnIndex());
             int rowDelta = abs(a.GetRowIndex() - b.GetRowIndex());
