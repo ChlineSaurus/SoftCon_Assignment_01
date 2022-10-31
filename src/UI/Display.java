@@ -23,6 +23,8 @@ public class Display {
     private static final String line = "-----------------------\n";
     private static final String equals = "=======================\n";
 
+    private static final String omitted = ". . . omitted for brevity . . .";
+
     public void display(Iterator oceanGrid, Iterator targetGrid, String message) {
         //next line of Code because the IDE doesn't clear the Terminal
         clearScreen();
@@ -51,6 +53,17 @@ public class Display {
         System.out.print(field);
         System.out.print(symbols+letters+equals);
     }
+/*
+    public void displayFinal(Iterator targetGrid) {
+        //next line of Code because the IDE doesn't clear the Terminal
+        clearScreen();
+        displayGrid(targetGrid, targetTitle);
+        System.out.print(line);
+        System.out.println(oceanTitle);
+        System.out.println(omitted);
+        System.out.println(equals);
+
+    }
     private static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -73,6 +86,7 @@ public class Display {
         }
 
     }
+
     private void DisplayGrid(int []target, int [] ocean){
         String targetDeco = "===== TARGET GRID =====\n" +
                 "A B C D E F G H I J \n" +

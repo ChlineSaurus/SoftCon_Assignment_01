@@ -61,9 +61,9 @@ public class GameManager {
         for(int i = 0; i < 2; i++) {
             AbstractPlayer currentPlayer = currentTurn();
             AbstractPlayer currentOpponent = currentOpponent();
-            boolean standartDisplay = true;
+            boolean standardDisplay = true;
             while(!currentPlayer.isFleetPlaced()) {
-                if(currentPlayer.shouldBeDisplayed && standartDisplay) {
+                if(currentPlayer.shouldBeDisplayed && standardDisplay) {
                     String boatsToPlace = "You still need to place:\n";
                     for (List<Integer> boatsNotPlaced : currentPlayer.boatsToPlace()){
                         boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(1)));
@@ -81,27 +81,31 @@ public class GameManager {
                 }
                 try {
                     currentPlayer.placeBoat();
-                    standartDisplay = true;
+                    standardDisplay = true;
                 } catch(IllegalBoatException e) {
                     if (currentPlayer.shouldBeDisplayed) {
                         ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), e.getMessage());
                     }
-                    standartDisplay = false;
+                    standardDisplay = false;
                 }
             }
         }
 
     }
     private void GameFlow(){
+        AbstractPlayer finalPlayer;
+        AbstractPlayer finalOpponent;
         while(true) {
             AbstractPlayer currentPlayer = currentTurn();
             AbstractPlayer currentOpponent = currentOpponent();
             if (currentPlayer.isFleetDestroyed()) {
+                finalPlayer = currentPlayer;
+                finalOpponent = currentOpponent;
                 break;
             }
             boolean firstIteration = true;
             while(true) {
-                if(currentPlayer.shouldBeDisplayed && firstIteration) {
+                if (currentPlayer.shouldBeDisplayed && firstIteration) {
                     firstIteration = false;
                     String message = "Please enter a Position (a Letter and a number) you want to shoot at:";
                     ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), message);
@@ -110,7 +114,7 @@ public class GameManager {
                     CoordinatesTuple shotPosition = currentPlayer.shoot();
                     currentOpponent.hitOnOwnGrid(shotPosition);
                     break;
-                } catch(IllegalShotException e) {
+                } catch (IllegalShotException e) {
                     if (currentPlayer.shouldBeDisplayed) {
                         ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), e.getMessage());
                     }
@@ -118,5 +122,11 @@ public class GameManager {
             }
         }
         //display in special way, the player that is the currentPlayer is the winner
+        if(finalPlayer.isFleetDestroyed()){
+            ui.display(finalPlayer.DisplayLikeOwn(),finalOpponent.DisplayLikeOpponent(),"Computer won the game!");
+        }
+        else if(finalOpponent.isFleetDestroyed()){
+            ui.display(finalPlayer.DisplayLikeOwn(),finalOpponent.DisplayLikeOwn(),"Player won the game!");
+        }
     }
 }
