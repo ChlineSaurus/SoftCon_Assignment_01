@@ -14,10 +14,8 @@ import java.util.Scanner;
 public class HumanPlayer extends AbstractPlayer {
     private final Scanner scanner;
 
-    public final boolean shouldBeDisplayed;
-
     public HumanPlayer(boolean shouldBeDisplayed) {
-        this.shouldBeDisplayed = shouldBeDisplayed;
+        super(shouldBeDisplayed);
         scanner = new Scanner(System.in);
     }
 
@@ -44,8 +42,7 @@ public class HumanPlayer extends AbstractPlayer {
             }
         }
         return new CoordinatesTuple(row, column);
-    } 
-
+    }
     @Override
     protected ArrayList<CoordinatesTuple> getBoatPosition() throws IllegalBoatException {
         ArrayList<CoordinatesTuple> boatCoordinates = new ArrayList<CoordinatesTuple>();

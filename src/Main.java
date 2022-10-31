@@ -1,17 +1,14 @@
-import Boats.FleetManager;
+import Exceptions.BoatPlacement.BoatPositionOccupiedException;
+import Exceptions.IllegalShotException;
+import Grid.*;
 import UI.Display;
 
 import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) {
-
-
-        FleetManager fleet=new FleetManager();
-        System.out.println(fleet.BoatsToBePlaced());
-        fleet.placeBoat(2);
-        System.out.println(fleet.BoatsToBePlaced());
-        fleet.placeBoat(6);
-        System.out.println(fleet.BoatsToBePlaced());
+    GameManager gameManager = GameManager.getInstance();
+    gameManager.ManageGame();
+    exit(0);
     }
 }

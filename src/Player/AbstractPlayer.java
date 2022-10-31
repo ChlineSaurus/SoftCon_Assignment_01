@@ -6,13 +6,19 @@ import Exceptions.IllegalShotException;
 import Grid.CoordinatesTuple;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractPlayer {
     //private Grid ownGrid() = new Grid;
     //private Grid targetGrid() = new Grid;
-    private FleetManager ownFleet = new FleetManager();
-    public final boolean shouldBeDisplayed = false;
 
+
+    public final boolean shouldBeDisplayed;
+    protected final FleetManager ownFleet;
+    protected AbstractPlayer(boolean shouldBeDisplay) {
+        this.shouldBeDisplayed = shouldBeDisplay;
+        this.ownFleet = new FleetManager();
+    }
     public CoordinatesTuple shoot() throws IllegalShotException {
         return getShotPosition();
     }
@@ -30,6 +36,10 @@ public abstract class AbstractPlayer {
         return ownFleet.isFleetplaced();
     }
 
+    public List<List<Integer>> boatsToPlace() {
+        return ownFleet.BoatsToBePlaced();
+    }
+
     public boolean isFleetDestroyed() {
         return ownFleet.isFleetDestroyed();
     }
@@ -37,4 +47,5 @@ public abstract class AbstractPlayer {
     protected abstract ArrayList<CoordinatesTuple> getBoatPosition() throws IllegalBoatException;
 
     protected abstract CoordinatesTuple getShotPosition() throws IllegalShotException;
+
 }

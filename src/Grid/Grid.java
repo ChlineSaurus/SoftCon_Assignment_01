@@ -1,5 +1,8 @@
 package Grid;
 
+import Exceptions.BoatPlacement.BoatPositionOccupiedException;
+import Exceptions.IllegalShotException;
+
 import java.util.ArrayList;
 
 import static java.lang.Math.abs;
@@ -27,15 +30,80 @@ public class Grid {
     static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();
 
     //create ArrayList Matrix with GridCells in them
-    public void shoot(CoordinatesTuple c){
+    public void shoot(CoordinatesTuple c) throws IllegalShotException {
         ArrayList<GridCell> a=gridList.get(c.row.value);
         GridCell temp= a.get(c.column.value);
-        if (temp.WasShot()){
-            //create Error
+        if (temp.wasShot()){
+            throw new IllegalShotException("You can't shoot twice on a field");
         }
         else{
-            //to do wasshot to false
+            temp.isShot();
 
+        }
+    }
+    public void place(CoordinatesTuple c, CoordinatesTuple e) throws BoatPositionOccupiedException {
+
+        if(c.row.equals(e.row)){
+            int difference = Math.abs(c.column.value-e.column.value);
+            if(c.column.value-e.column.value<0){
+                checkDown(c,difference);
+                //check in fleet
+                setDown(c,difference);
+            }
+            else{
+                checkDown(e,difference);
+                //check in fleet
+                setDown(c, difference);
+            }
+        }
+        else{
+            int difference = Math.abs(c.row.value-e.row.value);
+            if(c.row.value-e.row.value<0){
+                checkFlat(c,difference);
+                //check in fleet
+                setFlat(c,difference);
+            }
+            else{
+                checkFlat(e,difference);
+                //check in fleet
+                setFlat(e, difference);
+            }
+        }
+
+        // implement set boat
+    }
+    private void setDown(CoordinatesTuple c, int range){
+        int row = c.row.value;
+        int rowRange = row + range;
+        for(int i = row;i<rowRange;i++){
+            //what should be made in the Grid??
+        }
+    }
+    private void setFlat(CoordinatesTuple c, int range){
+        int col = c.column.value;
+        int colRange = col + range;
+        for(int i = col;i<colRange;i++){
+            //what should be made in the Grid??
+        }
+
+    }
+
+    private void checkDown(CoordinatesTuple c, int range) throws BoatPositionOccupiedException {
+        int row = c.row.value;
+        int rowRange = row + range;
+        for(int i = row;i<rowRange;i++){
+            if(gridList.get(c.row.value).get(i).isOccupied()){
+                throw new BoatPositionOccupiedException("Sorry your boat place is occupied");
+            }
+        }
+    }
+    private  void checkFlat(CoordinatesTuple c, int range) throws BoatPositionOccupiedException {
+        int col = c.column.value;
+        int colRange = col + range;
+        for(int i = col;i<colRange;i++){
+            if(gridList.get(c.row.value).get(i).isOccupied()){
+                throw new BoatPositionOccupiedException("Sorry your boat place is occupied");
+            }
 
         }
     }
@@ -43,18 +111,14 @@ public class Grid {
         for (Row row : Row.values()) {
             gridList.add(rowList = new ArrayList<GridCell>());
             for (Column column : Column.values()) {
-                GridCell temp = new GridCell();
-                rowList.add(temp);
+                rowList.add(new GridCell());
             }
         }
     }
 
-    //create enum Matrix with GridCells in them
-
-
-
-
-
+    public Iterator createIterator(){
+        return new GridIterator(rowList);
+    }
 
         /*public int getDistance (GridCell a, GridCell b){
             int columDelta = abs(a.GetColumnIndex() - b.GetColumnIndex());

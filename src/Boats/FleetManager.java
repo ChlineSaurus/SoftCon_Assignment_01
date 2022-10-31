@@ -1,8 +1,6 @@
 package Boats;
 
 
-import org.apache.avro.JsonProperties;
-
 import java.util.*;
 
 import static java.lang.Math.abs;
@@ -25,24 +23,16 @@ public class FleetManager {
 
     public boolean isAvailabe (int length){
         int len=abs(length);
-        for (Boat temp : fleet) {
-            if (!temp.isPlaced && temp.hitpoints.getHitpointValue() == length) {
+        for (int i=0;i<fleet.size();i++){
+            Boat temp=fleet.get(i);
+            if (!temp.isPlaced && temp.hitpoints.getHitpointValue()==length){
                 return true;
             }
         }
         return false;
     }
-    public Boat placeBoat(int length){
-        for (Boat boat: fleet){
-            if (boat.hitpoints.getHitpointValue()==length && !boat.isPlaced){
-                boat.place();
-                return boat;
-            }
-        }
-        return null;
-    }
 
-
+    //list die sagt was man noch setzen muss
 
     public FleetManager(){
         for (BoatTypes boat: BoatTypes.values()){
@@ -95,6 +85,7 @@ public class FleetManager {
 
     public boolean isFleetDestroyed(){
         int i=0;
+
         while (fleet.size()>i){
 
             if (!fleet.get(i).isSunk()){
