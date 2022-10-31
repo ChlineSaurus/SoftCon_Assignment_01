@@ -12,6 +12,12 @@ import static java.lang.Math.max;
 public class Grid {
 
     public Grid() {
+        for (Row row : Row.values()) {
+            gridList.add(rowList = new ArrayList<GridCell>());
+            for (Column column : Column.values()) {
+                rowList.add(new GridCell());
+            }
+        }
 
     }
     /*
@@ -107,14 +113,7 @@ public class Grid {
 
         }
     }
-    public void arraylistMatrix() {
-        for (Row row : Row.values()) {
-            gridList.add(rowList = new ArrayList<GridCell>());
-            for (Column column : Column.values()) {
-                rowList.add(new GridCell());
-            }
-        }
-    }
+
 
     public Iterator createIterator(){
         return new GridIterator(rowList);

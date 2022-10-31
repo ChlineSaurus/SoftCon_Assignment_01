@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="delted enums unnecessary">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="finshing up fleet placeBaot for placmenet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/Boat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/BoatTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/BoatTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/GridIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridIterator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <workItem from="1667134563335" duration="679000" />
       <workItem from="1667138211834" duration="863000" />
       <workItem from="1667204334726" duration="511000" />
-      <workItem from="1667210786865" duration="1395000" />
+      <workItem from="1667210786865" duration="3732000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -204,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667210867753</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="finshing up fleet placeBaot for placmenet">
+      <created>1667212248859</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667212248859</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +255,7 @@
     <MESSAGE value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
     <MESSAGE value="fleetmaager" />
     <MESSAGE value="delted enums unnecessary" />
-    <option name="LAST_COMMIT_MESSAGE" value="delted enums unnecessary" />
+    <MESSAGE value="finshing up fleet placeBaot for placmenet" />
+    <option name="LAST_COMMIT_MESSAGE" value="finshing up fleet placeBaot for placmenet" />
   </component>
 </project>
