@@ -4,22 +4,22 @@ import java.util.*;
 import static java.lang.Math.abs;
 
 public class FleetManager {
-    private List<Boat> fleet=new ArrayList<>();
+    private List<Boat> fleet = new ArrayList<>();
 
     public FleetManager(){
         for (BoatTypes boat: BoatTypes.values()){
             int allowed=boat.boatsAllowed;
             HitpointManager hitpoints=HitpointManager.valueOf(boat.startingHitPoints);
             for (int i=0;i<allowed;i++){
-                Boat temp=new Boat(hitpoints, boat.representationCharacter);
+                Boat temp = new Boat(hitpoints, boat.representationCharacter);
                 fleet.add(temp);
             }
         }
     }
-    public Boat placeBoat(int length){
+    public Boat placeBoat(int length) {
         assert isAvailable(length);
         for (Boat boat:fleet){
-            if (!boat.isPlaced &&boat.hitpoints.getHitpointValue()==length){
+            if (!boat.isPlaced && boat.hitpoints.getHitpointValue()==length) {
                 boat.place();
                 return boat;
             }
@@ -27,7 +27,7 @@ public class FleetManager {
         return null;
     }
 
-    public boolean isAvailable(int length){
+    public boolean isAvailable(int length) {
         int len=abs(length);
         for (Boat temp : fleet) {
             if (!temp.isPlaced && temp.hitpoints.getHitpointValue() == length) {
@@ -36,7 +36,7 @@ public class FleetManager {
         }
         return false;
     }
-    public List<List<Integer>> BoatsToBePlaced(){
+    public List<List<Integer>> BoatsToBePlaced() {
 
 
         List<List<Integer>> required=new ArrayList<>();
@@ -63,7 +63,7 @@ public class FleetManager {
         return required;
     }
 
-    public boolean isFleetplaced(){
+    public boolean isFleetplaced() {
         for (Boat boat : fleet) {
             if (!boat.isPlaced) {
                 return false;

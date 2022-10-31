@@ -11,7 +11,8 @@ public enum HitpointManager {
         TwoHitPoints(2),
         ThreeHitPoints(3),
         FourHitPoints(4),
-        FiveHitPoints(5);
+        FiveHitPoints(5),
+        SixHitPoints(6);
         private final int value;
         private static Map map = new HashMap<>();
         HitpointManager(int value){

@@ -6,6 +6,8 @@ import Player.type.ComputerPlayer;
 import Player.type.HumanPlayer;
 import UI.Display;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class GameManager {
@@ -13,14 +15,13 @@ public class GameManager {
     private boolean player1turn;
     private final AbstractPlayer player1;
     private final AbstractPlayer player2;
-    private final Display UI;
+    private final Display ui;
 
     private GameManager() {
         player1 = new HumanPlayer(true);
         player2 = new ComputerPlayer(false);
-        UI = new Display();
+        ui = new Display();
         }
-
 
     public static synchronized GameManager getInstance() {
         if (uniqueInstance == null) {
@@ -30,7 +31,7 @@ public class GameManager {
     }
     public void ManageGame(){
         StartGame();
-        //GameFlow();
+        GameFlow();
     }
 
     private boolean getStartingPlayer() {
@@ -55,14 +56,34 @@ public class GameManager {
     }
 
     private void StartGame(){
+        player1turn = getStartingPlayer();
         for(int i = 0; i < 2; i++) {
             AbstractPlayer currentPlayer = currentTurn();
+            AbstractPlayer currentOpponent = currentOpponent();
+            boolean firstIteration = true;
             while(currentPlayer.isFleetPlaced()) {
+                if(currentPlayer.shouldBeDisplayed && firstIteration) {
+                    String boatsToPlace = "You still need to place:";
+                    for (List<Integer> boatsNotPlaced : currentPlayer.boatsToPlace()){
+                        boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(1)));
+                        if (boatsNotPlaced.get(1) == 1) {
+                            boatsToPlace = boatsToPlace.concat(" Boat of length ");
+                        } else {
+                            boatsToPlace = boatsToPlace.concat(" Boats of length ");
+                        }
+                        boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(0))+"\n");
+                    }
+                    firstIteration = false;
+                    String message = boatsToPlace + "Please enter two Position (a Letter and a number) " +
+                            "to place a Boat:";
+
+                    ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), message);
+                }
                 try {
                     currentPlayer.placeBoat();
                 } catch(IllegalBoatException e) {
                     if (currentPlayer.shouldBeDisplayed) {
-                        //display with text e
+                        ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), e.getMessage());
                     }
                 }
             }
@@ -76,14 +97,20 @@ public class GameManager {
             if (currentPlayer.isFleetDestroyed()) {
                 break;
             }
+            boolean firstIteration = true;
             while(true) {
+                if(currentPlayer.shouldBeDisplayed && firstIteration) {
+                    firstIteration = false;
+                    String message = "Please enter a Position (a Letter and a number) you want to shoot at:";
+                    ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), message);
+                }
                 try {
                     CoordinatesTuple shotPosition = currentPlayer.shoot();
                     currentOpponent.hitOnOwnGrid(shotPosition);
                     break;
                 } catch(IllegalShotException e) {
                     if (currentPlayer.shouldBeDisplayed) {
-                        //display grids with the message e passed by the exception
+                        ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), e.getMessage());
                     }
                 }
             }
