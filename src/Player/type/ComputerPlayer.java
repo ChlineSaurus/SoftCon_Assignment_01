@@ -34,24 +34,25 @@ public class ComputerPlayer extends AbstractPlayer {
     @Override
     protected ArrayList<CoordinatesTuple> getBoatPosition() {
         ArrayList<CoordinatesTuple> boatCoordinates = new ArrayList<CoordinatesTuple>();
-        int boatLength = ownFleet.BoatsToBePlaced().get(0).get(1);
+        int boatLength = ownFleet.BoatsToBePlaced().get(0).get(0);
         while(true){
+            System.out.println(boatsToPlace());
             CoordinatesTuple firstBoatPosition = randomPosition();
             Column secondBoatColumn;
             Row secondBoatRow;
             int direction = random.nextInt(4);
             if (direction == 0) {
-                secondBoatColumn = Column.valueOf(firstBoatPosition.column.value + boatLength);
+                secondBoatColumn = Column.valueOf(firstBoatPosition.column.value + (boatLength - 1));
                 secondBoatRow = firstBoatPosition.row;
             } else if (direction == 1) {
-                secondBoatColumn = Column.valueOf(firstBoatPosition.column.value - boatLength);
+                secondBoatColumn = Column.valueOf(firstBoatPosition.column.value - (boatLength - 1));
                 secondBoatRow = firstBoatPosition.row;
             } else if (direction == 2) {
                 secondBoatColumn = firstBoatPosition.column;
-                secondBoatRow = Row.valueOf(firstBoatPosition.row.value + boatLength);
+                secondBoatRow = Row.valueOf(firstBoatPosition.row.value + (boatLength - 1));
             } else {
                 secondBoatColumn = firstBoatPosition.column;
-                secondBoatRow = Row.valueOf(firstBoatPosition.row.value - boatLength);
+                secondBoatRow = Row.valueOf(firstBoatPosition.row.value - (boatLength - 1));
             }
             if (secondBoatColumn == null || secondBoatRow == null) {
                 continue;
