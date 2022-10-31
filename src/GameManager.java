@@ -19,7 +19,7 @@ public class GameManager {
 
     private GameManager() {
         player1 = new HumanPlayer(true);
-        player2 = new ComputerPlayer(false);
+        player2 = new ComputerPlayer(true);
         ui = new Display();
         }
 
@@ -60,10 +60,10 @@ public class GameManager {
         for(int i = 0; i < 2; i++) {
             AbstractPlayer currentPlayer = currentTurn();
             AbstractPlayer currentOpponent = currentOpponent();
-            boolean firstIteration = true;
-            while(currentPlayer.isFleetPlaced()) {
-                if(currentPlayer.shouldBeDisplayed && firstIteration) {
-                    String boatsToPlace = "You still need to place:";
+            boolean standartDisplay = true;
+            while(!currentPlayer.isFleetPlaced()) {
+                if(currentPlayer.shouldBeDisplayed && standartDisplay) {
+                    String boatsToPlace = "You still need to place:\n";
                     for (List<Integer> boatsNotPlaced : currentPlayer.boatsToPlace()){
                         boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(1)));
                         if (boatsNotPlaced.get(1) == 1) {
@@ -73,7 +73,6 @@ public class GameManager {
                         }
                         boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(0))+"\n");
                     }
-                    firstIteration = false;
                     String message = boatsToPlace + "Please enter two Position (a Letter and a number) " +
                             "to place a Boat:";
 
@@ -81,10 +80,13 @@ public class GameManager {
                 }
                 try {
                     currentPlayer.placeBoat();
+                    standartDisplay = true;
                 } catch(IllegalBoatException e) {
                     if (currentPlayer.shouldBeDisplayed) {
                         ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), e.getMessage());
+
                     }
+                    standartDisplay = false;
                 }
             }
         }

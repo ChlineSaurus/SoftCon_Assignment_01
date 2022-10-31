@@ -2,10 +2,10 @@ package Boats;
 //Das isch en Vorschlag, aber es chönt glaubs einigi vo eusne Problem Löse
 public enum BoatTypes {
 
+    Carrier(1, 6,'C'),
     Battleship(2, 4,'B'),
-    Carrier(1, 6,'C'), //müest 6 Hitpoints ha
-    PatrolBoat(4, 2,'P'),
-    Submarine(3, 3,'S');
+    Submarine(3, 3,'S'),
+    PatrolBoat(4, 2,'P');
 
     public final Integer boatsAllowed;
     public final Integer startingHitPoints;

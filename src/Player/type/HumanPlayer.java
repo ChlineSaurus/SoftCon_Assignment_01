@@ -34,11 +34,11 @@ public class HumanPlayer extends AbstractPlayer {
             column = Column.valueOf(Character.toString(uppercaseInput.charAt(1)));
         } catch (IllegalArgumentException e1) {
             try {
-                row = Row.valueOf("R" + uppercaseInput.charAt(0));
+                row = Row.valueOf("R" + uppercaseInput.charAt(1));
                 column = Column.valueOf(Character.toString(uppercaseInput.charAt(0)));
             } catch (IllegalArgumentException e2) {
                 throw new IllegalUserInputException("Your input was not in the right form: Please give the game a " +
-                        "Uppercase Letter from A-J and a Number from 0-1");
+                        "Letter from A-J and a Number from 0-1");
             }
         }
         return new CoordinatesTuple(row, column);

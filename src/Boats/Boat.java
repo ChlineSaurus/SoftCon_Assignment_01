@@ -4,9 +4,9 @@ public  class Boat {
 
 
     protected HitpointManager hitpoints;
-    private char sunkLetter;
-    boolean isPlaced=false;
-    protected int gethitpoints(){
+    private final char sunkLetter;
+    boolean isPlaced = false;
+    protected int getHitPoints(){
         return hitpoints.getHitpointValue();
     }
 

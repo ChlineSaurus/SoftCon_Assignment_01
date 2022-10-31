@@ -38,7 +38,6 @@ public abstract class AbstractPlayer {
         ownGrid.place(boatPosition.get(0), boatPosition.get(1));
     }
 
-
     public boolean isFleetPlaced() {
         return ownFleet.isFleetplaced();
     }

@@ -4,14 +4,15 @@ import java.util.*;
 import static java.lang.Math.abs;
 
 public class FleetManager {
-    private List<Boat> fleet = new ArrayList<>();
+    private final List<Boat> fleet;
 
     public FleetManager(){
-        for (BoatTypes boat: BoatTypes.values()){
-            int allowed=boat.boatsAllowed;
-            HitpointManager hitpoints=HitpointManager.valueOf(boat.startingHitPoints);
+        fleet = new ArrayList<Boat>();
+        for (BoatTypes currentBoatType: BoatTypes.values()){
+            int allowed = currentBoatType.boatsAllowed;
+            HitpointManager hitPoints = HitpointManager.valueOf(currentBoatType.startingHitPoints);
             for (int i=0;i<allowed;i++){
-                Boat temp = new Boat(hitpoints, boat.representationCharacter);
+                Boat temp = new Boat(hitPoints, currentBoatType.representationCharacter);
                 fleet.add(temp);
             }
         }
@@ -38,12 +39,11 @@ public class FleetManager {
     }
     public List<List<Integer>> BoatsToBePlaced() {
 
-
         List<List<Integer>> required=new ArrayList<>();
         Map<Integer, Integer> map = new LinkedHashMap<>();
         for (Boat boat:fleet){
             if (!boat.isPlaced){
-                int length=boat.gethitpoints();
+                int length=boat.getHitPoints();
                 if (map.containsKey(length)){
                     map.put(length, map.get(length) + 1);
                 }

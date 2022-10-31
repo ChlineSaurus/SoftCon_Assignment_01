@@ -38,13 +38,11 @@ public class Grid{
         }
     }
     public void place(CoordinatesTuple c, CoordinatesTuple e) throws IllegalBoatException {
-
         if(c.row.equals(e.row)){
-            int difference = Math.abs(c.column.value-e.column.value);
+            int difference = Math.abs(c.column.value-e.column.value)+1;
             if(c.column.value-e.column.value<0){
                 checkDown(c,difference);
                 if(fleet.isAvailable(difference)) {
-
                     Boat boat = fleet.placeBoat(difference);
                     setDown(c, difference, boat);
                 }
@@ -64,7 +62,7 @@ public class Grid{
             }
         }
         else{
-            int difference = Math.abs(c.row.value-e.row.value);
+            int difference = Math.abs(c.row.value-e.row.value)+1;
             if(c.row.value-e.row.value<0){
                 checkFlat(c,difference);
                 if(fleet.isAvailable(difference)) {

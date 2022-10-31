@@ -23,7 +23,7 @@ public class GridIterator implements Iterator{
     public char next() {
         assert(hasNext());
         GridCell currentGridCell = grid.get(currentRow).get(currentColumn);
-        if(currentColumn == (totalRows-1)) {
+        if(currentColumn == (totalColumns-1)) {
             currentColumn = 0;
             currentRow++;
         } else {
@@ -33,7 +33,7 @@ public class GridIterator implements Iterator{
     }
 
     public boolean hasNext() {
-        if (currentRow >= (totalRows-1) && currentColumn >= (totalColumns -1)) {
+        if (currentRow >= totalRows) {
             return false;
         } else {
             return true;
