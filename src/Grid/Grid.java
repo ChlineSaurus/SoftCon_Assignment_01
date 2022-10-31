@@ -1,5 +1,7 @@
 package Grid;
 
+import Exceptions.IllegalShotException;
+
 import java.util.ArrayList;
 
 import static java.lang.Math.abs;
@@ -27,11 +29,11 @@ public class Grid {
     static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();
 
     //create ArrayList Matrix with GridCells in them
-    public void shoot(CoordinatesTuple c){
+    public void shoot(CoordinatesTuple c) throws IllegalShotException {
         ArrayList<GridCell> a=gridList.get(c.row.value);
         GridCell temp= a.get(c.column.value);
-        if (temp.WasShot()){
-            //create Error
+        if (temp.wasShot()){
+            throw (new IllegalShotException("This Place was already, please give another input"));
         }
         else{
             //to do wasshot to false
@@ -43,8 +45,7 @@ public class Grid {
         for (Row row : Row.values()) {
             gridList.add(rowList = new ArrayList<GridCell>());
             for (Column column : Column.values()) {
-                GridCell temp = new GridCell();
-                rowList.add(temp);
+                rowList.add(new GridCell());
             }
         }
     }
