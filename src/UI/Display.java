@@ -2,6 +2,8 @@ package UI;
 import Grid.Grid;
 
 import java.awt.*;
+import java.util.Iterator;
+
 /* How to use: call DisplayMaster with two GridList and a String, what you want to display.
 Choose from:
     "boats" to display everything within the process of placing boats
@@ -9,12 +11,28 @@ Choose from:
     "won" when the UserPlayer has won
     "lost" when the UserPlayer has lost
  */
-public class Display{
+public class Display {
+
     final String targetTitle = "===== TARGET GRID =====\n";
+    final String oceanTitle = "===== OCEAN GRID =====\n";
     final String letters = "A B C D E F G H I J \n";
     final String symbols = "+-+-+-+-+-+-+-+-+-+-+-+\n";
     final String line = "-----------------------\n";
     final String equals = "=======================\n";
+
+    public void DisplayAsOwn(Iterator grid){
+        System.out.println(targetTitle+letters+symbols);
+        System.out.println("emum");//do some strings with enum
+        System.out.println(equals+line);
+    }
+    public void DisplayAsOpponent(){
+        System.out.println(oceanTitle+letters+symbols);
+        System.out.println("emum");//do some strings with enum
+        System.out.println(symbols+letters+equals);
+    }
+}
+
+    /*
     public void DisplayMaster(int[] target, int[] ocean, String what){
         System.out.println("I am the display master");
         if(what == "boats"){
@@ -78,7 +96,7 @@ public class Display{
         System.out.println(BottomDeco);
     }
 }
-/*interface Display {
+interface Display {
     void DisplayGrid();
     void DisplayRecivedText(String message);
 
