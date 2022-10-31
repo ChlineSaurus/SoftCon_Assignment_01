@@ -4,18 +4,21 @@ import Grid.CoordinatesTuple;
 import Player.AbstractPlayer;
 import Player.type.ComputerPlayer;
 import Player.type.HumanPlayer;
+import UI.Display;
 
 import java.util.Random;
 
 public class GameManager {
     private static GameManager uniqueInstance;
     private boolean player1turn;
-    AbstractPlayer player1;
-    AbstractPlayer player2;
+    private final AbstractPlayer player1;
+    private final AbstractPlayer player2;
+    private final Display UI;
 
     private GameManager() {
         player1 = new HumanPlayer(true);
         player2 = new ComputerPlayer(false);
+        UI = new Display();
         }
 
 
@@ -66,11 +69,11 @@ public class GameManager {
         }
 
     }
-    /*private void GameFlow(){
+    private void GameFlow(){
         while(true) {
             AbstractPlayer currentPlayer = currentTurn();
             AbstractPlayer currentOpponent = currentOpponent();
-            if (currentPlayer.ownFleet.isFleetDestroyed()) {
+            if (currentPlayer.isFleetDestroyed()) {
                 break;
             }
             while(true) {
@@ -86,5 +89,5 @@ public class GameManager {
             }
         }
         //display in special way, the player that is the currentPlayer is the winner
-    }*/
+    }
 }

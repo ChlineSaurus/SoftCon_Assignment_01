@@ -20,16 +20,16 @@ public class GridIterator implements Iterator{
 
 
 
-    public GridCell next() {
+    public char next() {
         assert(hasNext());
-        GridCell gridCell = grid.get(currentRow).get(currentColumn);
+        GridCell currentGridCell = grid.get(currentRow).get(currentColumn);
         if(currentColumn == (totalRows-1)) {
             currentColumn = 0;
             currentRow++;
         } else {
             currentColumn++;
         }
-        return gridCell;
+        return gridCellDisplayer.display(currentGridCell);
     }
 
     public boolean hasNext() {

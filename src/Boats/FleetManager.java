@@ -1,16 +1,10 @@
 package Boats;
 
-
 import java.util.*;
-
 import static java.lang.Math.abs;
-
 
 public class FleetManager {
     private List<Boat> fleet=new ArrayList<>();
-
-
-
 
     public FleetManager(){
         for (BoatTypes boat: BoatTypes.values()){
@@ -42,10 +36,6 @@ public class FleetManager {
         }
         return false;
     }
-
-    //list die sagt was man noch setzen muss
-
-
     public List<List<Integer>> BoatsToBePlaced(){
 
 
@@ -71,8 +61,6 @@ public class FleetManager {
             required.add(temp);
         }
         return required;
-
-
     }
 
     public boolean isFleetplaced(){
