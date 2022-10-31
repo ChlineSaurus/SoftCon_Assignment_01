@@ -38,6 +38,11 @@ public class Grid{
         }
     }
     public void place(CoordinatesTuple c, CoordinatesTuple e) throws IllegalBoatException {
+        if((c.row.value + c.column.value)> (e.row.value+e.column.value)){
+            CoordinatesTuple temp = c;
+            e = c;
+            c = temp;
+        }
         if(c.row.equals(e.row)){
             int difference = Math.abs(c.column.value-e.column.value)+1;
             if(c.column.value-e.column.value<0){
@@ -60,7 +65,7 @@ public class Grid{
                     throw new IllegalBoatException("You do not have such a boat type");
                 }
             }
-        }
+        }/*
         else{
             int difference = Math.abs(c.row.value-e.row.value)+1;
             if(c.row.value-e.row.value<0){
@@ -83,9 +88,8 @@ public class Grid{
                     throw new IllegalBoatException("You do not have such a boat type");
                 }
             }
-        }
+        }*/
 
-        // implement set boat
     }
     private void setDown(CoordinatesTuple c, int range, Boat boat){
         int row = c.row.value;
