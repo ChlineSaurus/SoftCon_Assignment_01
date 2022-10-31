@@ -1,25 +1,39 @@
 package Grid;
 
+import Grid.DisplayGridcell.GridCellDisplayer;
+
 import java.util.ArrayList;
 
-public class GridIterator implements Iterator {
-
-    ArrayList<GridCell> rowList;
-
-    int position = 0;
-
-    public GridIterator(ArrayList<GridCell> rowList) {
-        this.rowList = rowList;
+public class GridIterator implements Iterator{
+    static final int totalRows = Row.values().length;
+    static final int totalColumns = Column.values().length;
+    private int currentRow;
+    private int currentColumn;
+    private final GridCellDisplayer gridCellDisplayer;
+    private final ArrayList<ArrayList<GridCell>> grid;
+    public GridIterator(ArrayList<ArrayList<GridCell>> grid, GridCellDisplayer gridCellDisplayer) {
+        currentColumn = 0;
+        currentRow = 0;
+        this.gridCellDisplayer = gridCellDisplayer;
+        this.grid = grid;
     }
 
+
+
     public GridCell next() {
-        GridCell gridCell = rowList.get(position);
-        position++;
+        assert(hasNext());
+        GridCell gridCell = grid.get(currentRow).get(currentColumn);
+        if(currentColumn == (totalRows-1)) {
+            currentColumn = 0;
+            currentRow++;
+        } else {
+            currentColumn++;
+        }
         return gridCell;
     }
 
     public boolean hasNext() {
-        if (position >= rowList.size() || rowList.get(position) == null) {
+        if (currentRow >= (totalRows-1) && currentColumn >= (totalColumns -1)) {
             return false;
         } else {
             return true;

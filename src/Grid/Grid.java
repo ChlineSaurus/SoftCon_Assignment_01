@@ -2,57 +2,38 @@ package Grid;
 
 import Boats.Boat;
 import Boats.FleetManager;
-import Boats.FleetManager;
 import Exceptions.BoatPlacement.BoatPositionOccupiedException;
 import Exceptions.BoatPlacement.IllegalBoatException;
 import Exceptions.IllegalShotException;
-
+import Grid.DisplayGridcell.GridCellDisplayer;
 import java.util.ArrayList;
-import static java.lang.Math.abs;
-import static java.lang.Math.max;
 
+public class Grid{
+    private final FleetManager fleet;
+    private final ArrayList<ArrayList<GridCell>> gridList;
 
-public class Grid {
-    protected final FleetManager fleet;
-
-    public Grid() {
-        this.fleet = new FleetManager();
-
-
+    public Grid(FleetManager fleet) {
+        this.fleet = fleet;
+        this.gridList = new ArrayList<ArrayList<GridCell>>();
         for (Row row : Row.values()) {
-            gridList.add(rowList = new ArrayList<GridCell>());
+            ArrayList<GridCell> rowList = new ArrayList<GridCell>();
             for (Column column : Column.values()) {
                 rowList.add(new GridCell());
             }
+            gridList.add(rowList);
         }
     }
 
 
-    /*
-            [A,B,C,D,E,F,G,H,I,J],
-            [A,B,C,D,E,F,G,H,I,J],
-            [A,B,C,D,E,F,G,H,I,J],
-            [A,B,C,D,E,F,G,H,I,J],
-            [A,B,C,D,E,F,G,H,I,J],
-            [A,B,C,D,E,F,G,H,I,J],
-            [A,B,C,D,E,F,G,H,I,J],
-            [A,B,C,D,E,F,G,H,I,J],
-            [A,B,C,D,E,F,G,H,I,J],
-
-
-     */
-    static ArrayList<GridCell> rowList = new ArrayList<GridCell>();
-    static ArrayList<ArrayList<GridCell>> gridList = new ArrayList<ArrayList<GridCell>>();
-
     //create ArrayList Matrix with GridCells in them
     public void shoot(CoordinatesTuple c) throws IllegalShotException {
-        ArrayList<GridCell> a=gridList.get(c.row.value);
-        GridCell temp= a.get(c.column.value);
-        if (temp.wasShot()){
+        ArrayList<GridCell> current_row = gridList.get(c.row.value);
+        GridCell currentGridCell= current_row.get(c.column.value);
+        if (currentGridCell.wasShot()){
             throw new IllegalShotException("You can't shoot twice on a field");
         }
         else{
-            temp.isShot();
+            currentGridCell.isShot();
 
         }
     }
@@ -98,7 +79,7 @@ public class Grid {
                 checkFlat(e,difference);
                 if(fleet.isAvailable(difference)) {
                     Boat boat = fleet.placeBoat(difference);
-                    setFlat(c,difference, boat);
+                    setFlat(c, difference, boat);
                 }
                 else{
                     throw new IllegalBoatException("You do not have such a boat type");
@@ -129,7 +110,7 @@ public class Grid {
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
             if(gridList.get(c.row.value).get(i).isOccupied()){
-                throw new BoatPositionOccupiedException("Sorry your boat place is occupied");
+                throw new BoatPositionOccupiedException("Sorry, your boat place is occupied");
             }
         }
     }
@@ -138,15 +119,15 @@ public class Grid {
         int colRange = col + range;
         for(int i = col;i<colRange;i++){
             if(gridList.get(c.row.value).get(i).isOccupied()){
-                throw new BoatPositionOccupiedException("Sorry your boat place is occupied");
+                throw new BoatPositionOccupiedException("Sorry, your boat place is occupied");
             }
 
         }
     }
 
 
-    public Iterator createIterator(){
-        return new GridIterator(rowList);
+    public Iterator iterator(GridCellDisplayer gridCellDisplayer){
+        return new GridIterator(gridList, gridCellDisplayer);
     }
 
         /*public int getDistance (GridCell a, GridCell b){

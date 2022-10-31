@@ -22,33 +22,19 @@ public class Display {
     final String line = "-----------------------\n";
     final String equals = "=======================\n";
 
-    public void DisplayAsOwn(Iterator grid){
+    private void DisplayGrid(Iterator gridIterator){
         System.out.println(targetTitle+letters+symbols);
-        while(grid.hasNext()){
+        while(gridIterator.hasNext()){
             if(lengthOfField == 0){
                 field += Integer.toString(row)+"|";
             }
-            field += grid.next().toString()+"|";
+            field += gridIterator.next().toString()+"|";
             if(lengthOfField==9){
                 field += Integer.toString(row) +"\n";
                 lengthOfField = 0;
             }
         }
         System.out.println(equals+line);
-    }
-    public void DisplayAsOpponent(){
-        System.out.println(oceanTitle+letters+symbols);
-        while(grid.hasNext()){
-            if(lengthOfField == 0){
-                field += Integer.toString(row)+"|";
-            }
-            field += grid.next().toString()+"|";
-            if(lengthOfField==9){
-                field += Integer.toString(row) +"\n";
-                lengthOfField = 0;
-            }
-        }
-        System.out.println(symbols+letters+equals);
     }
 }
 
