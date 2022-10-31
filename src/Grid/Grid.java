@@ -60,7 +60,7 @@ public class Grid {
             int difference = Math.abs(c.column.value-e.column.value);
             if(c.column.value-e.column.value<0){
                 checkDown(c,difference);
-                if(Fleet.isAvailabe(difference)) {
+                if(Fleet.isAvailable(difference)) {
                     setDown(c, difference);
                 }
                 else{
@@ -69,7 +69,7 @@ public class Grid {
             }
             else{
                 checkDown(e,difference);
-                if(Fleet.isAvailabe(difference)) {
+                if(Fleet.isAvailable(difference)) {
                     setDown(c, difference);
                 }
                 else{
@@ -81,7 +81,7 @@ public class Grid {
             int difference = Math.abs(c.row.value-e.row.value);
             if(c.row.value-e.row.value<0){
                 checkFlat(c,difference);
-                if(Fleet.isAvailabe(difference)) {
+                if(Fleet.isAvailable(difference)) {
                     setFlat(c,difference);
                 }
                 else{
@@ -90,7 +90,7 @@ public class Grid {
             }
             else{
                 checkFlat(e,difference);
-                if(Fleet.isAvailabe(difference)) {
+                if(Fleet.isAvailable(difference)) {
                     setFlat(c,difference);
                 }
                 else{
