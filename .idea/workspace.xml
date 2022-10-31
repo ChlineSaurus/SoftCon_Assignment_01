@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="fleetmaager">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22__22_19__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_22__22_19__Changes_.xml" afterDir="false" />
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="delted enums unnecessary">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/GridCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/GridCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boats/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/Boat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boats/BoatTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/BoatTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Boats/FleetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Boats/FleetManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +83,7 @@
       <workItem from="1667134563335" duration="679000" />
       <workItem from="1667138211834" duration="863000" />
       <workItem from="1667204334726" duration="511000" />
+      <workItem from="1667210786865" duration="1395000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -196,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667165515458</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="delted enums unnecessary">
+      <created>1667210867753</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1667210867753</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +248,7 @@
     <MESSAGE value="Sunkletter is now part of boat so that one can get the letter that needs to be displayed once boat is sunk" />
     <MESSAGE value="need change fleetmanger but have removed all the boattypes and now have allowed it to construct correctly" />
     <MESSAGE value="fleetmaager" />
-    <option name="LAST_COMMIT_MESSAGE" value="fleetmaager" />
+    <MESSAGE value="delted enums unnecessary" />
+    <option name="LAST_COMMIT_MESSAGE" value="delted enums unnecessary" />
   </component>
 </project>

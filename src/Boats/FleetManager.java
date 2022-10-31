@@ -11,28 +11,6 @@ public class FleetManager {
 
 
 
-    public void addBoat (Boat a){
-         //check
-        int max = 10;
-        assert fleet.size()< max;
-         fleet.add(a);
-     }
-
-
-
-
-    public boolean isAvailabe (int length){
-        int len=abs(length);
-        for (int i=0;i<fleet.size();i++){
-            Boat temp=fleet.get(i);
-            if (!temp.isPlaced && temp.hitpoints.getHitpointValue()==length){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    //list die sagt was man noch setzen muss
 
     public FleetManager(){
         for (BoatTypes boat: BoatTypes.values()){
@@ -44,6 +22,30 @@ public class FleetManager {
             }
         }
     }
+    public Boat placeBoat(int length){
+        assert isAvailable(length);
+        for (Boat boat:fleet){
+            if (!boat.isPlaced &&boat.hitpoints.getHitpointValue()==length){
+                boat.place();
+                return boat;
+            }
+        }
+        return null;
+    }
+
+    public boolean isAvailable(int length){
+        int len=abs(length);
+        for (Boat temp : fleet) {
+            if (!temp.isPlaced && temp.hitpoints.getHitpointValue() == length) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //list die sagt was man noch setzen muss
+
+
     public List<List<Integer>> BoatsToBePlaced(){
 
 
@@ -60,8 +62,8 @@ public class FleetManager {
                 }
             }
         }
-        List<Integer> keys=new ArrayList(map.keySet());
-        List<Integer> values=new ArrayList(map.values());
+        List<Integer> keys=new ArrayList<Integer>(map.keySet());
+        List<Integer> values=new ArrayList<Integer>(map.values());
         for (int i=0;i< keys.size();i++){
             ArrayList<Integer> temp=new ArrayList<>();
             temp.add(keys.get(i));
