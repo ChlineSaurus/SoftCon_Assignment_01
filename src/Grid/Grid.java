@@ -13,10 +13,10 @@ import static java.lang.Math.max;
 
 
 public class Grid {
-    protected final FleetManager Fleet;
+    protected final FleetManager fleet;
 
     public Grid() {
-        this.Fleet = new FleetManager();
+        this.fleet = new FleetManager();
 
 
         for (Row row : Row.values()) {
@@ -38,6 +38,7 @@ public class Grid {
             [A,B,C,D,E,F,G,H,I,J],
             [A,B,C,D,E,F,G,H,I,J],
             [A,B,C,D,E,F,G,H,I,J],
+
 
      */
     static ArrayList<GridCell> rowList = new ArrayList<GridCell>();
@@ -61,9 +62,9 @@ public class Grid {
             int difference = Math.abs(c.column.value-e.column.value);
             if(c.column.value-e.column.value<0){
                 checkDown(c,difference);
-                if(Fleet.isAvailable(difference)) {
+                if(fleet.isAvailable(difference)) {
 
-                    Boat boat = Fleet.placeBoat(difference);
+                    Boat boat = fleet.placeBoat(difference);
                     setDown(c, difference, boat);
                 }
                 else{
@@ -72,8 +73,8 @@ public class Grid {
             }
             else{
                 checkDown(e,difference);
-                if(Fleet.isAvailable(difference)) {
-                    Boat boat = Fleet.placeBoat(difference);
+                if(fleet.isAvailable(difference)) {
+                    Boat boat = fleet.placeBoat(difference);
                     setDown(c, difference, boat);
                 }
                 else{
@@ -85,8 +86,8 @@ public class Grid {
             int difference = Math.abs(c.row.value-e.row.value);
             if(c.row.value-e.row.value<0){
                 checkFlat(c,difference);
-                if(Fleet.isAvailable(difference)) {
-                    Boat boat = Fleet.placeBoat(difference);
+                if(fleet.isAvailable(difference)) {
+                    Boat boat = fleet.placeBoat(difference);
                     setFlat(c,difference, boat);
                 }
                 else{
@@ -95,8 +96,8 @@ public class Grid {
             }
             else{
                 checkFlat(e,difference);
-                if(Fleet.isAvailable(difference)) {
-                    Boat boat = Fleet.placeBoat(difference);
+                if(fleet.isAvailable(difference)) {
+                    Boat boat = fleet.placeBoat(difference);
                     setFlat(c,difference, boat);
                 }
                 else{
