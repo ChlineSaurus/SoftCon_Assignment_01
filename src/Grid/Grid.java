@@ -41,6 +41,29 @@ public class Grid{
         if(c.row.equals(e.row)){
             int difference = Math.abs(c.column.value-e.column.value)+1;
             if(c.column.value-e.column.value<0){
+                checkFlat(c,difference);
+                if(fleet.isAvailable(difference)) {
+                    Boat boat = fleet.placeBoat(difference);
+                    setFlat(c, difference, boat);
+                }
+                else{
+                    throw new IllegalBoatException("You do not have such a boat type");
+                }
+            }
+            else{
+                checkFlat(e,difference);
+                if(fleet.isAvailable(difference)) {
+                    Boat boat = fleet.placeBoat(difference);
+                    setFlat(e, difference, boat);
+                }
+                else{
+                    throw new IllegalBoatException("You do not have such a boat type");
+                }
+            }
+        }
+        else{
+            int difference = Math.abs(c.row.value-e.row.value)+1;
+            if(c.row.value-e.row.value<0){
                 checkDown(c,difference);
                 if(fleet.isAvailable(difference)) {
                     Boat boat = fleet.placeBoat(difference);
@@ -54,30 +77,7 @@ public class Grid{
                 checkDown(e,difference);
                 if(fleet.isAvailable(difference)) {
                     Boat boat = fleet.placeBoat(difference);
-                    setDown(c, difference, boat);
-                }
-                else{
-                    throw new IllegalBoatException("You do not have such a boat type");
-                }
-            }
-        }
-        else{
-            int difference = Math.abs(c.row.value-e.row.value)+1;
-            if(c.row.value-e.row.value<0){
-                checkFlat(c,difference);
-                if(fleet.isAvailable(difference)) {
-                    Boat boat = fleet.placeBoat(difference);
-                    setFlat(c,difference, boat);
-                }
-                else{
-                    throw new IllegalBoatException("You do not have such a boat type");
-                }
-            }
-            else{
-                checkFlat(e,difference);
-                if(fleet.isAvailable(difference)) {
-                    Boat boat = fleet.placeBoat(difference);
-                    setFlat(c, difference, boat);
+                    setDown(e, difference, boat);
                 }
                 else{
                     throw new IllegalBoatException("You do not have such a boat type");
@@ -91,7 +91,8 @@ public class Grid{
         int row = c.row.value;
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
-            gridList.get(c.column.value).get(i).takeBoat(boat);
+            System.out.println(i);
+            gridList.get(i).get(c.column.value).takeBoat(boat);
         }
     }
     private void setFlat(CoordinatesTuple c, int range,Boat boat){
@@ -107,7 +108,7 @@ public class Grid{
         int row = c.row.value;
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
-            if(gridList.get(c.row.value).get(i).isOccupied()){
+            if(gridList.get(i).get(c.column.value).isOccupied()){
                 throw new BoatPositionOccupiedException("Sorry, your boat place is occupied");
             }
         }

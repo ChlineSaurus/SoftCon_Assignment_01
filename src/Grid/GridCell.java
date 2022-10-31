@@ -31,9 +31,7 @@ public class GridCell {
         if (wasShot()){
             if (boat!= null){
                 boat.isHit();
-
             }
-
         }
     }
 

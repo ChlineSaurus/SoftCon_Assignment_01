@@ -57,6 +57,7 @@ public class GameManager {
 
     private void StartGame(){
         player1turn = getStartingPlayer();
+        player1turn = false;
         for(int i = 0; i < 2; i++) {
             AbstractPlayer currentPlayer = currentTurn();
             AbstractPlayer currentOpponent = currentOpponent();
@@ -84,7 +85,6 @@ public class GameManager {
                 } catch(IllegalBoatException e) {
                     if (currentPlayer.shouldBeDisplayed) {
                         ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), e.getMessage());
-
                     }
                     standartDisplay = false;
                 }
