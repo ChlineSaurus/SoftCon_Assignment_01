@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Random;
 
 public class GameManager {
-
     private static GameManager uniqueInstance;
     private boolean player1turn;
     private final AbstractPlayer player1;

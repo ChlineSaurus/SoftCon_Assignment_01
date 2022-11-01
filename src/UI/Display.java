@@ -4,7 +4,6 @@ import Grid.Iterator;
 import Grid.Row;
 
 public class Display {
-
     private static final String targetTitle = "===== TARGET GRID =====\n";
     private static final String oceanTitle = "===== OCEAN GRID =====\n";
     private static final String letters = "  A B C D E F G H I J \n";

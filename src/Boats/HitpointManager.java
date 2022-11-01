@@ -4,9 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum HitpointManager {
-
         ZeroHitPoints(0),
-
         OneHitPoint(1),
         TwoHitPoints(2),
         ThreeHitPoints(3),
@@ -14,6 +12,7 @@ public enum HitpointManager {
         FiveHitPoints(5),
         SixHitPoints(6);
         private final int value;
+
         private final static Map<Integer, HitpointManager> map = new HashMap<>();
         HitpointManager(int value){
             this.value=value;
@@ -25,9 +24,11 @@ public enum HitpointManager {
             }
 
         }
+
         public static HitpointManager valueOf(int value) {
             return (HitpointManager) map.get(value);
         }
+
         int getHitpointValue(){
             return value;
         }

@@ -4,7 +4,6 @@ import Boats.Boat;
 import org.apache.avro.JsonProperties;
 
 public class GridCell {
-
     private Boat boat;
     private boolean wasShot = false;
     private boolean isOccupied = false;

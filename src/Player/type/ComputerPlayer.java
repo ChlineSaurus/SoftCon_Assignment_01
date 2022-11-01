@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Random;
 
 public class ComputerPlayer extends AbstractPlayer {
-
     private final Row[] rowEnum;
     private final int rowLength;
     private final Column[] columnEnum;

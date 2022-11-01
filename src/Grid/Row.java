@@ -3,7 +3,6 @@ package Grid;
 import java.util.HashMap;
 import java.util.Map;
 
-//10x10 grid cells
 public enum Row {
         R0(0),
         R1(1),
@@ -17,17 +16,18 @@ public enum Row {
         R9(9);
 
         public final Integer value;
+        private static final Map<Integer, Row> map = new HashMap<>();
 
         Row(Integer value) {
             this.value = value;
         }
-        private static final Map<Integer, Row> map = new HashMap<>();
 
         static {
                 for (Row rowName : Row.values()) {
                         map.put(rowName.value, rowName);
                 }
         }
+
         public static Row valueOf(int value) {
                 return map.get(value);
         }

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HumanPlayer extends AbstractPlayer {
-
     private final Scanner scanner;
 
     public HumanPlayer(boolean shouldBeDisplayed) {

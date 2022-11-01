@@ -20,7 +20,7 @@ public class FleetManager {
     public Boat placeBoat(int length) {
         assert isAvailable(length);
         for (Boat boat:fleet){
-            if (!boat.isPlaced && boat.hitpoints.getHitpointValue()==length) {
+            if (!boat.isPlaced && boat.hitPoints.getHitpointValue()==length) {
                 boat.place();
                 return boat;
             }
@@ -29,16 +29,16 @@ public class FleetManager {
     }
 
     public boolean isAvailable(int length) {
-        int len=abs(length);
+        int len = abs(length);
         for (Boat temp : fleet) {
-            if (!temp.isPlaced && temp.hitpoints.getHitpointValue() == length) {
+            if (!temp.isPlaced && temp.hitPoints.getHitpointValue() == length) {
                 return true;
             }
         }
         return false;
     }
-    public List<List<Integer>> BoatsToBePlaced() {
 
+    public List<List<Integer>> BoatsToBePlaced() {
         List<List<Integer>> required=new ArrayList<>();
         Map<Integer, Integer> map = new LinkedHashMap<>();
         for (Boat boat:fleet){
@@ -72,7 +72,6 @@ public class FleetManager {
         return true;
     }
 
-
     public boolean isFleetDestroyed(){
         int i=0;
 
@@ -85,6 +84,4 @@ public class FleetManager {
         }
         return true;
     }
-
-
 }

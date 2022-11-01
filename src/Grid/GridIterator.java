@@ -7,10 +7,12 @@ import java.util.ArrayList;
 public class GridIterator implements Iterator{
     static final int totalRows = Row.values().length;
     static final int totalColumns = Column.values().length;
+
     private int currentRow;
     private int currentColumn;
     private final GridCellDisplayer gridCellDisplayer;
     private final ArrayList<ArrayList<GridCell>> grid;
+
     public GridIterator(ArrayList<ArrayList<GridCell>> grid, GridCellDisplayer gridCellDisplayer) {
         currentColumn = 0;
         currentRow = 0;

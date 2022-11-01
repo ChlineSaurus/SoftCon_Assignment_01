@@ -1,38 +1,35 @@
 package Boats;
 
 public  class Boat {
-
-
-    protected HitpointManager hitpoints;
+    protected HitpointManager hitPoints;
     private final char sunkLetter;
     boolean isPlaced = false;
-    protected int getHitPoints(){
-        return hitpoints.getHitpointValue();
-    }
 
     public Boat(HitpointManager health,char sunk){
         assert health!=null;
 
         sunkLetter=sunk;
-        hitpoints=health;
+        hitPoints=health;
 
     }
+
+    protected int getHitPoints(){
+        return hitPoints.getHitpointValue();
+    }
+
     void place(){
         isPlaced=true;
     }
 
-
     public boolean isSunk(){
-        return hitpoints == HitpointManager.ZeroHitPoints;
+        return hitPoints == HitpointManager.ZeroHitPoints;
     }
     public void isHit(){
         assert !isSunk();
-        hitpoints=HitpointManager.valueOf(hitpoints.getHitpointValue()-1);
+        hitPoints=HitpointManager.valueOf(hitPoints.getHitpointValue()-1);
     }
 
     public char getSunkLetter() {
         return sunkLetter;
     }
-
-
 }

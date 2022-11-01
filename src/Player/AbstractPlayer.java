@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractPlayer {
-
     protected static GridCellDisplayer displayLikeOwn = new DisplayLikeOwn();
     protected static GridCellDisplayer displayLikeOpponent = new DisplayLikeOpponent();
     public final boolean shouldBeDisplayed;
