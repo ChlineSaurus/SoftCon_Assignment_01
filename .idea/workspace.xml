@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="place funktioniert">
+    <list default="true" id="78742255-1aad-482c-92b7-d9d45e264ce0" name="Changes" comment="place funktioniert jetzt noch mit +1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +82,7 @@
       <workItem from="1667134563335" duration="679000" />
       <workItem from="1667138211834" duration="863000" />
       <workItem from="1667204334726" duration="10406000" />
-      <workItem from="1667290119290" duration="558000" />
+      <workItem from="1667290119290" duration="1669000" />
     </task>
     <task id="LOCAL-00001" summary="creat git repository">
       <created>1666123243096</created>
@@ -230,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667290584158</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="place funktioniert jetzt noch mit +1">
+      <created>1667290702555</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1667290702555</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +285,7 @@
     <MESSAGE value="How to place ships" />
     <MESSAGE value="How to place ships_finito" />
     <MESSAGE value="place funktioniert" />
-    <option name="LAST_COMMIT_MESSAGE" value="place funktioniert" />
+    <MESSAGE value="place funktioniert jetzt noch mit +1" />
+    <option name="LAST_COMMIT_MESSAGE" value="place funktioniert jetzt noch mit +1" />
   </component>
 </project>

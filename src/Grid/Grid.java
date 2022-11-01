@@ -46,10 +46,10 @@ public class Grid{
         if(c.row.equals(e.row)){
             int difference = Math.abs(c.column.value-e.column.value)+1;
             if(c.column.value-e.column.value<0){
-                checkFlat(c,difference);
+                checkDown(c,difference);
                 if(fleet.isAvailable(difference)) {
                     Boat boat = fleet.placeBoat(difference);
-                    setFlat(c, difference, boat);
+                    setDown(c, difference, boat);
                 }
                 else{
                     throw new IllegalBoatException("You do not have such a boat type");
@@ -93,7 +93,7 @@ public class Grid{
         }*/
 
     }
-    private void setDown(CoordinatesTuple c, int range, Boat boat){
+    private void setFlat(CoordinatesTuple c, int range, Boat boat){
         int row = c.row.value;
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
@@ -101,7 +101,7 @@ public class Grid{
             gridList.get(i).get(c.column.value).takeBoat(boat);
         }
     }
-    private void setFlat(CoordinatesTuple c, int range,Boat boat){
+    private void setDown(CoordinatesTuple c, int range,Boat boat){
         int col = c.column.value;
         int colRange = col + range;
         for(int i = col;i<colRange;i++){
