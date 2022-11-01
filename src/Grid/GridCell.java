@@ -1,12 +1,16 @@
 package Grid;
 
 import Boats.Boat;
-import org.apache.avro.JsonProperties;
 
 public class GridCell {
     private Boat boat;
-    private boolean wasShot = false;
-    private boolean isOccupied = false;
+    private boolean wasShot;
+    private boolean isOccupied;
+
+    public GridCell(){
+        isOccupied = false;
+        wasShot = false;
+    }
 
     public void takeBoat(Boat boat) {
         assert (!isOccupied);
@@ -34,11 +38,4 @@ public class GridCell {
             }
         }
     }
-
-    public GridCell(){
-
-    }
-
-
-
 }

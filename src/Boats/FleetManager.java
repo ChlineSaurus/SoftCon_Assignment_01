@@ -1,7 +1,6 @@
 package Boats;
 
 import java.util.*;
-import static java.lang.Math.abs;
 
 public class FleetManager {
     private final List<Boat> fleet;
@@ -17,6 +16,7 @@ public class FleetManager {
             }
         }
     }
+
     public Boat placeBoat(int length) {
         assert isAvailable(length);
         for (Boat boat:fleet){
@@ -29,7 +29,6 @@ public class FleetManager {
     }
 
     public boolean isAvailable(int length) {
-        int len = abs(length);
         for (Boat temp : fleet) {
             if (!temp.isPlaced && temp.hitPoints.getHitpointValue() == length) {
                 return true;
@@ -63,7 +62,7 @@ public class FleetManager {
         return required;
     }
 
-    public boolean isFleetplaced() {
+    public boolean isFleetPlaced() {
         for (Boat boat : fleet) {
             if (!boat.isPlaced) {
                 return false;
@@ -74,7 +73,6 @@ public class FleetManager {
 
     public boolean isFleetDestroyed(){
         int i=0;
-
         while (fleet.size()>i){
 
             if (!fleet.get(i).isSunk()){

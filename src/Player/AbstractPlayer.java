@@ -1,7 +1,6 @@
 package Player;
 
-import Boats.FleetManager;
-import Exceptions.BoatPlacement.IllegalBoatException;
+import Exceptions.IllegalBoatException;
 import Exceptions.IllegalShotException;
 import Grid.Coordinates.CoordinatesTuple;
 import Grid.DisplayGridcell.DisplayLikeOpponent;

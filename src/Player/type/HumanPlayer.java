@@ -1,6 +1,6 @@
 package Player.type;
 
-import Exceptions.BoatPlacement.IllegalBoatException;
+import Exceptions.IllegalBoatException;
 import Exceptions.IllegalShotException;
 import Exceptions.IllegalUserInputException;
 import Grid.Coordinates.Column;

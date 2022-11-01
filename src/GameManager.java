@@ -1,4 +1,4 @@
-import Exceptions.BoatPlacement.IllegalBoatException;
+import Exceptions.IllegalBoatException;
 import Exceptions.IllegalShotException;
 import Grid.Coordinates.CoordinatesTuple;
 import Player.AbstractPlayer;

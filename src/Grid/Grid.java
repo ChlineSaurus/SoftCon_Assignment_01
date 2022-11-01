@@ -2,8 +2,7 @@ package Grid;
 
 import Boats.Boat;
 import Boats.FleetManager;
-import Exceptions.BoatPlacement.BoatPositionOccupiedException;
-import Exceptions.BoatPlacement.IllegalBoatException;
+import Exceptions.IllegalBoatException;
 import Exceptions.IllegalShotException;
 import Grid.Coordinates.Column;
 import Grid.Coordinates.CoordinatesTuple;
@@ -88,22 +87,22 @@ public class Grid{
         }
     }
 
-    private void checkDown(CoordinatesTuple c, int range) throws BoatPositionOccupiedException {
+    private void checkDown(CoordinatesTuple c, int range) throws IllegalBoatException {
         int row = c.row.value;
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
             if(gridList.get(i).get(c.column.value).isOccupied()){
-                throw new BoatPositionOccupiedException("Sorry, your boat place is occupied");
+                throw new IllegalBoatException("Sorry, your boat place is occupied");
             }
         }
     }
 
-    private  void checkFlat(CoordinatesTuple c, int range) throws BoatPositionOccupiedException {
+    private  void checkFlat(CoordinatesTuple c, int range) throws IllegalBoatException {
         int col = c.column.value;
         int colRange = col + range;
         for(int i = col;i<colRange;i++){
             if(gridList.get(c.row.value).get(i).isOccupied()){
-                throw new BoatPositionOccupiedException("Sorry, your boat place is occupied");
+                throw new IllegalBoatException("Sorry, your boat place is occupied");
             }
         }
     }
@@ -113,7 +112,7 @@ public class Grid{
     }
 
     public boolean isFleetPlaced() {
-        return fleet.isFleetplaced();
+        return fleet.isFleetPlaced();
     }
 
     public boolean isFleetDestroyed() {
