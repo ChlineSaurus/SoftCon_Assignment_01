@@ -40,8 +40,8 @@ public class Grid{
     public void place(CoordinatesTuple c, CoordinatesTuple e) throws IllegalBoatException {
         if((c.row.value + c.column.value)> (e.row.value+e.column.value)){
             CoordinatesTuple temp = c;
-            e = c;
-            c = temp;
+            c=e;
+            e = temp;
         }
         if(c.row.equals(e.row)){
             int difference = Math.abs(c.column.value-e.column.value)+1;
