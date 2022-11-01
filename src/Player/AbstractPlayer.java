@@ -14,17 +14,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractPlayer {
+
     protected static GridCellDisplayer displayLikeOwn = new DisplayLikeOwn();
     protected static GridCellDisplayer displayLikeOpponent = new DisplayLikeOpponent();
     public final boolean shouldBeDisplayed;
     protected final FleetManager ownFleet;
     protected final Grid ownGrid;
+
     protected AbstractPlayer(boolean shouldBeDisplay) {
         this.shouldBeDisplayed = shouldBeDisplay;
         this.ownFleet = new FleetManager();
         this.ownGrid = new Grid(ownFleet);
 
     }
+
     public CoordinatesTuple shoot() throws IllegalShotException {
         return getShotPosition();
     }

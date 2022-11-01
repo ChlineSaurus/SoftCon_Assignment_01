@@ -1,8 +1,3 @@
-import Exceptions.BoatPlacement.BoatPositionOccupiedException;
-import Exceptions.IllegalShotException;
-import Grid.*;
-import UI.Display;
-
 import static java.lang.System.exit;
 
 public class Main {

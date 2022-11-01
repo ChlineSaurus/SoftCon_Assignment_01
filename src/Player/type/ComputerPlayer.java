@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.Random;
 
 public class ComputerPlayer extends AbstractPlayer {
+
     private final Row[] rowEnum;
     private final int rowLength;
     private final Column[] columnEnum;
     private final int columnLength;
     private final Random random;
-
 
     public ComputerPlayer(boolean shouldBeDisplayed) {
         super(shouldBeDisplayed);
@@ -31,6 +31,7 @@ public class ComputerPlayer extends AbstractPlayer {
         int randomColumnIndex = random.nextInt(columnLength);
         return new CoordinatesTuple(rowEnum[randomRowIndex], columnEnum[randomColumnIndex]);
     }
+
     @Override
     protected ArrayList<CoordinatesTuple> getBoatPosition() {
         ArrayList<CoordinatesTuple> boatCoordinates = new ArrayList<CoordinatesTuple>();
@@ -62,6 +63,7 @@ public class ComputerPlayer extends AbstractPlayer {
         }
         return boatCoordinates;
     }
+
     @Override
      protected CoordinatesTuple getShotPosition() {
         return randomPosition();

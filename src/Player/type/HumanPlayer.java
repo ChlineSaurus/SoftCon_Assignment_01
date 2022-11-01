@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HumanPlayer extends AbstractPlayer {
+
     private final Scanner scanner;
 
     public HumanPlayer(boolean shouldBeDisplayed) {
@@ -22,6 +23,7 @@ public class HumanPlayer extends AbstractPlayer {
     private String takeInput() {
         return scanner.nextLine();
     }
+
     private CoordinatesTuple inputToCoordinatesTuple(String input) throws IllegalUserInputException {
         if (input.length() != 2) {
             throw new IllegalUserInputException("Your input hasn't had the right length!");
@@ -43,6 +45,7 @@ public class HumanPlayer extends AbstractPlayer {
         }
         return new CoordinatesTuple(row, column);
     }
+
     @Override
     protected ArrayList<CoordinatesTuple> getBoatPosition() throws IllegalBoatException {
         ArrayList<CoordinatesTuple> boatCoordinates = new ArrayList<CoordinatesTuple>();
@@ -75,5 +78,4 @@ public class HumanPlayer extends AbstractPlayer {
             throw new IllegalShotException(e.getMessage());
         }
     }
-
 }

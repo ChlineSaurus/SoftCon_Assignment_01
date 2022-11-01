@@ -6,11 +6,11 @@ import Player.type.ComputerPlayer;
 import Player.type.HumanPlayer;
 import UI.Display;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class GameManager {
+
     private static GameManager uniqueInstance;
     private boolean player1turn;
     private final AbstractPlayer player1;
@@ -29,6 +29,7 @@ public class GameManager {
         }
         return uniqueInstance;
     }
+
     public void ManageGame(){
         StartGame();
         GameFlow();
@@ -72,7 +73,6 @@ public class GameManager {
 
     private void StartGame(){
         player1turn = getStartingPlayer();
-        player1turn = false;
         for(int i = 0; i < 2; i++) {
             AbstractPlayer currentPlayer = currentTurn();
             AbstractPlayer currentOpponent = currentOpponent();
@@ -82,7 +82,6 @@ public class GameManager {
                     String boatsToPlace = boatsNeededToPlace(currentPlayer);
                     String message = boatsToPlace + "Please enter two Position (a Letter and a number) " +
                             "to place a Boat:";
-
                     ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), message);
                 }
                 try {
@@ -97,8 +96,8 @@ public class GameManager {
                 }
             }
         }
-
     }
+
     private void GameFlow(){
         while(true) {
             AbstractPlayer currentPlayer = currentTurn();
@@ -124,8 +123,8 @@ public class GameManager {
                 }
             }
         }
-        //display in special way, the player that is the currentPlayer is the winner
     }
+
     private void EndGame(){
         AbstractPlayer winner = currentTurn();
         AbstractPlayer loser = currentOpponent();
