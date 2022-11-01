@@ -57,7 +57,7 @@ public class Grid{
             }
         }
         else{
-            int difference = Math.abs((c.row.value-e.row.value));
+            int difference = Math.abs((c.row.value-e.row.value))+1;
             checkFlat(c,difference);
             if(fleet.isAvailable(difference)) {
                 Boat boat = fleet.placeBoat(difference);
