@@ -33,7 +33,7 @@ public class ComputerPlayer extends AbstractPlayer {
     @Override
     protected ArrayList<CoordinatesTuple> getBoatPosition() {
         ArrayList<CoordinatesTuple> boatCoordinates = new ArrayList<CoordinatesTuple>();
-        int boatLength = ownFleet.BoatsToBePlaced().get(0).get(0);
+        int boatLength = ownGrid.boatsToPlace().get(0).get(0);
         while(true){
             CoordinatesTuple firstBoatPosition = randomPosition();
             Column secondBoatColumn;

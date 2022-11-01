@@ -17,13 +17,11 @@ public abstract class AbstractPlayer {
     protected static GridCellDisplayer displayLikeOwn = new DisplayLikeOwn();
     protected static GridCellDisplayer displayLikeOpponent = new DisplayLikeOpponent();
     public final boolean shouldBeDisplayed;
-    protected final FleetManager ownFleet;
     protected final Grid ownGrid;
 
     protected AbstractPlayer(boolean shouldBeDisplay) {
         this.shouldBeDisplayed = shouldBeDisplay;
-        this.ownFleet = new FleetManager();
-        this.ownGrid = new Grid(ownFleet);
+        this.ownGrid = new Grid();
 
     }
 
@@ -41,15 +39,15 @@ public abstract class AbstractPlayer {
     }
 
     public boolean isFleetPlaced() {
-        return ownFleet.isFleetplaced();
+        return ownGrid.isFleetPlaced();
     }
 
     public List<List<Integer>> boatsToPlace() {
-        return ownFleet.BoatsToBePlaced();
+        return ownGrid.boatsToPlace();
     }
 
     public boolean isFleetDestroyed() {
-        return ownFleet.isFleetDestroyed();
+        return ownGrid.isFleetDestroyed();
     }
 
     protected abstract ArrayList<CoordinatesTuple> getBoatPosition() throws IllegalBoatException;
@@ -59,6 +57,7 @@ public abstract class AbstractPlayer {
     public Iterator DisplayLikeOpponent() {
         return ownGrid.iterator(displayLikeOpponent);
     }
+
     public Iterator DisplayLikeOwn() {
         return ownGrid.iterator(displayLikeOwn);
     }

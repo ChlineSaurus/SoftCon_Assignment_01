@@ -13,13 +13,14 @@ import Grid.Iterator.GridIterator;
 import Grid.Iterator.Iterator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Grid{
     private final FleetManager fleet;
     private final ArrayList<ArrayList<GridCell>> gridList;
 
-    public Grid(FleetManager fleet) {
-        this.fleet = fleet;
+    public Grid() {
+        this.fleet = new FleetManager();
         this.gridList = new ArrayList<ArrayList<GridCell>>();
         for (Row row : Row.values()) {
             ArrayList<GridCell> rowList = new ArrayList<GridCell>();
@@ -30,8 +31,6 @@ public class Grid{
         }
     }
 
-
-    //create ArrayList Matrix with GridCells in them
     public void shoot(CoordinatesTuple c) throws IllegalShotException {
         ArrayList<GridCell> current_row = gridList.get(c.row.value);
         GridCell currentGridCell= current_row.get(c.column.value);
@@ -111,6 +110,18 @@ public class Grid{
 
     public Iterator iterator(GridCellDisplayer gridCellDisplayer){
         return new GridIterator(gridList, gridCellDisplayer);
+    }
+
+    public boolean isFleetPlaced() {
+        return fleet.isFleetplaced();
+    }
+
+    public boolean isFleetDestroyed() {
+        return fleet.isFleetDestroyed();
+    }
+
+    public List<List<Integer>> boatsToPlace() {
+        return fleet.BoatsToBePlaced();
     }
 }
 
