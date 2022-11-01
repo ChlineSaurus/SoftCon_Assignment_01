@@ -95,7 +95,6 @@ public class Grid{
         int row = c.row.value;
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
-            System.out.println(i);
             gridList.get(i).get(c.column.value).takeBoat(boat);
         }
     }
