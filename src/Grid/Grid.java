@@ -44,24 +44,22 @@ public class Grid{
             e = temp;
         }
         if(c.row.equals(e.row)){
-            int difference = Math.abs(c.column.value-e.column.value)+1;
-            if(c.column.value-e.column.value<0){
-                checkDown(c,difference);
-                if(fleet.isAvailable(difference)) {
-                    Boat boat = fleet.placeBoat(difference);
-                    setDown(c, difference, boat);
-                }
-                else{
-                    throw new IllegalBoatException("You do not have such a boat type");
-                }
-            }
-        }
-        else{
-            int difference = Math.abs((c.row.value-e.row.value))+1;
+            int difference = e.column.value - c.column.value + 1;
             checkFlat(c,difference);
             if(fleet.isAvailable(difference)) {
                 Boat boat = fleet.placeBoat(difference);
                 setFlat(c, difference, boat);
+            }
+            else{
+                throw new IllegalBoatException("You do not have such a boat type");
+            }
+        }
+        else{
+            int difference = e.row.value - c.row.value + 1;
+            checkDown(c,difference);
+            if(fleet.isAvailable(difference)) {
+                Boat boat = fleet.placeBoat(difference);
+                setDown(c, difference, boat);
             }
             else{
                 throw new IllegalBoatException("You do not have such a boat type");
@@ -93,7 +91,7 @@ public class Grid{
         }*/
 
     }
-    private void setFlat(CoordinatesTuple c, int range, Boat boat){
+    private void setDown(CoordinatesTuple c, int range, Boat boat){
         int row = c.row.value;
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
@@ -101,13 +99,12 @@ public class Grid{
             gridList.get(i).get(c.column.value).takeBoat(boat);
         }
     }
-    private void setDown(CoordinatesTuple c, int range,Boat boat){
+    private void setFlat(CoordinatesTuple c, int range,Boat boat){
         int col = c.column.value;
         int colRange = col + range;
         for(int i = col;i<colRange;i++){
             gridList.get(c.row.value).get(i).takeBoat(boat);
         }
-
     }
 
     private void checkDown(CoordinatesTuple c, int range) throws BoatPositionOccupiedException {

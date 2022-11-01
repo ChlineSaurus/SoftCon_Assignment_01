@@ -58,7 +58,7 @@ public class HumanPlayer extends AbstractPlayer {
         }
         if (boatCoordinates.get(0).column != boatCoordinates.get(1).column &&
                 boatCoordinates.get(0).row != boatCoordinates.get(1).row) {
-            throw new IllegalBoatException("Your Boat was less straight than Freddie Mercury: Please give the game +" +
+            throw new IllegalBoatException("Your Boat was less straight than Freddie Mercury: Please give the game" +
                     "Coordinates that are in a line.");
         }
         return boatCoordinates;

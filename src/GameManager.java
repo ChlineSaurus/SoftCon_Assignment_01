@@ -19,7 +19,7 @@ public class GameManager {
 
     private GameManager() {
         player1 = new HumanPlayer(true);
-        player2 = new ComputerPlayer(true);
+        player2 = new ComputerPlayer(false);
         ui = new Display();
         }
 
