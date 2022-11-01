@@ -18,7 +18,7 @@ public class GameManager {
     private final Display ui;
 
     private GameManager() {
-        player1 = new ComputerPlayer(true);
+        player1 = new HumanPlayer(true);
         player2 = new ComputerPlayer(false);
         ui = new Display();
         }
@@ -56,6 +56,20 @@ public class GameManager {
         return player2;
     }
 
+    private String boatsNeededToPlace (AbstractPlayer currentPlayer) {
+        String boatsToPlace = "You still need to place:\n";
+        for (List<Integer> boatsNotPlaced : currentPlayer.boatsToPlace()){
+            boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(1)));
+            if (boatsNotPlaced.get(1) == 1) {
+                boatsToPlace = boatsToPlace.concat(" Boat of length ");
+            } else {
+                boatsToPlace = boatsToPlace.concat(" Boats of length ");
+            }
+            boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(0))+"\n");
+        }
+        return boatsToPlace;
+    }
+
     private void StartGame(){
         player1turn = getStartingPlayer();
         player1turn = false;
@@ -65,16 +79,7 @@ public class GameManager {
             boolean standartDisplay = true;
             while(!currentPlayer.isFleetPlaced()) {
                 if(currentPlayer.shouldBeDisplayed && standartDisplay) {
-                    String boatsToPlace = "You still need to place:\n";
-                    for (List<Integer> boatsNotPlaced : currentPlayer.boatsToPlace()){
-                        boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(1)));
-                        if (boatsNotPlaced.get(1) == 1) {
-                            boatsToPlace = boatsToPlace.concat(" Boat of length ");
-                        } else {
-                            boatsToPlace = boatsToPlace.concat(" Boats of length ");
-                        }
-                        boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(0))+"\n");
-                    }
+                    String boatsToPlace = boatsNeededToPlace(currentPlayer);
                     String message = boatsToPlace + "Please enter two Position (a Letter and a number) " +
                             "to place a Boat:";
 
@@ -85,7 +90,8 @@ public class GameManager {
                     standartDisplay = true;
                 } catch(IllegalBoatException e) {
                     if (currentPlayer.shouldBeDisplayed) {
-                        ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), e.getMessage());
+                        ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(),
+                                boatsNeededToPlace(currentPlayer) + e.getMessage());
                     }
                     standartDisplay = false;
                 }
