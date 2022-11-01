@@ -1,10 +1,14 @@
-package Grid;
+package Grid.Iterator;
 
+import Grid.Coordinates.Column;
+import Grid.Coordinates.Row;
 import Grid.DisplayGridcell.GridCellDisplayer;
+import Grid.GridCell;
+import Grid.Iterator.Iterator;
 
 import java.util.ArrayList;
 
-public class GridIterator implements Iterator{
+public class GridIterator implements Iterator {
     static final int totalRows = Row.values().length;
     static final int totalColumns = Column.values().length;
 

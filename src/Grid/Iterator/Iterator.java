@@ -1,4 +1,4 @@
-package Grid;
+package Grid.Iterator;
 
 public interface Iterator {
     boolean hasNext();

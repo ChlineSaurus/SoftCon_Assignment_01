@@ -3,12 +3,12 @@ package Player;
 import Boats.FleetManager;
 import Exceptions.BoatPlacement.IllegalBoatException;
 import Exceptions.IllegalShotException;
-import Grid.CoordinatesTuple;
+import Grid.Coordinates.CoordinatesTuple;
 import Grid.DisplayGridcell.DisplayLikeOpponent;
 import Grid.DisplayGridcell.DisplayLikeOwn;
 import Grid.DisplayGridcell.GridCellDisplayer;
 import Grid.Grid;
-import Grid.Iterator;
+import Grid.Iterator.Iterator;
 
 import java.util.ArrayList;
 import java.util.List;

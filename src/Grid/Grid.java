@@ -5,7 +5,13 @@ import Boats.FleetManager;
 import Exceptions.BoatPlacement.BoatPositionOccupiedException;
 import Exceptions.BoatPlacement.IllegalBoatException;
 import Exceptions.IllegalShotException;
+import Grid.Coordinates.Column;
+import Grid.Coordinates.CoordinatesTuple;
+import Grid.Coordinates.Row;
 import Grid.DisplayGridcell.GridCellDisplayer;
+import Grid.Iterator.GridIterator;
+import Grid.Iterator.Iterator;
+
 import java.util.ArrayList;
 
 public class Grid{

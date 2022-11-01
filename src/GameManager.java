@@ -1,9 +1,8 @@
 import Exceptions.BoatPlacement.IllegalBoatException;
 import Exceptions.IllegalShotException;
-import Grid.CoordinatesTuple;
+import Grid.Coordinates.CoordinatesTuple;
 import Player.AbstractPlayer;
 import Player.type.ComputerPlayer;
-import Player.type.HumanPlayer;
 import UI.Display;
 
 import java.util.List;

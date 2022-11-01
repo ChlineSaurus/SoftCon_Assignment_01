@@ -1,4 +1,7 @@
-package Grid;
+package Grid.Coordinates;
+
+import Grid.Coordinates.Column;
+import Grid.Coordinates.Row;
 
 //Container Class such that we are able to give coordinate in pairs
 public class CoordinatesTuple {

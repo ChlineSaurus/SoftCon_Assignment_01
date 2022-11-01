@@ -1,4 +1,4 @@
-package Grid;
+package Grid.Coordinates;
 
 import java.util.HashMap;
 import java.util.Map;

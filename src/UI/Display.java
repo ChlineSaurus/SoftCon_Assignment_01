@@ -1,7 +1,7 @@
 package UI;
 
-import Grid.Iterator;
-import Grid.Row;
+import Grid.Iterator.Iterator;
+import Grid.Coordinates.Row;
 
 public class Display {
     private static final String targetTitle = "===== TARGET GRID =====\n";

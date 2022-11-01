@@ -3,9 +3,9 @@ package Player.type;
 import Exceptions.BoatPlacement.IllegalBoatException;
 import Exceptions.IllegalShotException;
 import Exceptions.IllegalUserInputException;
-import Grid.Column;
-import Grid.CoordinatesTuple;
-import Grid.Row;
+import Grid.Coordinates.Column;
+import Grid.Coordinates.CoordinatesTuple;
+import Grid.Coordinates.Row;
 import Player.AbstractPlayer;
 
 import java.util.ArrayList;

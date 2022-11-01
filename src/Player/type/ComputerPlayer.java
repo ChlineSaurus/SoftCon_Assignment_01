@@ -1,12 +1,11 @@
 package Player.type;
 
-import Grid.Column;
-import Grid.CoordinatesTuple;
-import Grid.Row;
+import Grid.Coordinates.Column;
+import Grid.Coordinates.CoordinatesTuple;
+import Grid.Coordinates.Row;
 import Player.AbstractPlayer;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class ComputerPlayer extends AbstractPlayer {
