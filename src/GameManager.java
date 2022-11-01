@@ -16,6 +16,7 @@ public class GameManager {
     private final Display ui;
 
     private GameManager() {
+        player1turn = getStartingPlayer();
         player1 = new ComputerPlayer(true);
         player2 = new ComputerPlayer(false);
         ui = new Display();
@@ -34,43 +35,7 @@ public class GameManager {
         EndGame();
     }
 
-    private boolean getStartingPlayer() {
-        Random random = new Random();
-        return random.nextBoolean();
-    }
-
-    private AbstractPlayer currentTurn() {
-        if (player1turn) {
-            player1turn = false;
-            return player1;
-        }
-        player1turn = true;
-        return player2;
-    }
-
-    private AbstractPlayer currentOpponent() {
-        if (player1turn) {
-            return player1;
-        }
-        return player2;
-    }
-
-    private String boatsNeededToPlace (AbstractPlayer currentPlayer) {
-        String boatsToPlace = "You still need to place:\n";
-        for (List<Integer> boatsNotPlaced : currentPlayer.boatsToPlace()){
-            boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(1)));
-            if (boatsNotPlaced.get(1) == 1) {
-                boatsToPlace = boatsToPlace.concat(" Boat of length ");
-            } else {
-                boatsToPlace = boatsToPlace.concat(" Boats of length ");
-            }
-            boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(0))+"\n");
-        }
-        return boatsToPlace;
-    }
-
     private void StartGame(){
-        player1turn = getStartingPlayer();
         for(int i = 0; i < 2; i++) {
             AbstractPlayer currentPlayer = currentTurn();
             AbstractPlayer currentOpponent = currentOpponent();
@@ -132,5 +97,40 @@ public class GameManager {
         else {
             ui.display(winner.DisplayLikeOwn(), loser.DisplayLikeOwn(),"Player2 has won the game!");
         }
+    }
+
+    private boolean getStartingPlayer() {
+        Random random = new Random();
+        return random.nextBoolean();
+    }
+
+    private AbstractPlayer currentTurn() {
+        if (player1turn) {
+            player1turn = false;
+            return player1;
+        }
+        player1turn = true;
+        return player2;
+    }
+
+    private AbstractPlayer currentOpponent() {
+        if (player1turn) {
+            return player1;
+        }
+        return player2;
+    }
+
+    private String boatsNeededToPlace (AbstractPlayer currentPlayer) {
+        String boatsToPlace = "You still need to place:\n";
+        for (List<Integer> boatsNotPlaced : currentPlayer.boatsToPlace()){
+            boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(1)));
+            if (boatsNotPlaced.get(1) == 1) {
+                boatsToPlace = boatsToPlace.concat(" Boat of length ");
+            } else {
+                boatsToPlace = boatsToPlace.concat(" Boats of length ");
+            }
+            boatsToPlace = boatsToPlace.concat(Integer.toString(boatsNotPlaced.get(0))+"\n");
+        }
+        return boatsToPlace;
     }
 }
