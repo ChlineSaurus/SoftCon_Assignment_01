@@ -32,11 +32,11 @@ public class Grid{
         if (currentGridCell.wasShot()){
             throw new IllegalShotException("You can't shoot twice on a field");
         }
-        else{
+        else {
             currentGridCell.isShot();
-
         }
     }
+
     public void place(CoordinatesTuple c, CoordinatesTuple e) throws IllegalBoatException {
         if((c.row.value + c.column.value)> (e.row.value+e.column.value)){
             CoordinatesTuple temp = c;
@@ -50,11 +50,11 @@ public class Grid{
                 Boat boat = fleet.placeBoat(difference);
                 setFlat(c, difference, boat);
             }
-            else{
+            else {
                 throw new IllegalBoatException("You do not have such a boat type");
             }
         }
-        else{
+        else {
             int difference = e.row.value - c.row.value + 1;
             checkDown(c,difference);
             if(fleet.isAvailable(difference)) {
@@ -65,32 +65,8 @@ public class Grid{
                 throw new IllegalBoatException("You do not have such a boat type");
             }
         }
-        /*
-        else{
-            int difference = Math.abs(c.row.value-e.row.value)+1;
-            if(c.row.value-e.row.value<0){
-                checkDown(c,difference);
-                if(fleet.isAvailable(difference)) {
-                    Boat boat = fleet.placeBoat(difference);
-                    setDown(c, difference, boat);
-                }
-                else{
-                    throw new IllegalBoatException("You do not have such a boat type");
-                }
-            }
-            else{
-                checkDown(e,difference);
-                if(fleet.isAvailable(difference)) {
-                    Boat boat = fleet.placeBoat(difference);
-                    setDown(e, difference, boat);
-                }
-                else{
-                    throw new IllegalBoatException("You do not have such a boat type");
-                }
-            }
-        }*/
-
     }
+
     private void setDown(CoordinatesTuple c, int range, Boat boat){
         int row = c.row.value;
         int rowRange = row + range;
@@ -98,6 +74,7 @@ public class Grid{
             gridList.get(i).get(c.column.value).takeBoat(boat);
         }
     }
+
     private void setFlat(CoordinatesTuple c, int range,Boat boat){
         int col = c.column.value;
         int colRange = col + range;
@@ -115,6 +92,7 @@ public class Grid{
             }
         }
     }
+
     private  void checkFlat(CoordinatesTuple c, int range) throws BoatPositionOccupiedException {
         int col = c.column.value;
         int colRange = col + range;
@@ -122,26 +100,11 @@ public class Grid{
             if(gridList.get(c.row.value).get(i).isOccupied()){
                 throw new BoatPositionOccupiedException("Sorry, your boat place is occupied");
             }
-
         }
     }
-
 
     public Iterator iterator(GridCellDisplayer gridCellDisplayer){
         return new GridIterator(gridList, gridCellDisplayer);
     }
-
-        /*public int getDistance (GridCell a, GridCell b){
-            int columDelta = abs(a.GetColumnIndex() - b.GetColumnIndex());
-            int rowDelta = abs(a.GetRowIndex() - b.GetRowIndex());
-            //this function to check if the distance of the user is valid for instance
-            if (columDelta != 0 && rowDelta != 0) {
-                //error Message
-            }
-            return max(columDelta, rowDelta);
-
-         */
-
-
 }
 

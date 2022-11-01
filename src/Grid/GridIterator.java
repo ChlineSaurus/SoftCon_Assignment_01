@@ -18,8 +18,6 @@ public class GridIterator implements Iterator{
         this.grid = grid;
     }
 
-
-
     public String next() {
         assert(hasNext());
         GridCell currentGridCell = grid.get(currentRow).get(currentColumn);
