@@ -55,17 +55,19 @@ public class Grid{
                     throw new IllegalBoatException("You do not have such a boat type");
                 }
             }
-            else{
-                checkFlat(e,difference);
-                if(fleet.isAvailable(difference)) {
-                    Boat boat = fleet.placeBoat(difference);
-                    setFlat(e, difference, boat);
-                }
-                else{
-                    throw new IllegalBoatException("You do not have such a boat type");
-                }
+        }
+        else{
+            int difference = Math.abs((c.row.value-e.row.value));
+            checkFlat(c,difference);
+            if(fleet.isAvailable(difference)) {
+                Boat boat = fleet.placeBoat(difference);
+                setFlat(c, difference, boat);
             }
-        }/*
+            else{
+                throw new IllegalBoatException("You do not have such a boat type");
+            }
+        }
+        /*
         else{
             int difference = Math.abs(c.row.value-e.row.value)+1;
             if(c.row.value-e.row.value<0){
