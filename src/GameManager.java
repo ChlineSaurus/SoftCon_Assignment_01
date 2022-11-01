@@ -32,6 +32,7 @@ public class GameManager {
     public void ManageGame(){
         StartGame();
         GameFlow();
+        EndGame();
     }
 
     private boolean getStartingPlayer() {
@@ -118,5 +119,15 @@ public class GameManager {
             }
         }
         //display in special way, the player that is the currentPlayer is the winner
+    }
+    private void EndGame(){
+        AbstractPlayer winner = currentTurn();
+        AbstractPlayer loser = currentOpponent();
+        if(winner == player1){
+            ui.display(winner.DisplayLikeOwn(), loser.DisplayLikeOwn(),"Player1 has won the game!");
+        }
+        else {
+            ui.display(winner.DisplayLikeOwn(), loser.DisplayLikeOwn(),"Player2 has won the game!");
+        }
     }
 }
