@@ -49,6 +49,9 @@ public class HumanPlayer extends AbstractPlayer {
         String input = takeInput();
         input = input.replaceAll("\\s", "");
         input = input.replaceAll(",", "");
+        if(input.length() != 4) {
+            throw new IllegalBoatException("Your Input for the Boat had a strange length, please give two Positions");
+        }
         try {
             boatCoordinates.add(inputToCoordinatesTuple(input.substring(0,2)));
             boatCoordinates.add(inputToCoordinatesTuple(input.substring(2,4)));
