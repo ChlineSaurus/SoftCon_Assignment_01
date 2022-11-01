@@ -14,7 +14,7 @@ public enum HitpointManager {
         FiveHitPoints(5),
         SixHitPoints(6);
         private final int value;
-        private static Map map = new HashMap<>();
+        private final static Map<Integer, HitpointManager> map = new HashMap<>();
         HitpointManager(int value){
             this.value=value;
         }
