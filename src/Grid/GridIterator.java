@@ -20,7 +20,7 @@ public class GridIterator implements Iterator{
 
 
 
-    public char next() {
+    public String next() {
         assert(hasNext());
         GridCell currentGridCell = grid.get(currentRow).get(currentColumn);
         if(currentColumn == (totalColumns-1)) {
