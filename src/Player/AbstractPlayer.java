@@ -7,9 +7,9 @@ import Grid.DisplayGridcell.DisplayLikeOpponent;
 import Grid.DisplayGridcell.DisplayLikeOwn;
 import Grid.DisplayGridcell.GridCellDisplayer;
 import Grid.Grid;
-import Grid.Iterator.Iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public abstract class AbstractPlayer {
@@ -53,11 +53,11 @@ public abstract class AbstractPlayer {
 
     protected abstract CoordinatesTuple getShotPosition() throws IllegalShotException;
 
-    public Iterator DisplayLikeOpponent() {
+    public Iterator<String> DisplayLikeOpponent() {
         return ownGrid.iterator(displayLikeOpponent);
     }
 
-    public Iterator DisplayLikeOwn() {
+    public Iterator<String> DisplayLikeOwn() {
         return ownGrid.iterator(displayLikeOwn);
     }
 }

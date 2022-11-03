@@ -9,9 +9,9 @@ import Grid.Coordinates.CoordinatesTuple;
 import Grid.Coordinates.Row;
 import Grid.DisplayGridcell.GridCellDisplayer;
 import Grid.Iterator.GridIterator;
-import Grid.Iterator.Iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Grid{
@@ -107,7 +107,7 @@ public class Grid{
         }
     }
 
-    public Iterator iterator(GridCellDisplayer gridCellDisplayer){
+    public Iterator<String> iterator(GridCellDisplayer gridCellDisplayer){
         return new GridIterator(gridList, gridCellDisplayer);
     }
 

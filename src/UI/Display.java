@@ -1,7 +1,8 @@
 package UI;
 
-import Grid.Iterator.Iterator;
 import Grid.Coordinates.Row;
+
+import java.util.Iterator;
 
 public class Display {
     private static final String targetTitle = "===== TARGET GRID =====\n";
@@ -17,7 +18,7 @@ public class Display {
         this.totalLengthOfField = Row.values().length;
     }
 
-    public void display(Iterator oceanGrid, Iterator targetGrid, String message) {
+    public void display(Iterator<String> oceanGrid, Iterator<String> targetGrid, String message) {
         //next line of Code because the IDE doesn't clear the Terminal
         clearScreen();
         displayGrid(targetGrid, targetTitle);
@@ -26,7 +27,7 @@ public class Display {
         System.out.println(message);
     }
 
-    private void displayGrid(Iterator gridIterator, String title){
+    private void displayGrid(Iterator<String> gridIterator, String title){
         int lengthOfField = 0;
         int row = 0;
         String field = "";

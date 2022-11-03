@@ -4,11 +4,11 @@ import Grid.Coordinates.Column;
 import Grid.Coordinates.Row;
 import Grid.DisplayGridcell.GridCellDisplayer;
 import Grid.GridCell;
-import Grid.Iterator.Iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class GridIterator implements Iterator {
+public class GridIterator implements Iterator<String> {
     static final int totalRows = Row.values().length;
     static final int totalColumns = Column.values().length;
 
