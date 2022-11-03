@@ -14,6 +14,7 @@ public class GridCell {
 
     public void takeBoat(Boat boat) {
         assert (!isOccupied);
+        assert boat!=null;
         isOccupied = true;
         this.boat = boat;
     }

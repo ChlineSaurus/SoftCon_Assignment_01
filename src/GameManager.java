@@ -3,6 +3,7 @@ import Exceptions.IllegalShotException;
 import Grid.Coordinates.CoordinatesTuple;
 import Player.AbstractPlayer;
 import Player.type.ComputerPlayer;
+import Player.type.HumanPlayer;
 import UI.Display;
 
 import java.util.List;
@@ -43,7 +44,7 @@ public class GameManager {
             while(!currentPlayer.isFleetPlaced()) {
                 if(currentPlayer.shouldBeDisplayed && standartDisplay) {
                     String boatsToPlace = boatsNeededToPlace(currentPlayer);
-                    String message = boatsToPlace + "Please enter two Position (a Letter and a number) " +
+                    String message = boatsToPlace + "Please enter two Coordinates (a Letter and a number) " +
                             "to place a Boat:";
                     ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), message);
                 }
@@ -72,7 +73,7 @@ public class GameManager {
             while(true) {
                 if(currentPlayer.shouldBeDisplayed && firstIteration) {
                     firstIteration = false;
-                    String message = "Please enter a Position (a Letter and a number) you want to shoot at:";
+                    String message = "Please enter a Coordinate (a Letter and a number) you want to shoot at:";
                     ui.display(currentPlayer.DisplayLikeOwn(), currentOpponent.DisplayLikeOpponent(), message);
                 }
                 try {

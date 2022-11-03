@@ -25,6 +25,8 @@ public class FleetManager {
                 return boat;
             }
         }
+        //the function is never going to return null because of the assertion
+        //however it needs to return null or else it won't compile
         return null;
     }
 

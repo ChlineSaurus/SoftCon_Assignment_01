@@ -25,7 +25,7 @@ public class HumanPlayer extends AbstractPlayer {
 
     private CoordinatesTuple inputToCoordinatesTuple(String input) throws IllegalUserInputException {
         if (input.length() != 2) {
-            throw new IllegalUserInputException("Your input hasn't had the right length!");
+            throw new IllegalUserInputException("Your input doesn't have the right length!");
         }
         String uppercaseInput = input.toUpperCase();
         Row row;
@@ -39,7 +39,7 @@ public class HumanPlayer extends AbstractPlayer {
                 column = Column.valueOf(Character.toString(uppercaseInput.charAt(0)));
             } catch (IllegalArgumentException e2) {
                 throw new IllegalUserInputException("Your input was not in the right form: Please give the game a " +
-                        "Letter from A-J and a Number from 0-1");
+                        "Letter from A-J and a Number from 0-9");
             }
         }
         return new CoordinatesTuple(row, column);
@@ -52,18 +52,18 @@ public class HumanPlayer extends AbstractPlayer {
         input = input.replaceAll("\\s", "");
         input = input.replaceAll(",", "");
         if(input.length() != 4) {
-            throw new IllegalBoatException("Your Input for the Boat had a strange length, please give two Positions");
+            throw new IllegalBoatException("Your Input for the Boat had a strange length, please give enter two Coordinates");
         }
         try {
             boatCoordinates.add(inputToCoordinatesTuple(input.substring(0,2)));
             boatCoordinates.add(inputToCoordinatesTuple(input.substring(2,4)));
         } catch (IllegalUserInputException e) {
             throw new IllegalBoatException("Your input was not in the right form: Please give the game two pairs of " +
-                    "a Uppercase Letter from A-J and a Number from 0-1");
+                    "a Uppercase Letter from A-J and a Number from 0-9");
         }
         if (boatCoordinates.get(0).column != boatCoordinates.get(1).column &&
                 boatCoordinates.get(0).row != boatCoordinates.get(1).row) {
-            throw new IllegalBoatException("Your Boat was less straight than Freddie Mercury: Please give the game" +
+            throw new IllegalBoatException("Make sure that your boat is straight and is not placed diagonally: Please input" +
                     "Coordinates that are in a line.");
         }
         return boatCoordinates;

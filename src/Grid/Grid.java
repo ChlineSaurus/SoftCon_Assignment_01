@@ -38,7 +38,7 @@ public class Grid implements Iterable<String>{
         ArrayList<GridCell> current_row = gridList.get(c.row.value);
         GridCell currentGridCell= current_row.get(c.column.value);
         if (currentGridCell.wasShot()){
-            throw new IllegalShotException("You can't shoot twice on a field");
+            throw new IllegalShotException("You can't shoot at a field that you have already shot on");
         }
         else {
             currentGridCell.isShot();
@@ -56,6 +56,7 @@ public class Grid implements Iterable<String>{
             checkFlat(c,difference);
             if(fleet.isAvailable(difference)) {
                 Boat boat = fleet.placeBoat(difference);
+                assert boat!=null;
                 setFlat(c, difference, boat);
             }
             else {
@@ -67,6 +68,7 @@ public class Grid implements Iterable<String>{
             checkDown(c,difference);
             if(fleet.isAvailable(difference)) {
                 Boat boat = fleet.placeBoat(difference);
+                assert boat!=null;
                 setDown(c, difference, boat);
             }
             else{
@@ -96,7 +98,7 @@ public class Grid implements Iterable<String>{
         int rowRange = row + range;
         for(int i = row;i<rowRange;i++){
             if(gridList.get(i).get(c.column.value).isOccupied()){
-                throw new IllegalBoatException("Sorry, your boat place is occupied");
+                throw new IllegalBoatException("You can't place a boat on cells that are already occupied.");
             }
         }
     }
@@ -106,7 +108,7 @@ public class Grid implements Iterable<String>{
         int colRange = col + range;
         for(int i = col;i<colRange;i++){
             if(gridList.get(c.row.value).get(i).isOccupied()){
-                throw new IllegalBoatException("Sorry, your boat place is occupied");
+                throw new IllegalBoatException("You can't place a boat on cells that are already occupied.");
             }
         }
     }
