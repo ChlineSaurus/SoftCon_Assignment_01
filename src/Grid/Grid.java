@@ -16,15 +16,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Grid{
-    protected static GridCellDisplayer displayLikeOwn = new DisplayLikeOwn();
-    protected static GridCellDisplayer displayLikeOpponent = new DisplayLikeOpponent();
+public class Grid implements Iterable<String>{
+    private GridCellDisplayer currentDisplayType;
     private final FleetManager fleet;
     private final ArrayList<ArrayList<GridCell>> gridList;
 
     public Grid() {
-        this.fleet = new FleetManager();
-        this.gridList = new ArrayList<ArrayList<GridCell>>();
+        fleet = new FleetManager();
+        gridList = new ArrayList<ArrayList<GridCell>>();
         for (Row row : Row.values()) {
             ArrayList<GridCell> rowList = new ArrayList<GridCell>();
             for (Column column : Column.values()) {
@@ -32,6 +31,7 @@ public class Grid{
             }
             gridList.add(rowList);
         }
+        currentDisplayType = new DisplayLikeOpponent();
     }
 
     public void shoot(CoordinatesTuple c) throws IllegalShotException {
@@ -112,15 +112,21 @@ public class Grid{
     }
 
     public Iterator<String> displayLikeOpponent() {
-        return iterator(displayLikeOpponent);
+        if (currentDisplayType.getClass() != DisplayLikeOpponent.class) {
+            currentDisplayType = new DisplayLikeOpponent();
+        }
+        return iterator();
     }
 
     public Iterator<String> displayLikeOwn() {
-        return iterator(displayLikeOwn);
+        if (currentDisplayType.getClass() != DisplayLikeOwn.class) {
+            currentDisplayType = new DisplayLikeOwn();
+        }
+        return iterator();
     }
 
-    public Iterator<String> iterator(GridCellDisplayer gridCellDisplayer){
-        return new GridIterator(gridList, gridCellDisplayer);
+    public Iterator<String> iterator(){
+        return new GridIterator(gridList, currentDisplayType);
     }
 
     public boolean isFleetPlaced() {
