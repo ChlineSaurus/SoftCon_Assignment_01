@@ -3,9 +3,6 @@ package Player;
 import Exceptions.IllegalBoatException;
 import Exceptions.IllegalShotException;
 import Grid.Coordinates.CoordinatesTuple;
-import Grid.DisplayGridcell.DisplayLikeOpponent;
-import Grid.DisplayGridcell.DisplayLikeOwn;
-import Grid.DisplayGridcell.GridCellDisplayer;
 import Grid.Grid;
 
 import java.util.ArrayList;
@@ -13,8 +10,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public abstract class AbstractPlayer {
-    protected static GridCellDisplayer displayLikeOwn = new DisplayLikeOwn();
-    protected static GridCellDisplayer displayLikeOpponent = new DisplayLikeOpponent();
     public final boolean shouldBeDisplayed;
     protected final Grid ownGrid;
 
@@ -54,10 +49,10 @@ public abstract class AbstractPlayer {
     protected abstract CoordinatesTuple getShotPosition() throws IllegalShotException;
 
     public Iterator<String> DisplayLikeOpponent() {
-        return ownGrid.iterator(displayLikeOpponent);
+        return ownGrid.displayLikeOpponent();
     }
 
     public Iterator<String> DisplayLikeOwn() {
-        return ownGrid.iterator(displayLikeOwn);
+        return ownGrid.displayLikeOwn();
     }
 }

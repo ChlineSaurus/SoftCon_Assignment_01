@@ -7,6 +7,8 @@ import Exceptions.IllegalShotException;
 import Grid.Coordinates.Column;
 import Grid.Coordinates.CoordinatesTuple;
 import Grid.Coordinates.Row;
+import Grid.DisplayGridcell.DisplayLikeOpponent;
+import Grid.DisplayGridcell.DisplayLikeOwn;
 import Grid.DisplayGridcell.GridCellDisplayer;
 import Grid.Iterator.GridIterator;
 
@@ -15,6 +17,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Grid{
+    protected static GridCellDisplayer displayLikeOwn = new DisplayLikeOwn();
+    protected static GridCellDisplayer displayLikeOpponent = new DisplayLikeOpponent();
     private final FleetManager fleet;
     private final ArrayList<ArrayList<GridCell>> gridList;
 
@@ -105,6 +109,14 @@ public class Grid{
                 throw new IllegalBoatException("Sorry, your boat place is occupied");
             }
         }
+    }
+
+    public Iterator<String> displayLikeOpponent() {
+        return iterator(displayLikeOpponent);
+    }
+
+    public Iterator<String> displayLikeOwn() {
+        return iterator(displayLikeOwn);
     }
 
     public Iterator<String> iterator(GridCellDisplayer gridCellDisplayer){

@@ -15,7 +15,7 @@ public class ComputerPlayer extends AbstractPlayer {
     private final int columnLength;
     private final Random random;
 
-    public ComputerPlayer(boolean shouldBeDisplayed) {
+    public ComputerPlayer(boolean shouldBeDisplayed ) {
         super(shouldBeDisplayed);
         random = new Random();
         rowEnum = Row.values();
