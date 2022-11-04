@@ -49,10 +49,12 @@ public abstract class AbstractPlayer {
     protected abstract CoordinatesTuple getShotPosition() throws IllegalShotException;
 
     public Iterator<String> DisplayLikeOpponent() {
-        return ownGrid.displayLikeOpponent();
+        ownGrid.setDisplayLikeOpponent();
+        return ownGrid.iterator();
     }
 
     public Iterator<String> DisplayLikeOwn() {
-        return ownGrid.displayLikeOwn();
+        ownGrid.setDisplayLikeOwn();
+        return ownGrid.iterator();
     }
 }

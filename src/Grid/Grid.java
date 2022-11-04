@@ -113,18 +113,16 @@ public class Grid implements Iterable<String>{
         }
     }
 
-    public Iterator<String> displayLikeOpponent() {
+    public void setDisplayLikeOpponent() {
         if (currentDisplayType.getClass() != DisplayLikeOpponent.class) {
             currentDisplayType = new DisplayLikeOpponent();
         }
-        return iterator();
     }
 
-    public Iterator<String> displayLikeOwn() {
+    public void setDisplayLikeOwn() {
         if (currentDisplayType.getClass() != DisplayLikeOwn.class) {
             currentDisplayType = new DisplayLikeOwn();
         }
-        return iterator();
     }
 
     public Iterator<String> iterator(){
