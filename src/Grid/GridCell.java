@@ -20,6 +20,7 @@ public class GridCell {
     }
 
     public Boat getBoat() {
+        assert (isOccupied);
         return boat;
     }
 
