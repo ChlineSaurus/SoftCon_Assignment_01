@@ -18,7 +18,7 @@ public class GameManager {
 
     private GameManager() {
         player1turn = getStartingPlayer();
-        player1 = new ComputerPlayer(true);
+        player1 = new HumanPlayer(true);
         player2 = new ComputerPlayer(false);
         ui = new Display();
         }
